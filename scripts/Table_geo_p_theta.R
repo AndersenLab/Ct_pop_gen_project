@@ -1,4 +1,3 @@
-# calculate population size of Taiwan isotypes
 
 
 rm(list = ls())
