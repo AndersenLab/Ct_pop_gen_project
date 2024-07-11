@@ -1,0 +1,106 @@
+# The input .treefile were generated with iqtree
+# Annotation file "indep_isotype_info_geo.csv" is from Isotype_tropicalis_global_map.R 
+
+rm(list=ls())
+
+library(ggtree)
+library(ggplot2)
+library(treeio)
+library(dplyr)
+library(ggnewscale)
+
+library(RColorBrewer)
+display.brewer.all()
+display.brewer.pal(11,"RdYlBu")
+brewer.pal(11,"RdYlBu")
+display.brewer.pal(9,"Set1")
+brewer.pal(9,"Set1")
+
+isotype_map_0.6<-treeio::read.tree("../processed_data/LD_pruned_trees/LD_0.6_singletons_eiganstrat_input.min4.phy.treefile")
+isotype_map_0.7<-treeio::read.tree("../processed_data/LD_pruned_trees/LD_0.7_singletons_eiganstrat_input.min4.phy.treefile")
+isotype_map_0.8<-treeio::read.tree("../processed_data/LD_pruned_trees/LD_0.8_singletons_eiganstrat_input.min4.phy.treefile")
+isotype_map_0.9<-treeio::read.tree("../processed_data/LD_pruned_trees/LD_0.9_singletons_eiganstrat_input.min4.phy.treefile")
+
+
+# function: plot the tree
+plot_tree <- function(tree_file){
+  
+data_tree_file<-ggtree::fortify(tree_file)
+
+annotation_maps<- read.csv("../processed_data/Geo_info/indep_isotype_info_geo.csv", header = TRUE)
+heatmap<- annotation_maps%>%
+  select(lat)
+row.names(heatmap)<-annotation_maps$isotype
+heatmap$lat<-abs(heatmap$lat)
+
+
+geo.colours <- c("Hawaii"="#66C2A5", "Australia"="#FC8D62", "Central America"="#8DA0CB",
+                 "South America"="#E78AC3", "Africa"="#A6D854", "Caribbean"="#FFD92F", 
+                 "Taiwan" = "#E5C494")
+
+
+# plot tree
+p1<-ggtree::ggtree(data_tree_file, aes(col=geo), layout="circular", size=0.5) %<+% annotation_maps + # %<+% annotation_maps # 引入注释文件
+  # 树型、线粗细、末端颜色 + 注释信息
+  geom_tippoint(aes(color=geo), size=1.5, alpha =0.8)+
+  scale_color_manual(values=geo.colours)+
+  #加树和外圈之间的连线
+  geom_tiplab(aes(label=label, col=geo), size = 0.8,hjust=-0.5, align=TRUE, linesize=0.5, alpha=0.8)+
+  # 端点颜色、大小
+  geom_tiplab(aes(label=NA, col=NA), size=0.8)+
+  # 注释、注释的颜色
+  theme(legend.title=element_text(face="bold"), legend.position="right", legend.box="horizontal", legend.text=element_text(size=rel(0.7))) +
+  theme(plot.margin = unit(c(0, 0, 0, 0), "in"))
+  #外圈添加柱状图
+  # 图例位置、文字大小
+  #xlim(NA, max(data_16S$x)*1.3)
+
+p1<- ggtree::open_tree(p1, 90) %>% ggtree::rotate_tree(90) #树开口90度，再把树旋转90度
+
+
+lat_color<-brewer.pal(11,"RdYlBu")[2:10]
+p2<-p1+new_scale_fill()+new_scale_color()
+p3<-gheatmap(p2, heatmap, offset = 0.0015, width=0.1, font.size=6, 
+             color = NULL, hjust = -0.1, colnames_level=colnames(heatmap), 
+             colnames_angle=0, legend_title=" Absolute latitude") + 
+  scale_fill_gradient2(low = "#D73027", mid = "#FFFFBF",high = "#4575B4",midpoint = mean(c(max(heatmap$lat), min(heatmap$lat))))+
+    # scale_fill_viridis_c(option = "H")+
+  theme(legend.position = c(0.75,0.75))
+
+
+
+p3
+
+return(p3)
+}
+
+
+
+
+
+
+
+
+
+
+# plot_legend<-plot_legend(isotype_map_0.6)
+# ggsave("legend.pdf", plot = plot_legend, width = 7.5, height = 7.5, units = "in")
+
+plot_0.6_tree<-plot_tree(isotype_map_0.6)
+ggsave("../plots/Tree_0.6.pdf", plot = plot_0.6_tree, width = 7.5, height = 7.5, units = "in")
+
+plot_0.7_tree<-plot_tree(isotype_map_0.7)
+ggsave("../plots/Tree_0.7.pdf", plot = plot_0.7_tree, width = 7.5, height = 7.5, units = "in")
+
+plot_0.8_tree<-plot_tree(isotype_map_0.8)
+ggsave("../plots/Tree_0.8.pdf", plot = plot_0.8_tree, width = 7.5, height = 7.5, units = "in")
+
+plot_0.9_tree<-plot_tree(isotype_map_0.9)
+ggsave("../plots/Tree_0.9.pdf", plot = plot_0.9_tree, width = 7.5, height = 7.5, units = "in")
+
+#save image 7.5inches*inches
+#rearrange legend positions and remove outer ring titles with Adobe Illustrator
+
+
+
+
