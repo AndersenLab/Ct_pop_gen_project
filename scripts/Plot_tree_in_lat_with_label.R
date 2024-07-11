@@ -41,21 +41,15 @@ geo.colours <- c("Hawaii"="#66C2A5", "Australia"="#FC8D62", "Central America"="#
 
 # plot tree
 p1<-ggtree::ggtree(data_tree_file, aes(col=geo), layout="circular", size=0.5) %<+% annotation_maps + # %<+% annotation_maps # 引入注释文件
-  # 树型、线粗细、末端颜色 + 注释信息
   geom_tippoint(aes(color=geo), size=1.5, alpha =0.8)+
   scale_color_manual(values=geo.colours)+
-  #加树和外圈之间的连线
   geom_tiplab(aes(label=label, col=geo), size = 0.8,hjust=-0.5, align=TRUE, linesize=0.5, alpha=0.8)+
-  # 端点颜色、大小
   geom_tiplab(aes(label=NA, col=NA), size=0.8)+
-  # 注释、注释的颜色
   theme(legend.title=element_text(face="bold"), legend.position="right", legend.box="horizontal", legend.text=element_text(size=rel(0.7))) +
   theme(plot.margin = unit(c(0, 0, 0, 0), "in"))
-  #外圈添加柱状图
-  # 图例位置、文字大小
-  #xlim(NA, max(data_16S$x)*1.3)
+ 
 
-p1<- ggtree::open_tree(p1, 90) %>% ggtree::rotate_tree(90) #树开口90度，再把树旋转90度
+p1<- ggtree::open_tree(p1, 1) %>% ggtree::rotate_tree(90) 
 
 
 lat_color<-brewer.pal(11,"RdYlBu")[2:10]
@@ -65,7 +59,7 @@ p3<-gheatmap(p2, heatmap, offset = 0.0015, width=0.1, font.size=6,
              colnames_angle=0, legend_title=" Absolute latitude") + 
   scale_fill_gradient2(low = "#D73027", mid = "#FFFFBF",high = "#4575B4",midpoint = mean(c(max(heatmap$lat), min(heatmap$lat))))+
     # scale_fill_viridis_c(option = "H")+
-  theme(legend.position = c(0.75,0.75))
+  theme(legend.position = c(0.1,0.1))
 
 
 
@@ -99,7 +93,7 @@ plot_0.9_tree<-plot_tree(isotype_map_0.9)
 ggsave("../plots/Tree_0.9.pdf", plot = plot_0.9_tree, width = 7.5, height = 7.5, units = "in")
 
 #save image 7.5inches*inches
-#rearrange legend positions and remove outer ring titles with Adobe Illustrator
+#rearrange legend positions and titles with Adobe Illustrator
 
 
 
