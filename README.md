@@ -1,5 +1,5 @@
 # Ct_pop_gen_project
----
+
 - The "data" folder contains the raw data from public database (*i.e.* CaeNDR)
 - The "scripts" folder contains all the code used for generating figures and tables.
 - The "processed_data" folder contains all the intermediate results files generated during the analysis.
