@@ -1,4 +1,4 @@
-# Dendrogram and geographical frequency of TA, slow-1 on chromosome III
+# Dendrogram and geographical frequency of five different maternal effect regions
 
 
 # BiocManager::install("fastreeR")
