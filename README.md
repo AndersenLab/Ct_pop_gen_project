@@ -74,6 +74,10 @@ This repository contains scripts and files used to perform the analyses and make
 #### Figure S12-S16. Relatedness of 518 *C. tropicalis* isotype reference strains at five different maternal effect regions
 - Figure S12-S16: Plot_TAs_vcf2tree.R
 
+#### Table S4 Diversity statistic (*π*, *θ*, Tajima's D) for all isotype reference strains and for each geographic region
+- Table S4: Table_geo_p_theta.R
 
+#### Table S5 Effective population size (N<sub>e</sub>) for all isotype reference strains and for each geographic region except for the two under-sampled regions, Africa and Australia.
+- Table S5: Table_isotypes_Ne_Outcrossing rate_20240420.R
 
 
