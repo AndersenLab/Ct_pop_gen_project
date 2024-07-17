@@ -65,11 +65,11 @@ This repository contains scripts and files used to perform the analyses and make
 #### Figure S8. Genetic distance (Dxy) correlation with geographic distance and regional variation
 - Figure S8: Plot_dxy_geo_change_in_dxy_per_km_20240518.R
 
-#### Figure S9. Pairwise fixation index *(Fst)* among C. tropicalis from different geographic regions
-- FigureS9: Plot_fst_geo.R
+#### Figure S9. Pairwise fixation index *(F<sub>st</sub>)* among C. tropicalis from different geographic regions
+- Figure S9: Plot_fst_geo.R
 
 #### Figure S10. LD decay for all autosomes
-
+- Figure S10: 
 
 
 
