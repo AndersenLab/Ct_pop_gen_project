@@ -41,6 +41,19 @@ This repository contains scripts and files used to perform the analyses and make
 
 
 #### Figure S1. Global distribution of 690 *C. tropicalis* strains.
+- Figure S1: Plot_strains_tropicalis_global_map.R
+
+#### Figure S2. Geographical distance between strains within an isotype.
+- Figure S2 a: Plot_Vincenty_geo_Ce.R
+- Figure S2 b: Plot_Vincenty_geo_Ct.R
+
+#### Figure S3-S5. The ML tree of 518 *C. tropicalis* isotype reference strains generated from LD-pruned variants with r<sup>2</sup> values less than or equal to 0.7-0.9.
+- Figure S3-S5: Plot_tree_in_lat_with_label.R
+
+#### 
+
+
+
 
 
 
