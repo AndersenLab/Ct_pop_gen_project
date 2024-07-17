@@ -71,7 +71,8 @@ This repository contains scripts and files used to perform the analyses and make
 #### Figure S10. LD decay for all autosomes
 - Figure S10: Plot_LD_geo_all_chromosome.R
 
-
+#### Figure S12-S16. Relatedness of 518 *C. tropicalis* isotype reference strains at five different maternal effect regions
+- Figure S12-S16: Plot_TAs_vcf2tree.R
 
 
 
