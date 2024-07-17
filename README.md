@@ -34,7 +34,7 @@ This repository contains scripts and files used to perform the analyses and make
 #### Figure 7. Human Impact Index of nematode sampling sites
 - Figure 7: Plot_human_footprint_index.R
 
-#### Table 1. Effective population size (Ne) for *Caenorhabditis* spp. samples from different studies
+#### Table 1. Effective population size (N<sub>e</sub>) for *Caenorhabditis* spp. samples from different studies
 - Table 1: Table_isotypes_Ne_Outcrossing rate_20240420.R
 
 #### Table 2. Outcrossing rate of isotype reference strains from different sampling sites
