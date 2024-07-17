@@ -40,7 +40,7 @@ geo.colours <- c("Hawaii"="#66C2A5", "Australia"="#FC8D62", "Central America"="#
 
 
 # plot tree
-p1<-ggtree::ggtree(data_tree_file, aes(col=geo), layout="circular", size=0.5) %<+% annotation_maps + # %<+% annotation_maps # 引入注释文件
+p1<-ggtree::ggtree(data_tree_file, aes(col=geo), layout="circular", size=0.5) %<+% annotation_maps + # %<+% annotation_maps 
   geom_tippoint(aes(color=geo), size=1.5, alpha =0.8)+
   scale_color_manual(values=geo.colours)+
   geom_tiplab(aes(label=label, col=geo), size = 0.8,hjust=-0.5, align=TRUE, linesize=0.5, alpha=0.8)+
