@@ -30,6 +30,8 @@ This repository contains scripts and files used to perform the analyses and make
 - Figure 6: Plot_Medea_vcf2tree.R
 
 ### Figure 7. Human Impact Index of nematode sampling sites. 
-- 
+- Figure 7: Plot_human_footprint_index.R
+
+### Table 1. 
 
 
