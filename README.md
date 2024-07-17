@@ -69,7 +69,7 @@ This repository contains scripts and files used to perform the analyses and make
 - Figure S9: Plot_fst_geo.R
 
 #### Figure S10. LD decay for all autosomes
-- Figure S10: 
+- Figure S10: Plot_LD_geo_all_chromosome.R
 
 
 
