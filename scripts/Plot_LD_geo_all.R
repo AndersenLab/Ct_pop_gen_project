@@ -124,7 +124,7 @@ plot_LD_all_summary<-plot_figure(LD_all_summary)
 plot_LD_all_summary
 # save image 7.5 * 4 inches
 
-ggsave("../plots/Plot_LD_geo_all.pdf", plot = plot_LD_all_summary, width = 7.5, height = 4, units = "in")
+# ggsave("../plots/Plot_LD_geo_all.pdf", plot = plot_LD_all_summary, width = 7.5, height = 4, units = "in")
 
 
 plot_LD_main_fig_summary<-plot_figure(LD_main_fig_summary)
