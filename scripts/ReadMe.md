@@ -1,3 +1,3 @@
+- Scripts starting with "Calculate" are used to compute and produce processed data.
 - Scripts starting with "Plot" are used to plot figures. 
 - Scripts starting with "Tables" are used to generate tables. 
-- Scripts starting with "Calculate" are used to compute and produce processed data.
