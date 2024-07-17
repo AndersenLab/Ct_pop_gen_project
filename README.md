@@ -40,3 +40,10 @@ This repository contains scripts and files used to perform the analyses and make
 
 
 
+#### Figure S1. Global distribution of 690 *C. tropicalis* strains.
+
+
+
+
+
+
