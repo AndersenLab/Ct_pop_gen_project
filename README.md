@@ -14,7 +14,7 @@ This repository contains scripts and files used to perform the analyses and make
 - Figure 1 a-f: Plot_Isotype_tropicalis_global_map.R 
 - Figure 1 g-i: Plot_PCA_vcf.R
 
-#### Figure 2. The ML tree of 518 *C. tropicalis* isotype reference strains generated from variants pruned with LD r2 values less than or equal to 0.9.
+#### Figure 2. The ML tree of 518 *C. tropicalis* isotype reference strains generated from variants pruned with LD r<sup>2</sup> values less than or equal to 0.9.
 - Figure 2: Plot_tree_in_lat_with_label.R
 
 #### Figure 3. Diversity statistic calculated across global *C. tropicalis* isotypes.
