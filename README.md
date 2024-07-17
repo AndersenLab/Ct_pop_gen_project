@@ -11,7 +11,7 @@ This repository contains scripts and files used to perform the analyses and make
 ---
 
 #### Figure 1. Global distribution of 518 *C. tropicalis* isotype reference strains.
-- Figure 1 a-f: Plot_Isotype_tropicalis_global_map.R 
+- Figure 1 a-f: Plot_isotype_tropicalis_global_map.R 
 - Figure 1 g-i: Plot_PCA_vcf.R
 
 #### Figure 2. The ML tree of 518 *C. tropicalis* isotype reference strains generated from variants pruned with LD r<sup>2</sup> values less than or equal to 0.9.
