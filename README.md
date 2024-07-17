@@ -10,6 +10,8 @@ This repository contains scripts and files used to perform the analyses and make
 
 ---
 
+### Main Figures & Tables
+
 #### Figure 1. Global distribution of 518 *C. tropicalis* isotype reference strains.
 - Figure 1 a-f: Plot_isotype_tropicalis_global_map.R 
 - Figure 1 g-i: Plot_PCA_vcf.R
@@ -39,6 +41,10 @@ This repository contains scripts and files used to perform the analyses and make
 - Table 2: Table_isotypes_Ne_Outcrossing rate_20240420.R
 
 
+<br>
+<br>
+
+### Supplemental Figures & Tables
 
 #### Figure S1. Global distribution of 690 *C. tropicalis* strains.
 - Figure S1: Plot_strains_tropicalis_global_map.R
