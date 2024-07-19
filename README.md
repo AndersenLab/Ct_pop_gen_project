@@ -80,6 +80,7 @@ This repository contains scripts and files used to perform the analyses and make
 - Table S4: Table_geo_p_theta.R
 
 #### Table S5 Effective population size (N<sub>e</sub>) for all isotype reference strains and for each geographic region except for the two under-sampled regions, Africa and Australia.
-- Table S5: Table_isotypes_Ne_Outcrossing rate_20240420.R
+- Table S5: Table_isotypes_Ne_Outcrossing rate_20240420.R 
+
 
 
