@@ -80,7 +80,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 - Figure S7: Plot_phy_geo.R
 
 #### Figure S8. Genetic distance (*D<sub>xy</sub>*) correlation with geographic distance and regional variation
-- Figure S8: Plot_dxy_geo_change_in_dxy_per_km_20240518.R
+- Figure S8: Calculate_C_tro_dxy(10kb)_only_among_geo.sh  &#8594; <br>
+  Plot_dxy_geo_change_in_dxy_per_km_20240518.R
 
 #### Figure S9. Pairwise fixation index (*F<sub>st</sub>*) among *C. tropicalis* from different geographic regions
 - Figure S9: Calculate_C_tro_fst_geo.sh  &#8594; <br>
