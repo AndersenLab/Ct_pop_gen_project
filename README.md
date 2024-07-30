@@ -83,7 +83,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 - Figure S8: Plot_dxy_geo_change_in_dxy_per_km_20240518.R
 
 #### Figure S9. Pairwise fixation index (*F<sub>st</sub>*) among *C. tropicalis* from different geographic regions
-- Figure S9: Plot_fst_geo.R
+- Figure S9: Calculate_C_tro_fst_geo.sh  &#8594; <br>
+  Plot_fst_geo.R
 
 #### Figure S10. LD decay for all autosomes
 - Figure S10: Plot_LD_geo_all_chromosome.R
