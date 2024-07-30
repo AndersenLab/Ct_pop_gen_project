@@ -114,7 +114,9 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   Table_geo_p_theta.R
 
 #### Table S5 Effective population size (N<sub>e</sub>) for all isotype reference strains and for each geographic region except for the two under-sampled regions, Africa and Australia.
-- Table S5: Table_isotypes_Ne_Outcrossing rate_20240420.R 
+- Table S5: Calculate_vcf_to_zarr_geo.sh &#8594; <br>
+  Calculate_zarr_to_pi_theta_d_geo.sh + Calculate_LD_per_Mb_all.sh + Calculate_LD_per_Mb_geo.sh  &#8594; <br>
+  Table_isotypes_Ne_Outcrossing rate.R
 
 
 
