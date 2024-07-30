@@ -54,9 +54,14 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 - Figure 7: Plot_human_footprint_index.R
 
 #### Table 1. Effective population size (N<sub>e</sub>) for *Caenorhabditis* spp. samples from different studies
-- Table 1: Calculate_vcf_to_zarr_geo.sh &#8594; <br>
-  Calculate_zarr_to_pi_theta_d_geo.sh &#8594; <br>
-  Table_isotypes_Ne_Outcrossing rate.R
+- Table 1:
+  C. tropicalis:
+  Calculate_vcf_to_zarr_geo.sh &#8594; <br>
+  Calculate_zarr_to_pi_theta_d_geo.sh
+  C. elegans:
+  Calculate_Ce_vcf_to_zarr.sh  &#8594; <br>
+  Calculate_Ce_zarr_to_pi_theta_d.sh
+  Then, generate the table with all the output above: Table_isotypes_Ne_Outcrossing rate.R
 
 #### Table 2. Outcrossing rate of isotype reference strains from different sampling sites
 - Table 2: Calculate_vcf_to_zarr_geo.sh &#8594; <br>
