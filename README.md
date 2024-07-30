@@ -51,7 +51,9 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   Plot_Medea_vcf2tree.R
 
 #### Figure 7. Human Impact Index of nematode sampling sites
-- Figure 7: Plot_human_footprint_index.R
+- Figure 7: Calculate_download_and_unzip_tif_files.sh &#8594; <br>
+  Calculate_human_footprint_index.R  &#8594; <br>
+  Plot_human_footprint_index.R
 
 #### Table 1. Effective population size (N<sub>e</sub>) for *Caenorhabditis* spp. samples from different studies
 - Table 1: <br>
