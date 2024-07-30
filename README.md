@@ -49,10 +49,10 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 - Figure 7: Plot_human_footprint_index.R
 
 #### Table 1. Effective population size (N<sub>e</sub>) for *Caenorhabditis* spp. samples from different studies
-- Table 1: Table_isotypes_Ne_Outcrossing rate_20240420.R
+- Table 1: Table_isotypes_Ne_Outcrossing rate.R
 
 #### Table 2. Outcrossing rate of isotype reference strains from different sampling sites
-- Table 2: Table_isotypes_Ne_Outcrossing rate_20240420.R
+- Table 2: Table_isotypes_Ne_Outcrossing rate.R
 
 
 <br>
