@@ -62,6 +62,9 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   Calculate_Ce_vcf_to_zarr.sh  &#8594; <br>
   Calculate_Ce_zarr_to_pi_theta_d.sh <br>
   *C. briggsae*:
+  trim-fq-nf workflow: https://github.com/andersenlab/trim-fq-nf &#8594; <br>
+  alignment-nf workflow: https://github.com/andersenlab/alignment-nf &#8594; <br>
+  wi-gatk workflow: https://github.com/andersenlab/wi-gatk &#8594; <br> 
   Calculate_Cb_zarr_to_pi_theta_d.sh &#8594; <br>
   Calculate_Cb_vcf_to_zarr.sh <br>
   Then, use all the output above and this R script to generate the table: Table_isotypes_Ne_Outcrossing rate.R
