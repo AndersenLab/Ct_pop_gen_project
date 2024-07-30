@@ -37,7 +37,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 - Figure 3: Plot_tro_pi_theta_d.R
 
 #### Figure 4. LD decay for all *C. tropicalis* isotype reference strains across all autosomes
-- Figure 4: Plot_LD_geo_all.R
+- Figure 4: Calculate_LD_per_Mb_all.sh + Calculate_LD_per_Mb_geo.sh &#8594; <br>
+  Plot_LD_geo_all.R
 
 #### Figure 5. Hyper-variable regions (HVRs) in *C. tropicalis*
 - Figure 5 b, c: Plot_HVRs_TajimasD.R
