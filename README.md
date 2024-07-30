@@ -65,16 +65,25 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   trim-fq-nf workflow: https://github.com/andersenlab/trim-fq-nf &#8594; <br>
   alignment-nf workflow: https://github.com/andersenlab/alignment-nf &#8594; <br>
   wi-gatk workflow: https://github.com/andersenlab/wi-gatk &#8594; <br> 
-  Calculate_Cb_zarr_to_pi_theta_d.sh &#8594; <br>
-  Calculate_Cb_vcf_to_zarr.sh <br>
+  Calculate_Cb_vcf_to_zarr.sh &#8594; <br>
+  Calculate_Cb_zarr_to_pi_theta_d.sh <br>
   Then, use all the output above and this R script to generate the table: Table_isotypes_Ne_Outcrossing rate.R
 
 #### Table 2. Outcrossing rate of isotype reference strains from different sampling sites
 - Table 2: <br>
   *C. tropicalis*:
   Calculate_vcf_to_zarr_geo.sh &#8594; <br>
-  Calculate_zarr_to_pi_theta_d_geo.sh + Calculate_LD_per_Mb_all.sh + Calculate_LD_per_Mb_geo.sh  &#8594; <br>
-  Table_isotypes_Ne_Outcrossing rate.R
+  Calculate_zarr_to_pi_theta_d_geo.sh + Calculate_LD_per_Mb_all.sh + Calculate_LD_per_Mb_geo.sh  <br>
+  *C. elegans*:
+  Calculate_Ce_vcf_to_zarr.sh  &#8594; <br>
+  Calculate_Ce_zarr_to_pi_theta_d.sh + Calculate_Ce_LD_per_Mb.sh  <br>
+  *C. briggsae*:
+  trim-fq-nf workflow: https://github.com/andersenlab/trim-fq-nf &#8594; <br>
+  alignment-nf workflow: https://github.com/andersenlab/alignment-nf &#8594; <br>
+  wi-gatk workflow: https://github.com/andersenlab/wi-gatk &#8594; <br> 
+  Calculate_Cb_vcf_to_zarr.sh &#8594; <br>
+  Calculate_Cb_zarr_to_pi_theta_d.sh + Calculate_Cb_LD_per_Mb.sh <br> 
+  Then, use all the output above and this R script to generate the table: Table_isotypes_Ne_Outcrossing rate.R
 
 
 <br>
