@@ -47,7 +47,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   Plot_HVRs_TajimasD.R
 
 #### Figure 6. Relatedness and frequency of 518 *C. tropicalis* isotype reference strains at the Medea regions
-- Figure 6: Plot_Medea_vcf2tree.R
+- Figure 6: Calculate_C_tro_Medea_vcf.sh &#8594; <br>
+  Plot_Medea_vcf2tree.R
 
 #### Figure 7. Human Impact Index of nematode sampling sites
 - Figure 7: Plot_human_footprint_index.R
