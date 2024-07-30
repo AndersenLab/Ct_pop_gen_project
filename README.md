@@ -70,7 +70,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 #### Figure S3-S5. The ML trees of 518 *C. tropicalis* isotype reference strains generated from LD-pruned variants with r<sup>2</sup> values less than or equal to 0.7-0.9
 - Figure S3-S5: Calculate_C_tro_vcf_to_pyh.sh + vcf2phylip.py &#8594; <br>
   Calculate_C_tro_LD_pruned_0.6_pyh_to_tree.sh + Calculate_C_tro_LD_pruned_0.7_pyh_to_tree.sh + Calculate_C_tro_LD_pruned_0.8_pyh_to_tree.sh &#8594; <br>
-  Plot_tree_in_lat_with_label.R
+  Plot_tree_in_lat_with_label.R <br>
+  Notes: The vcf2phylip.py can be found in https://github.com/edgardomortiz/vcf2phylip
 
 #### Figure S6. Unrooted maximum likelihood trees of 518 *C. tropicalis* isotype reference strains generated from LD-pruned variants
 - Figure S6: Plot_equal angle_unrooted_tree.R
