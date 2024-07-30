@@ -64,7 +64,7 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   *C. briggsae*:
   Calculate_Cb_zarr_to_pi_theta_d.sh &#8594; <br>
   Calculate_Cb_vcf_to_zarr.sh <br>
-  Then, generate the table with all the output above: Table_isotypes_Ne_Outcrossing rate.R
+  Then, use all the output above and this R script to generate the table: Table_isotypes_Ne_Outcrossing rate.R
 
 #### Table 2. Outcrossing rate of isotype reference strains from different sampling sites
 - Table 2: Calculate_vcf_to_zarr_geo.sh &#8594; <br>
