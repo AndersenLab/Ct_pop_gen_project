@@ -97,7 +97,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   Plot_fst_geo.R
 
 #### Figure S10. LD decay for all autosomes
-- Figure S10: Plot_LD_geo_all_chromosome.R
+- Figure S10: Calculate_LD_per_Mb_all.sh + Calculate_LD_per_Mb_geo.sh  &#8594; <br>
+  Plot_LD_geo_all_chromosome.R
 
 #### Figure S11. Species wide (*D<sub>xy</sub>*)  of *C. tropicalis* 
 - Figure S11: Calculate_C_tro_dxy_10kb_chunk_I_to_X.sh + Calculate_C_tro_dxy_10kb_chunk_V_1.sh + Calculate_C_tro_dxy_10kb_chunk_V_2.sh  &#8594; <br>
