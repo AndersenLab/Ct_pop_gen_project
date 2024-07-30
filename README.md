@@ -11,8 +11,11 @@ This repository contains scripts and files used to perform the analyses and make
 <br>
 
 ---
+## How to generate figures/tables with scripts in the repo
+This section shows the names and order of the scripts used to plot figures and generate tables.
+Notes: The "&#8594;" reprensents the order of scripts. The “+” means you should use them both/all in that step. 
 
-## Main Figures & Tables
+### Main Figures & Tables
 
 #### Figure 1. Global distribution of 518 *C. tropicalis* isotype reference strains
 - Figure 1 a-f: Plot_isotype_tropicalis_global_map.R 
@@ -48,7 +51,7 @@ This repository contains scripts and files used to perform the analyses and make
 <br>
 <br>
 
-## Supplemental Figures & Tables
+### Supplemental Figures & Tables
 
 #### Figure S1. Global distribution of 690 *C. tropicalis* strains
 - Figure S1: Plot_strains_tropicalis_global_map.R
