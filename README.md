@@ -62,7 +62,7 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   Calculate_Ce_vcf_to_zarr.sh  &#8594; <br>
   Calculate_Ce_zarr_to_pi_theta_d.sh <br>
   *C. briggsae*:
-  Calculate_Cb_zarr_to_pi_theta_d.sh <br>
+  Calculate_Cb_zarr_to_pi_theta_d.sh &#8594; <br>
   Calculate_Cb_vcf_to_zarr.sh <br>
   Then, generate the table with all the output above: Table_isotypes_Ne_Outcrossing rate.R
 
