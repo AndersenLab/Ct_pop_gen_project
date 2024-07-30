@@ -15,7 +15,7 @@ This repository contains scripts and files used to perform the analyses and make
 
 <br>
 
-## How to plot figures and generate tables in the manuscript with scripts in this repo
+## How to use the scripts in this repository to plot figures and generate tables in the manuscript
 This section shows the names and order of the scripts used to plot figures and generate tables. <br>
 Notes: The "&#8594;" reprensents the order of scripts. The “+” means you should use them both/all in that step. 
 
