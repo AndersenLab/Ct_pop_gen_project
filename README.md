@@ -58,7 +58,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   Table_isotypes_Ne_Outcrossing rate.R
 
 #### Table 2. Outcrossing rate of isotype reference strains from different sampling sites
-- Table 2: Table_isotypes_Ne_Outcrossing rate.R
+- Table 2: Calculate_vcf_to_zarr_geo.sh + Calculate_zarr_to_pi_theta_d_geo.sh + Calculate_LD_per_Mb_all.sh + Calculate_LD_per_Mb_geo.sh  &#8594; <br>
+  Table_isotypes_Ne_Outcrossing rate.R
 
 
 <br>
