@@ -70,7 +70,9 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
   Then, use all the output above and this R script to generate the table: Table_isotypes_Ne_Outcrossing rate.R
 
 #### Table 2. Outcrossing rate of isotype reference strains from different sampling sites
-- Table 2: Calculate_vcf_to_zarr_geo.sh &#8594; <br>
+- Table 2: <br>
+  *C. tropicalis*:
+  Calculate_vcf_to_zarr_geo.sh &#8594; <br>
   Calculate_zarr_to_pi_theta_d_geo.sh + Calculate_LD_per_Mb_all.sh + Calculate_LD_per_Mb_geo.sh  &#8594; <br>
   Table_isotypes_Ne_Outcrossing rate.R
 
