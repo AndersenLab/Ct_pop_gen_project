@@ -57,10 +57,10 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 - Table 1:
   C. tropicalis:
   Calculate_vcf_to_zarr_geo.sh &#8594; <br>
-  Calculate_zarr_to_pi_theta_d_geo.sh
+  Calculate_zarr_to_pi_theta_d_geo.sh <br>
   C. elegans:
   Calculate_Ce_vcf_to_zarr.sh  &#8594; <br>
-  Calculate_Ce_zarr_to_pi_theta_d.sh
+  Calculate_Ce_zarr_to_pi_theta_d.sh <br>
   Then, generate the table with all the output above: Table_isotypes_Ne_Outcrossing rate.R
 
 #### Table 2. Outcrossing rate of isotype reference strains from different sampling sites
