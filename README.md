@@ -19,8 +19,8 @@ This repository contains scripts and files used to perform the analyses and make
 - Figure 1 g-i: Plot_PCA_vcf.R
 
 #### Figure 2. The ML tree of 518 *C. tropicalis* isotype reference strains generated from variants pruned with LD r<sup>2</sup> values less than or equal to 0.9
-- Figure 2: Calculate_C_tro_vcf_to_pyh.sh + vcf2phylip.py > <br>
-  Calculate_C_tro_LD_pruned_0.9_pyh_to_tree.sh > <br>
+- Figure 2: Calculate_C_tro_vcf_to_pyh.sh + vcf2phylip.py &#8594; <br>
+  Calculate_C_tro_LD_pruned_0.9_pyh_to_tree.sh &#8594; <br>
   Plot_tree_in_lat_with_label.R
 
 #### Figure 3. Diversity statistic calculated across global *C. tropicalis* isotypes
@@ -58,8 +58,8 @@ This repository contains scripts and files used to perform the analyses and make
 - Figure S2 b: Plot_Vincenty_geo_Ct.R
 
 #### Figure S3-S5. The ML trees of 518 *C. tropicalis* isotype reference strains generated from LD-pruned variants with r<sup>2</sup> values less than or equal to 0.7-0.9
-- Figure S3-S5: Calculate_C_tro_vcf_to_pyh.sh + vcf2phylip.py > <br>
-  Calculate_C_tro_LD_pruned_0.6_pyh_to_tree.sh + Calculate_C_tro_LD_pruned_0.7_pyh_to_tree.sh + Calculate_C_tro_LD_pruned_0.8_pyh_to_tree.sh > <br>
+- Figure S3-S5: Calculate_C_tro_vcf_to_pyh.sh + vcf2phylip.py &#8594; <br>
+  Calculate_C_tro_LD_pruned_0.6_pyh_to_tree.sh + Calculate_C_tro_LD_pruned_0.7_pyh_to_tree.sh + Calculate_C_tro_LD_pruned_0.8_pyh_to_tree.sh &#8594; <br>
   Plot_tree_in_lat_with_label.R
 
 #### Figure S6. Unrooted maximum likelihood trees of 518 *C. tropicalis* isotype reference strains generated from LD-pruned variants
