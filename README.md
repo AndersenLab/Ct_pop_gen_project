@@ -30,7 +30,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 #### Figure 2. The ML tree of 518 *C. tropicalis* isotype reference strains generated from variants pruned with LD r<sup>2</sup> values less than or equal to 0.9
 - Figure 2: Calculate_C_tro_vcf_to_pyh.sh + vcf2phylip.py &#8594; <br>
   Calculate_C_tro_LD_pruned_0.9_pyh_to_tree.sh &#8594; <br>
-  Plot_tree_in_lat_with_label.R
+  Plot_tree_in_lat_with_label.R <br> 
+  Notes: The vcf2phylip.py can be found in https://github.com/edgardomortiz/vcf2phylip
 
 #### Figure 3. Diversity statistic calculated across global *C. tropicalis* isotypes
 - Figure 3: Plot_tro_pi_theta_d.R
