@@ -12,7 +12,7 @@ This repository contains scripts and files used to perform the analyses and make
 
 ---
 ## How to generate figures/tables with scripts in the repo
-This section shows the names and order of the scripts used to plot figures and generate tables.
+This section shows the names and order of the scripts used to plot figures and generate tables. <br>
 Notes: The "&#8594;" reprensents the order of scripts. The “+” means you should use them both/all in that step. 
 
 ### Main Figures & Tables
