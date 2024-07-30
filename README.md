@@ -92,7 +92,8 @@ Notes: The "&#8594;" reprensents the order of scripts. The “+” means you sho
 
 #### Figure S11. Species wide (*D<sub>xy</sub>*)  of *C. tropicalis* 
 - Figure S11: Calculate_C_tro_dxy_10kb_chunk_I_to_X.sh + Calculate_C_tro_dxy_10kb_chunk_V_1.sh + Calculate_C_tro_dxy_10kb_chunk_V_2.sh  &#8594; <br>
-  Calculate_C_tro_dxy_10kb_stat.sh
+  Calculate_C_tro_dxy_10kb_stat.sh &#8594; <br>
+  Plot_dxy_species_wide_20240518.R
 
 #### Figure S12-S16. Relatedness of 518 *C. tropicalis* isotype reference strains at five different maternal effect regions
 - Figure S12-S16: Plot_TAs_vcf2tree.R
