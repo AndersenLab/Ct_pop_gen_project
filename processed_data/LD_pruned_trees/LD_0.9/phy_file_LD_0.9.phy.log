@@ -1,0 +1,945 @@
+IQ-TREE multicore version 2.1.4-beta COVID-edition for Linux 64-bit built Jun 24 2021
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
+Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    c322 (AVX512, FMA3, 188 GB RAM)
+Command: iqtree -s /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy -mset GTR -bb 1000 -T 48
+Seed:    482427 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Fri Jun  6 17:36:00 2025
+Kernel:  AVX+FMA - 48 threads (48 CPU cores detected)
+
+Reading alignment file /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy ... Phylip format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 622 sequences with 130726 columns, 27875 distinct patterns
+64162 parsimony-informative, 66564 singleton sites, 0 constant sites
+          Gap/Ambiguity  Composition  p-value
+   1  BRC20391    0.00%    passed     70.53%
+   2  BRC20400    0.00%    passed     90.98%
+   3  BRC20464    0.00%    passed     96.05%
+   4  BRC20548    0.00%    passed     73.54%
+   5  ECA1299     0.00%    failed      1.15%
+   6  ECA1300     0.00%    failed      0.83%
+   7  ECA1301     0.00%    failed      1.00%
+   8  ECA1302     0.00%    failed      0.97%
+   9  ECA1303     0.00%    failed      1.02%
+  10  ECA1304     0.00%    failed      0.88%
+  11  ECA1305     0.00%    failed      1.04%
+  12  ECA1306     0.00%    passed     40.45%
+  13  ECA1307     0.00%    failed      1.13%
+  14  ECA1309     0.00%    passed     40.82%
+  15  ECA1310     0.00%    passed     40.45%
+  16  ECA1311     0.00%    passed     52.71%
+  17  ECA1312     0.00%    passed     53.24%
+  18  ECA1313     0.00%    passed     52.71%
+  19  ECA1401     0.00%    failed      1.04%
+  20  ECA1403     0.00%    failed      0.98%
+  21  ECA1405     0.00%    failed      0.96%
+  22  ECA1445     0.00%    passed     80.30%
+  23  ECA1447     0.00%    passed     79.38%
+  24  ECA1449     0.00%    passed     79.74%
+  25  ECA1451     0.00%    passed     79.81%
+  26  ECA1453     0.00%    passed     80.09%
+  27  ECA1481     0.00%    passed     40.05%
+  28  ECA1518     0.00%    passed     41.14%
+  29  ECA1579     0.00%    passed     40.82%
+  30  ECA1581     0.00%    passed     40.82%
+  31  ECA1583     0.00%    passed     40.82%
+  32  ECA1585     0.00%    passed     40.82%
+  33  ECA1599     0.00%    passed     39.47%
+  34  ECA1603     0.00%    passed     40.11%
+  35  ECA2087     0.00%    passed     39.33%
+  36  ECA2898     0.00%    passed     36.69%
+  37  ECA2899     0.00%    passed     36.48%
+  38  ECA2900     0.00%    passed     36.90%
+  39  ECA2909     0.00%    passed     48.64%
+  40  ECA2910     0.00%    passed     36.98%
+  41  ECA2920     0.00%    passed     36.69%
+  42  ECA2954     0.00%    passed     51.18%
+  43  ECA2955     0.00%    passed     50.79%
+  44  ECA2976     0.00%    passed     51.02%
+  45  ECA3053     0.00%    passed     57.97%
+  46  ECA788      0.00%    failed      0.83%
+  47  ECA789      0.00%    failed      1.23%
+  48  ECA790      0.00%    passed     53.28%
+  49  ECA791      0.00%    passed     57.47%
+  50  ECA792      0.00%    passed     57.52%
+  51  ECA793      0.00%    passed     50.49%
+  52  ECA794      0.00%    passed     52.54%
+  53  ECA796      0.00%    passed     54.10%
+  54  ECA797      0.00%    passed     44.56%
+  55  ECA798      0.00%    passed     44.51%
+  56  ECA799      0.00%    passed     53.00%
+  57  ECA800      0.00%    passed     40.97%
+  58  ECA801      0.00%    passed     34.66%
+  59  ECA802      0.00%    passed     40.74%
+  60  ECA803      0.00%    passed     37.69%
+  61  ECA804      0.00%    passed     34.74%
+  62  ECA805      0.00%    passed     35.82%
+  63  ECA806      0.00%    passed     89.47%
+  64  EG5889      0.00%    passed     91.81%
+  65  EG6180      0.00%    passed     98.86%
+  66  HPT25       0.00%    passed     97.92%
+  67  HPT33       0.00%    passed     46.57%
+  68  HPT39       0.00%    passed     85.86%
+  69  HPT56       0.00%    passed     61.15%
+  70  JU1373      0.00%    passed     65.07%
+  71  JU1374      0.00%    passed     64.58%
+  72  JU1428      0.00%    passed     72.30%
+  73  JU1630      0.00%    passed     65.58%
+  74  JU1631      0.00%    passed     63.83%
+  75  JU1632      0.00%    passed     64.07%
+  76  JU1633      0.00%    passed     62.52%
+  77  JU1634      0.00%    passed     64.42%
+  78  JU1635      0.00%    passed     87.78%
+  79  JU1636      0.00%    passed     68.57%
+  80  JU1639      0.00%    passed     68.45%
+  81  JU1640      0.00%    passed     64.44%
+  82  JU1641      0.00%    passed     65.17%
+  83  JU1800      0.00%    passed     65.82%
+  84  JU1818      0.00%    passed     65.98%
+  85  JU1819      0.00%    passed     65.65%
+  86  JU1821      0.00%    passed     83.74%
+  87  JU1835      0.00%    passed     86.78%
+  88  JU1836      0.00%    passed     78.47%
+  89  JU1838      0.00%    passed     79.73%
+  90  JU1845      0.00%    passed     33.26%
+  91  JU1846      0.00%    passed     28.03%
+  92  JU1847      0.00%    passed     41.27%
+  93  JU1848      0.00%    passed     75.52%
+  94  JU1849      0.00%    passed     65.52%
+  95  JU1850      0.00%    passed     83.95%
+  96  JU1851      0.00%    passed     76.06%
+  97  JU1870      0.00%    passed     62.89%
+  98  JU1871      0.00%    passed     84.50%
+  99  JU1975      0.00%    passed     91.73%
+ 100  JU1976      0.00%    passed     97.09%
+ 101  JU2505      0.00%    passed     73.03%
+ 102  JU2750      0.00%    passed     97.44%
+ 103  JU2752      0.00%    passed     76.73%
+ 104  JU3170      0.00%    passed     63.00%
+ 105  NIC1000     0.00%    passed     79.55%
+ 106  NIC1004     0.00%    passed     65.18%
+ 107  NIC1005     0.00%    passed     80.47%
+ 108  NIC1012     0.00%    passed     92.30%
+ 109  NIC1016     0.00%    passed     86.08%
+ 110  NIC1028     0.00%    passed     77.88%
+ 111  NIC1033     0.00%    passed     91.78%
+ 112  NIC1038     0.00%    passed     69.56%
+ 113  NIC105      0.00%    passed     79.91%
+ 114  NIC1112     0.00%    passed     93.45%
+ 115  NIC1116     0.00%    passed     90.96%
+ 116  NIC1121     0.00%    passed     92.50%
+ 117  NIC1126     0.00%    passed     97.49%
+ 118  NIC1132     0.00%    passed     91.70%
+ 119  NIC1136     0.00%    passed     83.94%
+ 120  NIC1137     0.00%    passed     93.79%
+ 121  NIC114      0.00%    passed     97.50%
+ 122  NIC1140     0.00%    passed     95.53%
+ 123  NIC1142     0.00%    passed     93.10%
+ 124  NIC1144     0.00%    passed     96.93%
+ 125  NIC1145     0.00%    passed     94.18%
+ 126  NIC1146     0.00%    passed     95.92%
+ 127  NIC1147     0.00%    passed     94.88%
+ 128  NIC1149     0.00%    passed     95.43%
+ 129  NIC1150     0.00%    passed     94.00%
+ 130  NIC1151     0.00%    passed     95.16%
+ 131  NIC1152     0.00%    passed     92.93%
+ 132  NIC1153     0.00%    passed     94.68%
+ 133  NIC1155     0.00%    passed     79.13%
+ 134  NIC1156     0.00%    passed     98.01%
+ 135  NIC1157     0.00%    passed     99.67%
+ 136  NIC1160     0.00%    passed     95.77%
+ 137  NIC1161     0.00%    passed     91.14%
+ 138  NIC1163     0.00%    passed     93.65%
+ 139  NIC1164     0.00%    passed     95.00%
+ 140  NIC1165     0.00%    passed     92.07%
+ 141  NIC1167     0.00%    passed     96.07%
+ 142  NIC1168     0.00%    passed     94.95%
+ 143  NIC1169     0.00%    passed     95.98%
+ 144  NIC1170     0.00%    passed     86.34%
+ 145  NIC1175     0.00%    passed     96.03%
+ 146  NIC1176     0.00%    passed     94.17%
+ 147  NIC1177     0.00%    passed     95.70%
+ 148  NIC1179     0.00%    passed     95.84%
+ 149  NIC1180     0.00%    passed     95.77%
+ 150  NIC1181     0.00%    passed     86.02%
+ 151  NIC1188     0.00%    passed     87.64%
+ 152  NIC1192     0.00%    passed     94.46%
+ 153  NIC1193     0.00%    passed     82.73%
+ 154  NIC122      0.00%    passed     48.87%
+ 155  NIC124      0.00%    passed     83.56%
+ 156  NIC125      0.00%    passed     82.05%
+ 157  NIC1252     0.00%    passed     61.69%
+ 158  NIC1254     0.00%    passed     49.19%
+ 159  NIC1257     0.00%    passed     73.35%
+ 160  NIC1268     0.00%    passed     86.79%
+ 161  NIC1270     0.00%    passed     64.42%
+ 162  NIC1272     0.00%    passed     72.09%
+ 163  NIC1275     0.00%    passed     66.91%
+ 164  NIC1276     0.00%    passed     61.62%
+ 165  NIC1277     0.00%    passed     69.90%
+ 166  NIC1278     0.00%    passed     64.50%
+ 167  NIC129      0.00%    passed     88.17%
+ 168  NIC1290     0.00%    passed     88.84%
+ 169  NIC1293     0.00%    passed     81.71%
+ 170  NIC1300     0.00%    passed     85.67%
+ 171  NIC1301     0.00%    passed     80.41%
+ 172  NIC1305     0.00%    passed     84.36%
+ 173  NIC1307     0.00%    passed     80.84%
+ 174  NIC1309     0.00%    passed     63.18%
+ 175  NIC1313     0.00%    passed     63.60%
+ 176  NIC1316     0.00%    passed     65.00%
+ 177  NIC1317     0.00%    passed     81.31%
+ 178  NIC1321     0.00%    passed     49.60%
+ 179  NIC1323     0.00%    passed     76.50%
+ 180  NIC1328     0.00%    passed     59.67%
+ 181  NIC1337     0.00%    passed     79.05%
+ 182  NIC1338     0.00%    passed     75.08%
+ 183  NIC1341     0.00%    passed     86.07%
+ 184  NIC1343     0.00%    passed     82.73%
+ 185  NIC1344     0.00%    passed     77.82%
+ 186  NIC1354     0.00%    passed     73.51%
+ 187  NIC1355     0.00%    passed     64.87%
+ 188  NIC1359     0.00%    passed     71.62%
+ 189  NIC1363     0.00%    passed     67.58%
+ 190  NIC1372     0.00%    passed     82.51%
+ 191  NIC1376     0.00%    passed     63.37%
+ 192  NIC1378     0.00%    passed     81.00%
+ 193  NIC1381     0.00%    passed     89.16%
+ 194  NIC1382     0.00%    passed     84.44%
+ 195  NIC1383     0.00%    passed     91.45%
+ 196  NIC1384     0.00%    passed     96.01%
+ 197  NIC1386     0.00%    passed     69.98%
+ 198  NIC1387     0.00%    passed     65.46%
+ 199  NIC1389     0.00%    passed     70.80%
+ 200  NIC1391     0.00%    passed     79.16%
+ 201  NIC1392     0.00%    passed     71.25%
+ 202  NIC1393     0.00%    passed     66.63%
+ 203  NIC1395     0.00%    passed     88.01%
+ 204  NIC1400     0.00%    passed     66.83%
+ 205  NIC1405     0.00%    passed     71.04%
+ 206  NIC1408     0.00%    passed     61.99%
+ 207  NIC1410     0.00%    passed     74.21%
+ 208  NIC1411     0.00%    passed     76.82%
+ 209  NIC1415     0.00%    passed     68.42%
+ 210  NIC1419     0.00%    passed     85.16%
+ 211  NIC1420     0.00%    passed     82.39%
+ 212  NIC1422     0.00%    passed     71.29%
+ 213  NIC1425     0.00%    passed     84.46%
+ 214  NIC1430     0.00%    passed     63.43%
+ 215  NIC1432     0.00%    passed     86.03%
+ 216  NIC1433     0.00%    passed     63.99%
+ 217  NIC1438     0.00%    passed     88.54%
+ 218  NIC1453     0.00%    passed     64.36%
+ 219  NIC1470     0.00%    passed     77.96%
+ 220  NIC1476     0.00%    passed     76.26%
+ 221  NIC1477     0.00%    passed     48.34%
+ 222  NIC1478     0.00%    passed     72.84%
+ 223  NIC1514     0.00%    passed     84.52%
+ 224  NIC1526     0.00%    passed     59.61%
+ 225  NIC1531     0.00%    passed     59.32%
+ 226  NIC1534     0.00%    passed     59.99%
+ 227  NIC1541     0.00%    passed     96.46%
+ 228  NIC1542     0.00%    passed     94.51%
+ 229  NIC1543     0.00%    passed     91.97%
+ 230  NIC1544     0.00%    passed     95.07%
+ 231  NIC1545     0.00%    passed     94.98%
+ 232  NIC1546     0.00%    passed     95.14%
+ 233  NIC1547     0.00%    passed     93.21%
+ 234  NIC1548     0.00%    passed     94.98%
+ 235  NIC1549     0.00%    passed     95.17%
+ 236  NIC1550     0.00%    passed     94.90%
+ 237  NIC1551     0.00%    passed     92.61%
+ 238  NIC1553     0.00%    passed     93.69%
+ 239  NIC1555     0.00%    passed     95.01%
+ 240  NIC1556     0.00%    passed     75.24%
+ 241  NIC1557     0.00%    passed     94.18%
+ 242  NIC1559     0.00%    passed     92.07%
+ 243  NIC1560     0.00%    passed     74.32%
+ 244  NIC1561     0.00%    passed     93.36%
+ 245  NIC1563     0.00%    passed     51.53%
+ 246  NIC1564     0.00%    passed     94.35%
+ 247  NIC1565     0.00%    passed     74.68%
+ 248  NIC1583     0.00%    passed     77.65%
+ 249  NIC1584     0.00%    passed     77.24%
+ 250  NIC1585     0.00%    passed     77.08%
+ 251  NIC1586     0.00%    passed     75.81%
+ 252  NIC1587     0.00%    passed     75.31%
+ 253  NIC1588     0.00%    passed     75.08%
+ 254  NIC1592     0.00%    passed     78.74%
+ 255  NIC1594     0.00%    passed     78.05%
+ 256  NIC1596     0.00%    passed     75.89%
+ 257  NIC1603     0.00%    passed     77.29%
+ 258  NIC1644     0.00%    passed     94.66%
+ 259  NIC1646     0.00%    passed     94.07%
+ 260  NIC1647     0.00%    passed     92.97%
+ 261  NIC1648     0.00%    passed     93.95%
+ 262  NIC1649     0.00%    passed     94.26%
+ 263  NIC1650     0.00%    passed     94.20%
+ 264  NIC1651     0.00%    passed     96.29%
+ 265  NIC1653     0.00%    passed     90.48%
+ 266  NIC1656     0.00%    passed     90.75%
+ 267  NIC1657     0.00%    passed     91.06%
+ 268  NIC1658     0.00%    passed     76.54%
+ 269  NIC1679     0.00%    failed      4.71%
+ 270  NIC1694     0.00%    passed     78.54%
+ 271  NIC1846     0.00%    passed     86.47%
+ 272  NIC1851     0.00%    passed     95.18%
+ 273  NIC1855     0.00%    passed     87.14%
+ 274  NIC1856     0.00%    passed     96.56%
+ 275  NIC1862     0.00%    passed     94.99%
+ 276  NIC1877     0.00%    passed     96.26%
+ 277  NIC1879     0.00%    passed     91.07%
+ 278  NIC1881     0.00%    passed     95.96%
+ 279  NIC1886     0.00%    passed     98.56%
+ 280  NIC1911     0.00%    passed     96.55%
+ 281  NIC1912     0.00%    passed     93.28%
+ 282  NIC1913     0.00%    passed     93.56%
+ 283  NIC1914     0.00%    passed     90.98%
+ 284  NIC1915     0.00%    passed     45.27%
+ 285  NIC1916     0.00%    passed     45.31%
+ 286  NIC1917     0.00%    passed     86.64%
+ 287  NIC1918     0.00%    passed     47.74%
+ 288  NIC1919     0.00%    passed     47.12%
+ 289  NIC192      0.00%    passed     56.48%
+ 290  NIC1927     0.00%    passed     99.98%
+ 291  NIC1928     0.00%    passed     94.83%
+ 292  NIC1929     0.00%    passed     97.12%
+ 293  NIC193      0.00%    passed     77.71%
+ 294  NIC1939     0.00%    passed     99.31%
+ 295  NIC1941     0.00%    passed     95.40%
+ 296  NIC1950     0.00%    passed     94.02%
+ 297  NIC1962     0.00%    passed     97.36%
+ 298  NIC1976     0.00%    passed     85.97%
+ 299  NIC203      0.00%    passed     90.24%
+ 300  NIC2355     0.00%    passed     79.34%
+ 301  NIC2357     0.00%    passed     83.81%
+ 302  NIC2360     0.00%    passed     88.02%
+ 303  NIC2361     0.00%    passed     89.58%
+ 304  NIC2362     0.00%    passed     89.75%
+ 305  NIC2363     0.00%    passed     93.16%
+ 306  NIC2364     0.00%    passed     74.52%
+ 307  NIC2365     0.00%    passed     92.65%
+ 308  NIC2366     0.00%    passed     84.07%
+ 309  NIC2367     0.00%    passed     82.97%
+ 310  NIC2368     0.00%    passed     84.79%
+ 311  NIC2371     0.00%    passed     84.33%
+ 312  NIC2373     0.00%    passed     85.24%
+ 313  NIC2375     0.00%    passed     86.63%
+ 314  NIC247      0.00%    passed     84.99%
+ 315  NIC249      0.00%    passed     77.09%
+ 316  NIC280      0.00%    passed     70.28%
+ 317  NIC284      0.00%    passed     86.59%
+ 318  NIC286      0.00%    passed     84.02%
+ 319  NIC291      0.00%    passed     80.07%
+ 320  NIC294      0.00%    passed     84.27%
+ 321  NIC300      0.00%    passed     72.82%
+ 322  NIC311      0.00%    passed     71.24%
+ 323  NIC312      0.00%    passed     85.75%
+ 324  NIC314      0.00%    passed     59.95%
+ 325  NIC321      0.00%    passed     59.57%
+ 326  NIC322      0.00%    passed     66.61%
+ 327  NIC339      0.00%    passed     69.98%
+ 328  NIC344      0.00%    passed     84.85%
+ 329  NIC350      0.00%    passed     81.17%
+ 330  NIC354      0.00%    passed     61.82%
+ 331  NIC359      0.00%    passed     43.95%
+ 332  NIC363      0.00%    passed     70.92%
+ 333  NIC365      0.00%    passed     62.03%
+ 334  NIC372      0.00%    passed     87.01%
+ 335  NIC382      0.00%    passed     90.55%
+ 336  NIC384      0.00%    passed     82.15%
+ 337  NIC387      0.00%    passed     83.93%
+ 338  NIC389      0.00%    passed     87.01%
+ 339  NIC391      0.00%    passed     66.24%
+ 340  NIC393      0.00%    passed     66.81%
+ 341  NIC396      0.00%    passed     89.84%
+ 342  NIC404      0.00%    passed     82.84%
+ 343  NIC407      0.00%    passed     81.17%
+ 344  NIC408      0.00%    passed     53.54%
+ 345  NIC413      0.00%    passed     60.59%
+ 346  NIC416      0.00%    passed     90.03%
+ 347  NIC417      0.00%    passed     66.12%
+ 348  NIC420      0.00%    passed     91.85%
+ 349  NIC422      0.00%    passed     92.39%
+ 350  NIC424      0.00%    passed     82.90%
+ 351  NIC425      0.00%    passed     74.46%
+ 352  NIC426      0.00%    passed     93.03%
+ 353  NIC434      0.00%    passed     57.52%
+ 354  NIC436      0.00%    passed     79.41%
+ 355  NIC441      0.00%    passed     64.95%
+ 356  NIC443      0.00%    passed     78.81%
+ 357  NIC444      0.00%    passed     56.35%
+ 358  NIC445      0.00%    passed     81.92%
+ 359  NIC450      0.00%    passed     67.71%
+ 360  NIC454      0.00%    passed     53.66%
+ 361  NIC458      0.00%    passed     76.61%
+ 362  NIC459      0.00%    passed     75.93%
+ 363  NIC461      0.00%    passed     53.40%
+ 364  NIC468      0.00%    passed     80.80%
+ 365  NIC469      0.00%    passed     29.00%
+ 366  NIC475      0.00%    passed     85.20%
+ 367  NIC478      0.00%    passed     56.11%
+ 368  NIC479      0.00%    passed     80.32%
+ 369  NIC489      0.00%    passed     61.06%
+ 370  NIC491      0.00%    passed     78.40%
+ 371  NIC492      0.00%    passed     58.49%
+ 372  NIC496      0.00%    passed     65.04%
+ 373  NIC51       0.00%    passed     68.08%
+ 374  NIC517      0.00%    passed     96.20%
+ 375  NIC530      0.00%    passed     95.58%
+ 376  NIC533      0.00%    passed     96.50%
+ 377  NIC535      0.00%    passed     87.86%
+ 378  NIC540      0.00%    passed     87.82%
+ 379  NIC55       0.00%    passed     65.64%
+ 380  NIC551      0.00%    passed     88.51%
+ 381  NIC56       0.00%    passed     80.48%
+ 382  NIC567      0.00%    passed     51.20%
+ 383  NIC57       0.00%    passed     77.37%
+ 384  NIC570      0.00%    passed     59.31%
+ 385  NIC571      0.00%    passed     57.22%
+ 386  NIC572      0.00%    passed     57.91%
+ 387  NIC575      0.00%    passed     88.70%
+ 388  NIC577      0.00%    passed     89.60%
+ 389  NIC58       0.00%    passed     12.94%
+ 390  NIC584      0.00%    passed     45.04%
+ 391  NIC585      0.00%    passed     88.24%
+ 392  NIC586      0.00%    passed     88.06%
+ 393  NIC587      0.00%    passed     91.84%
+ 394  NIC589      0.00%    passed     88.23%
+ 395  NIC591      0.00%    passed     85.56%
+ 396  NIC746      0.00%    passed     85.39%
+ 397  NIC747      0.00%    passed     50.87%
+ 398  NIC749      0.00%    passed     91.51%
+ 399  NIC751      0.00%    passed     86.43%
+ 400  NIC753      0.00%    passed     90.44%
+ 401  NIC763      0.00%    passed     91.18%
+ 402  NIC773      0.00%    passed     89.19%
+ 403  NIC775      0.00%    passed     90.21%
+ 404  NIC85       0.00%    passed     65.94%
+ 405  NIC894      0.00%    passed     63.62%
+ 406  NIC895      0.00%    passed     63.62%
+ 407  NIC898      0.00%    passed     54.86%
+ 408  NIC903      0.00%    passed     83.22%
+ 409  NIC904      0.00%    passed     72.94%
+ 410  NIC905      0.00%    passed     83.43%
+ 411  NIC907      0.00%    passed     86.55%
+ 412  NIC908      0.00%    passed     71.10%
+ 413  NIC909      0.00%    passed     91.94%
+ 414  NIC91       0.00%    passed     80.25%
+ 415  NIC916      0.00%    passed     83.37%
+ 416  NIC917      0.00%    passed     88.82%
+ 417  NIC920      0.00%    passed     82.15%
+ 418  NIC925      0.00%    passed     84.14%
+ 419  NIC926      0.00%    passed     89.82%
+ 420  NIC927      0.00%    passed     91.00%
+ 421  NIC929      0.00%    passed     80.96%
+ 422  NIC933      0.00%    passed     91.33%
+ 423  NIC934      0.00%    passed     80.06%
+ 424  NIC936      0.00%    passed     68.85%
+ 425  NIC938      0.00%    passed     81.69%
+ 426  NIC939      0.00%    passed     94.75%
+ 427  NIC94       0.00%    passed     83.63%
+ 428  NIC940      0.00%    passed     85.61%
+ 429  NIC941      0.00%    passed     89.05%
+ 430  NIC942      0.00%    passed     91.15%
+ 431  NIC944      0.00%    passed     76.85%
+ 432  NIC945      0.00%    passed     78.43%
+ 433  NIC947      0.00%    passed     91.32%
+ 434  NIC948      0.00%    passed     82.21%
+ 435  NIC952      0.00%    passed     72.13%
+ 436  NIC953      0.00%    passed     81.93%
+ 437  NIC955      0.00%    passed     55.88%
+ 438  NIC956      0.00%    passed     87.45%
+ 439  NIC957      0.00%    passed     70.81%
+ 440  NIC958      0.00%    passed     90.85%
+ 441  NIC959      0.00%    passed     90.32%
+ 442  NIC961      0.00%    passed     90.02%
+ 443  NIC962      0.00%    passed     84.21%
+ 444  NIC964      0.00%    passed     82.91%
+ 445  NIC965      0.00%    passed     82.89%
+ 446  NIC970      0.00%    passed     91.86%
+ 447  NIC972      0.00%    passed     88.44%
+ 448  NIC975      0.00%    passed     87.68%
+ 449  NIC977      0.00%    passed     86.98%
+ 450  NIC980      0.00%    passed     79.17%
+ 451  NIC983      0.00%    passed     88.67%
+ 452  NIC986      0.00%    passed     87.78%
+ 453  NIC987      0.00%    passed     86.36%
+ 454  NIC988      0.00%    passed     86.82%
+ 455  NIC989      0.00%    passed     89.10%
+ 456  NIC99       0.00%    passed     25.18%
+ 457  NIC993      0.00%    passed     65.60%
+ 458  NIC994      0.00%    passed     89.78%
+ 459  NIC999      0.00%    passed     95.00%
+ 460  QG1000      0.00%    passed     99.59%
+ 461  QG1004      0.00%    passed     96.97%
+ 462  QG131       0.00%    passed     47.01%
+ 463  QG2716      0.00%    passed     89.24%
+ 464  QG2724      0.00%    passed     99.84%
+ 465  QG2726      0.00%    passed     98.52%
+ 466  QG2770      0.00%    passed     99.65%
+ 467  QG2896      0.00%    passed     87.16%
+ 468  QG2897      0.00%    passed     87.26%
+ 469  QG2898      0.00%    passed     87.75%
+ 470  QG2899      0.00%    passed     88.15%
+ 471  QG2904      0.00%    passed     84.62%
+ 472  QG2905      0.00%    passed     84.62%
+ 473  QG3008      0.00%    passed     99.78%
+ 474  QG3009      0.00%    passed     98.84%
+ 475  QG3010      0.00%    passed     99.01%
+ 476  QG3011      0.00%    passed     99.75%
+ 477  QG3013      0.00%    passed     98.74%
+ 478  QG3024      0.00%    passed     93.40%
+ 479  QG3037      0.00%    passed     99.13%
+ 480  QG3038      0.00%    passed     99.23%
+ 481  QG3055      0.00%    passed     99.47%
+ 482  QG3064      0.00%    passed     99.28%
+ 483  QG3514      0.00%    passed     98.72%
+ 484  QG3521      0.00%    passed     90.63%
+ 485  QG3522      0.00%    passed     63.41%
+ 486  QG3523      0.00%    passed     98.46%
+ 487  QG3526      0.00%    passed     94.09%
+ 488  QG3529      0.00%    passed     95.82%
+ 489  QG3533      0.00%    passed     95.29%
+ 490  QG3535      0.00%    passed     95.71%
+ 491  QG3539      0.00%    passed     98.97%
+ 492  QG3543      0.00%    passed     80.74%
+ 493  QG3545      0.00%    passed     99.43%
+ 494  QG3546      0.00%    passed     98.13%
+ 495  QG3547      0.00%    passed     93.50%
+ 496  QG3785      0.00%    passed     81.49%
+ 497  QG3786      0.00%    passed     78.31%
+ 498  QG3789      0.00%    passed     87.73%
+ 499  QG3790      0.00%    passed     81.48%
+ 500  QG3793      0.00%    passed     93.26%
+ 501  QG3795      0.00%    passed     87.08%
+ 502  QG3797      0.00%    passed     87.18%
+ 503  QG3799      0.00%    passed     99.07%
+ 504  QG3800      0.00%    passed     78.29%
+ 505  QG3805      0.00%    passed     97.13%
+ 506  QG3807      0.00%    passed     78.12%
+ 507  QG3808      0.00%    passed     85.78%
+ 508  QG3809      0.00%    passed     97.80%
+ 509  QG3811      0.00%    passed     92.27%
+ 510  QG3812      0.00%    passed     96.74%
+ 511  QG3817      0.00%    passed     96.49%
+ 512  QG3818      0.00%    passed     79.40%
+ 513  QG3821      0.00%    passed     83.36%
+ 514  QG3824      0.00%    passed     96.88%
+ 515  QG3828      0.00%    passed     91.08%
+ 516  QG3829      0.00%    passed     92.12%
+ 517  QG3831      0.00%    passed     88.54%
+ 518  QG3834      0.00%    passed     86.36%
+ 519  QG3839      0.00%    passed     95.99%
+ 520  QG3843      0.00%    passed     85.03%
+ 521  QG3845      0.00%    passed     92.91%
+ 522  QG3847      0.00%    passed     97.75%
+ 523  QG3848      0.00%    passed     94.04%
+ 524  QG3849      0.00%    passed     91.30%
+ 525  QG3850      0.00%    passed     83.36%
+ 526  QG3852      0.00%    passed     93.69%
+ 527  QG3856      0.00%    passed     94.91%
+ 528  QG3862      0.00%    passed     93.23%
+ 529  QG3863      0.00%    passed     78.53%
+ 530  QG3868      0.00%    passed     99.92%
+ 531  QG3871      0.00%    passed     94.33%
+ 532  QG3872      0.00%    passed     98.01%
+ 533  QG3873      0.00%    passed     96.42%
+ 534  QG3877      0.00%    passed     95.13%
+ 535  QG3880      0.00%    passed     95.15%
+ 536  QG4629      0.00%    passed     53.08%
+ 537  QG4646      0.00%    passed     22.27%
+ 538  QG4653      0.00%    passed     15.43%
+ 539  QG4659      0.00%    passed     15.88%
+ 540  QG4669      0.00%    passed     51.16%
+ 541  QG4671      0.00%    passed     26.04%
+ 542  QG4672      0.00%    passed     54.82%
+ 543  QG4694      0.00%    passed     50.88%
+ 544  QG4695      0.00%    passed     54.50%
+ 545  QG4696      0.00%    passed     55.12%
+ 546  QG4702      0.00%    passed     30.93%
+ 547  QG4713      0.00%    passed     25.56%
+ 548  QG4714      0.00%    passed     50.41%
+ 549  QG4730      0.00%    passed     52.79%
+ 550  QG4739      0.00%    passed     45.12%
+ 551  QG4740      0.00%    passed     52.88%
+ 552  QG4741      0.00%    passed     29.84%
+ 553  QG4754      0.00%    passed     25.37%
+ 554  QG4759      0.00%    passed     44.77%
+ 555  QG4779      0.00%    passed     24.91%
+ 556  QG4780      0.00%    passed     44.48%
+ 557  QG4781      0.00%    passed     25.29%
+ 558  QG4782      0.00%    passed     22.50%
+ 559  QG4817      0.00%    passed     30.94%
+ 560  QG4824      0.00%    passed     30.66%
+ 561  QG4866      0.00%    passed     45.94%
+ 562  QG4867      0.00%    passed     15.87%
+ 563  QG4869      0.00%    passed     22.05%
+ 564  QG4870      0.00%    passed     52.54%
+ 565  QG4871      0.00%    passed     52.54%
+ 566  QG4878      0.00%    passed     52.37%
+ 567  QG4891      0.00%    passed     15.70%
+ 568  QG4892      0.00%    passed     52.59%
+ 569  QG4893      0.00%    passed     50.66%
+ 570  QG4894      0.00%    passed     52.79%
+ 571  QG4897      0.00%    passed     16.05%
+ 572  QG4904      0.00%    passed     52.79%
+ 573  QG5104      0.00%    passed     44.83%
+ 574  QG5159      0.00%    passed     55.76%
+ 575  QG5160      0.00%    passed     55.65%
+ 576  QG5161      0.00%    passed     24.87%
+ 577  QG5220      0.00%    passed     50.06%
+ 578  QG5237      0.00%    passed     52.65%
+ 579  QG5256      0.00%    passed     52.07%
+ 580  QG5260      0.00%    passed     51.83%
+ 581  QG5262      0.00%    passed     54.40%
+ 582  QG5305      0.00%    passed     24.27%
+ 583  QG5319      0.00%    passed     46.59%
+ 584  QG5364      0.00%    passed     24.94%
+ 585  QG5365      0.00%    passed     25.33%
+ 586  QG5366      0.00%    passed     25.12%
+ 587  QG5405      0.00%    passed     25.15%
+ 588  QG5502      0.00%    passed     26.02%
+ 589  QG5503      0.00%    passed     27.41%
+ 590  QG5510      0.00%    passed     15.87%
+ 591  QG5550      0.00%    passed     25.12%
+ 592  QG5551      0.00%    passed     24.90%
+ 593  QG5552      0.00%    passed     25.12%
+ 594  QG5576      0.00%    passed     26.27%
+ 595  QG5588      0.00%    passed     24.62%
+ 596  QG5602      0.00%    passed     25.56%
+ 597  QG5628      0.00%    passed     25.12%
+ 598  QG5629      0.00%    passed     25.12%
+ 599  QG5638      0.00%    passed     25.33%
+ 600  QG5643      0.00%    passed     56.05%
+ 601  QG5650      0.00%    passed     26.01%
+ 602  QG5652      0.00%    passed     56.06%
+ 603  QG5654      0.00%    passed     31.18%
+ 604  QG5655      0.00%    passed     15.76%
+ 605  QG800       0.00%    passed     92.47%
+ 606  QG823       0.00%    passed     98.66%
+ 607  QG834       0.00%    passed     99.03%
+ 608  QG836       0.00%    passed     98.31%
+ 609  QG840       0.00%    passed     93.17%
+ 610  QG841       0.00%    passed     99.90%
+ 611  QG845       0.00%    passed     98.29%
+ 612  QG846       0.00%    passed     99.64%
+ 613  QG848       0.00%    passed     99.95%
+ 614  QG850       0.00%    passed     97.85%
+ 615  QG852       0.00%    passed     98.99%
+ 616  QG853       0.00%    passed     97.40%
+ 617  QG921       0.00%    passed     96.97%
+ 618  QG935       0.00%    passed     99.44%
+ 619  QG942       0.00%    passed     93.59%
+ 620  QG981       0.00%    passed     99.15%
+ 621  QG987       0.00%    passed     97.97%
+ 622  TWN2103     0.00%    passed     72.23%
+****  TOTAL       0.00%  14 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: minimal branch length is reduced to 0.000000764959 for long alignment
+NOTE: ECA1310 is identical to ECA1306 but kept for subsequent analysis
+NOTE: ECA1313 is identical to ECA1311 but kept for subsequent analysis
+NOTE: ECA1581 is identical to ECA1579 but kept for subsequent analysis
+NOTE: ECA2920 is identical to ECA2898 but kept for subsequent analysis
+NOTE: NIC1548 is identical to NIC1545 but kept for subsequent analysis
+NOTE: NIC895 is identical to NIC894 but kept for subsequent analysis
+NOTE: QG2905 is identical to QG2904 but kept for subsequent analysis
+NOTE: QG4894 is identical to QG4730 but kept for subsequent analysis
+NOTE: QG5510 is identical to QG4867 but kept for subsequent analysis
+NOTE: QG4871 is identical to QG4870 but kept for subsequent analysis
+NOTE: QG5550 is identical to QG5366 but kept for subsequent analysis
+NOTE: 6 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: ECA1583 (identical to ECA1579) is ignored but added at the end
+NOTE: ECA1585 (identical to ECA1579) is ignored but added at the end
+NOTE: QG4904 (identical to QG4730) is ignored but added at the end
+NOTE: QG5552 (identical to QG5366) is ignored but added at the end
+NOTE: QG5628 (identical to QG5366) is ignored but added at the end
+NOTE: QG5629 (identical to QG5366) is ignored but added at the end
+Alignment was printed to /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.uniqueseq.phy
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 32.675 seconds
+Perform fast likelihood tree search using GTR+ASC+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -2250462.528
+2. Current log-likelihood: -2250458.091
+Optimal log-likelihood: -2250457.647
+Rate parameters:  A-C: 1.01383  A-G: 3.43052  A-T: 1.77200  C-G: 0.56017  C-T: 3.54080  G-T: 1.00000
+Base frequencies:  A: 0.247  C: 0.254  G: 0.254  T: 0.245
+Gamma shape alpha: 0.250
+Parameters optimization took 2 rounds (5.952 sec)
+Time for fast ML tree search: 27.554 seconds
+
+NOTE: ModelFinder requires 5675 MB RAM!
+ModelFinder will test up to 22 DNA models (sample size: 130726) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  GTR+F         2380973.232  1237 4764420.463  4764444.117  4776519.386
+  2  GTR+F+ASC     2364277.823  1237 4731029.646  4731053.299  4743128.568
+  3  GTR+F+G4      2295449.945  1238 4593375.890  4593399.582  4605484.593
+  4  GTR+F+ASC+G4  2250454.865  1238 4503385.730  4503409.421  4515494.433
+  5  GTR+F+R2      2216744.354  1239 4435966.708  4435990.438  4448085.192
+  6  GTR+F+R3      2196650.477  1241 4395782.954  4395806.761  4407921.000
+  7  GTR+F+R4      2196650.375  1243 4395786.749  4395810.634  4407944.357
+ 14  GTR+F+ASC+R2  2166793.702  1239 4336065.404  4336089.134  4348183.888
+ 15  GTR+F+ASC+R3  2133686.790  1241 4269855.580  4269879.387  4281993.626
+ 16  GTR+F+ASC+R4  2126618.385  1243 4255722.770  4255746.654  4267880.377
+ 17  GTR+F+ASC+R5  2124609.569  1245 4251709.139  4251733.100  4263886.308
+WARNING: Log-likelihood -2.12466e+06 of GTR+F+ASC+R6 worse than GTR+F+ASC+R5 -2.12461e+06
+ 18  GTR+F+ASC+R6  2124658.229  1247 4251810.458  4251834.497  4264007.189
+Akaike Information Criterion:           GTR+F+ASC+R5
+Corrected Akaike Information Criterion: GTR+F+ASC+R5
+Bayesian Information Criterion:         GTR+F+ASC+R5
+Best-fit model: GTR+F+ASC+R5 chosen according to BIC
+
+All model information printed to /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.model.gz
+CPU time for ModelFinder: 41237.753 seconds (11h:27m:17s)
+Wall-clock time for ModelFinder: 939.885 seconds (0h:15m:39s)
+Generating 1000 samples for ultrafast bootstrap (seed: 482427)...
+
+NOTE: 2890 MB RAM (2 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -2124609.570
+Optimal log-likelihood: -2124609.546
+Rate parameters:  A-C: 1.01578  A-G: 3.57012  A-T: 1.75214  C-G: 0.57106  C-T: 3.60598  G-T: 1.00000
+Base frequencies:  A: 0.247  C: 0.254  G: 0.254  T: 0.245
+Site proportion and rates:  (0.959,0.380) (0.029,5.874) (0.007,19.509) (0.003,51.729) (0.001,122.109)
+Parameters optimization took 1 rounds (3.269 sec)
+Computing ML distances based on estimated model parameters...
+Computing ML distances took 0.479470 sec (of wall-clock time) 21.279120 sec(of CPU time)
+Computing RapidNJ tree took 5.487048 sec (of wall-clock time) 1.188781 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -2151641.098
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 3880.817 second
+Computing log-likelihood of 98 initial trees ... 64.005 seconds
+Current best score: -2124609.545
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -2124164.949
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -2113277.399
+Iteration 10 / LogL: -2115364.808 / Time: 1h:11m:41s
+Iteration 20 / LogL: -2116970.720 / Time: 1h:17m:19s
+Finish initializing candidate tree set (20)
+Current best tree score: -2113277.399 / CPU time: 4608.205
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 29: -2111830.274
+Iteration 30 / LogL: -2115607.019 / Time: 1h:19m:52s (4h:32m:38s left)
+Iteration 40 / LogL: -2113461.243 / Time: 1h:22m:11s (3h:7m:34s left)
+Iteration 50 / LogL: -2122980.845 / Time: 1h:24m:21s (2h:16m:0s left)
+Log-likelihood cutoff on original alignment: -2113543.969
+Iteration 60 / LogL: -2114227.290 / Time: 1h:26m:36s (1h:41m:16s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 63: -2111572.910
+Iteration 70 / LogL: -2112926.061 / Time: 1h:29m:10s (2h:0m:11s left)
+Iteration 80 / LogL: -2112148.957 / Time: 1h:31m:19s (1h:35m:56s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 89: -2111507.151
+Iteration 90 / LogL: -2113226.066 / Time: 1h:33m:56s (1h:44m:29s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 91: -2111429.588
+Iteration 100 / LogL: -2112385.879 / Time: 1h:36m:36s (1h:28m:48s left)
+Log-likelihood cutoff on original alignment: -2113477.895
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.916
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 110 / LogL: -2113512.638 / Time: 1h:38m:54s (1h:21m:40s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 115: -2111032.346
+Iteration 120 / LogL: -2119142.846 / Time: 1h:41m:30s (1h:21m:2s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 129: -2110757.442
+Iteration 130 / LogL: -2113646.572 / Time: 1h:43m:59s (1h:19m:48s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 131: -2110430.602
+Iteration 140 / LogL: -2111589.503 / Time: 1h:46m:46s (1h:9m:53s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 142: -2110183.548
+Iteration 150 / LogL: -2112035.542 / Time: 1h:49m:16s (1h:7m:28s left)
+Log-likelihood cutoff on original alignment: -2112628.043
+Iteration 160 / LogL: -2111231.219 / Time: 1h:51m:26s (0h:57m:28s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 163: -2110109.459
+Iteration 170 / LogL: -2114006.639 / Time: 1h:54m:12s (1h:2m:51s left)
+Iteration 180 / LogL: -2110340.946 / Time: 1h:56m:29s (0h:54m:0s left)
+Iteration 190 / LogL: -2110186.808 / Time: 1h:58m:46s (0h:45m:52s left)
+Iteration 200 / LogL: -2111479.039 / Time: 2h:1m:14s (0h:38m:22s left)
+Log-likelihood cutoff on original alignment: -2112628.043
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.866
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 210 / LogL: -2111375.193 / Time: 2h:3m:41s (0h:53m:15s left)
+Iteration 220 / LogL: -2114519.646 / Time: 2h:6m:8s (0h:46m:4s left)
+Iteration 230 / LogL: -2113427.578 / Time: 2h:8m:25s (0h:39m:15s left)
+Iteration 240 / LogL: -2112464.878 / Time: 2h:10m:41s (0h:32m:48s left)
+Iteration 250 / LogL: -2111177.594 / Time: 2h:12m:55s (0h:26m:41s left)
+Log-likelihood cutoff on original alignment: -2112628.043
+Iteration 260 / LogL: -2112032.243 / Time: 2h:15m:31s (0h:20m:55s left)
+Iteration 270 / LogL: -2120123.736 / Time: 2h:17m:57s (0h:15m:23s left)
+Iteration 280 / LogL: -2113117.596 / Time: 2h:20m:19s (0h:10m:3s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 281: -2109428.377
+Iteration 290 / LogL: -2112665.538 / Time: 2h:22m:57s (0h:45m:0s left)
+Iteration 300 / LogL: -2110745.085 / Time: 2h:25m:10s (0h:39m:19s left)
+Log-likelihood cutoff on original alignment: -2110449.752
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.799
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 310 / LogL: -2110907.733 / Time: 2h:27m:35s (0h:42m:59s left)
+Iteration 320 / LogL: -2111826.993 / Time: 2h:29m:55s (0h:37m:35s left)
+Iteration 330 / LogL: -2110133.890 / Time: 2h:32m:5s (0h:32m:21s left)
+Iteration 340 / LogL: -2111603.853 / Time: 2h:34m:25s (0h:27m:19s left)
+Iteration 350 / LogL: -2111023.410 / Time: 2h:36m:31s (0h:22m:25s left)
+Log-likelihood cutoff on original alignment: -2110189.025
+Iteration 360 / LogL: -2110491.588 / Time: 2h:38m:52s (0h:17m:42s left)
+Iteration 370 / LogL: -2110969.656 / Time: 2h:41m:1s (0h:13m:5s left)
+Iteration 380 / LogL: -2112072.176 / Time: 2h:43m:11s (0h:8m:36s left)
+Iteration 390 / LogL: -2110517.377 / Time: 2h:45m:7s (0h:4m:14s left)
+Iteration 400 / LogL: -2109897.268 / Time: 2h:47m:13s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -2109800.433
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.925
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 410 / LogL: -2109875.352 / Time: 2h:49m:21s (0h:37m:16s left)
+Iteration 420 / LogL: -2118411.080 / Time: 2h:51m:28s (0h:32m:44s left)
+Iteration 430 / LogL: -2110504.074 / Time: 2h:53m:33s (0h:28m:19s left)
+Iteration 440 / LogL: -2110834.869 / Time: 2h:55m:42s (0h:24m:0s left)
+Iteration 450 / LogL: -2112374.116 / Time: 2h:57m:47s (0h:19m:47s left)
+Log-likelihood cutoff on original alignment: -2109800.433
+Iteration 460 / LogL: -2111842.202 / Time: 2h:59m:56s (0h:15m:40s left)
+Iteration 470 / LogL: -2114115.903 / Time: 3h:1m:56s (0h:11m:38s left)
+Iteration 480 / LogL: -2111647.675 / Time: 3h:4m:6s (0h:7m:41s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 489: -2109295.350
+Iteration 490 / LogL: -2111350.241 / Time: 3h:6m:51s (0h:37m:49s left)
+Iteration 500 / LogL: -2113209.903 / Time: 3h:8m:56s (0h:33m:41s left)
+Log-likelihood cutoff on original alignment: -2109800.433
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.920
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 510 / LogL: -2113422.990 / Time: 3h:10m:58s (0h:33m:46s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 518: -2109070.649
+Iteration 520 / LogL: -2117037.529 / Time: 3h:13m:17s (0h:36m:29s left)
+Iteration 530 / LogL: -2109819.939 / Time: 3h:15m:23s (0h:32m:30s left)
+Iteration 540 / LogL: -2110769.927 / Time: 3h:17m:28s (0h:28m:34s left)
+Iteration 550 / LogL: -2111938.405 / Time: 3h:19m:31s (0h:24m:42s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+Iteration 560 / LogL: -2109859.067 / Time: 3h:21m:32s (0h:20m:54s left)
+Iteration 570 / LogL: -2111335.444 / Time: 3h:23m:33s (0h:17m:10s left)
+Iteration 580 / LogL: -2109828.530 / Time: 3h:25m:33s (0h:13m:29s left)
+Iteration 590 / LogL: -2114617.871 / Time: 3h:27m:31s (0h:9m:51s left)
+Iteration 600 / LogL: -2109848.516 / Time: 3h:29m:36s (0h:6m:17s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.819
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 610 / LogL: -2110225.509 / Time: 3h:31m:57s (0h:31m:19s left)
+Iteration 620 / LogL: -2111676.000 / Time: 3h:33m:55s (0h:27m:38s left)
+Iteration 630 / LogL: -2110773.390 / Time: 3h:35m:55s (0h:24m:1s left)
+Iteration 640 / LogL: -2110916.848 / Time: 3h:37m:56s (0h:20m:27s left)
+Iteration 650 / LogL: -2109501.105 / Time: 3h:40m:10s (0h:16m:57s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+Iteration 660 / LogL: -2109845.456 / Time: 3h:42m:13s (0h:13m:29s left)
+Iteration 670 / LogL: -2111401.090 / Time: 3h:44m:15s (0h:10m:3s left)
+Iteration 680 / LogL: -2110016.346 / Time: 3h:46m:17s (0h:6m:39s left)
+Iteration 690 / LogL: -2110342.385 / Time: 3h:48m:24s (0h:3m:18s left)
+Iteration 700 / LogL: -2111344.775 / Time: 3h:50m:22s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.882
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 710 / LogL: -2110591.789 / Time: 3h:52m:31s (0h:29m:31s left)
+Iteration 720 / LogL: -2110239.067 / Time: 3h:54m:29s (0h:26m:5s left)
+Iteration 730 / LogL: -2112522.217 / Time: 3h:56m:28s (0h:22m:42s left)
+Iteration 740 / LogL: -2111417.638 / Time: 3h:58m:28s (0h:19m:21s left)
+Iteration 750 / LogL: -2120252.035 / Time: 4h:0m:30s (0h:16m:3s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+Iteration 760 / LogL: -2119018.987 / Time: 4h:2m:28s (0h:12m:46s left)
+Iteration 770 / LogL: -2111626.319 / Time: 4h:4m:27s (0h:9m:32s left)
+Iteration 780 / LogL: -2131964.923 / Time: 4h:6m:36s (0h:6m:19s left)
+Iteration 790 / LogL: -2114324.060 / Time: 4h:8m:56s (0h:3m:9s left)
+Iteration 800 / LogL: -2111044.071 / Time: 4h:10m:56s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.894
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 810 / LogL: -2117499.639 / Time: 4h:13m:5s (0h:28m:9s left)
+Iteration 820 / LogL: -2119137.027 / Time: 4h:15m:4s (0h:24m:54s left)
+Iteration 830 / LogL: -2111550.315 / Time: 4h:16m:56s (0h:21m:41s left)
+Iteration 840 / LogL: -2112170.242 / Time: 4h:18m:53s (0h:18m:30s left)
+Iteration 850 / LogL: -2109966.340 / Time: 4h:20m:49s (0h:15m:21s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+Iteration 860 / LogL: -2111303.701 / Time: 4h:23m:5s (0h:12m:15s left)
+Iteration 870 / LogL: -2110225.670 / Time: 4h:25m:13s (0h:9m:9s left)
+Iteration 880 / LogL: -2110627.376 / Time: 4h:27m:24s (0h:6m:5s left)
+Iteration 890 / LogL: -2111357.013 / Time: 4h:29m:24s (0h:3m:1s left)
+Iteration 900 / LogL: -2111577.536 / Time: 4h:31m:23s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.905
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 910 / LogL: -2109503.139 / Time: 4h:33m:22s (0h:27m:4s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 913: -2109060.513
+Iteration 920 / LogL: -2109578.492 / Time: 4h:35m:39s (0h:27m:53s left)
+Iteration 930 / LogL: -2109239.070 / Time: 4h:37m:51s (0h:24m:49s left)
+Iteration 940 / LogL: -2109222.675 / Time: 4h:39m:54s (0h:21m:45s left)
+Iteration 950 / LogL: -2112005.526 / Time: 4h:42m:4s (0h:18m:43s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+Iteration 960 / LogL: -2110277.344 / Time: 4h:44m:1s (0h:15m:41s left)
+Iteration 970 / LogL: -2115035.933 / Time: 4h:45m:52s (0h:12m:41s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 971: -2109046.584
+Iteration 980 / LogL: -2110745.889 / Time: 4h:48m:9s (0h:26m:47s left)
+Iteration 990 / LogL: -2109300.505 / Time: 4h:50m:7s (0h:23m:45s left)
+Iteration 1000 / LogL: -2109066.481 / Time: 4h:52m:10s (0h:20m:45s left)
+Log-likelihood cutoff on original alignment: -2109784.345
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.953
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+WARNING: bootstrap analysis did not converge. You should rerun with higher number of iterations (-nm option)
+TREE SEARCH COMPLETED AFTER 1001 ITERATIONS / Time: 4h:52m:25s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -2109046.584
+2. Current log-likelihood: -2109046.505
+3. Current log-likelihood: -2109046.478
+Optimal log-likelihood: -2109046.470
+Rate parameters:  A-C: 1.01873  A-G: 3.60172  A-T: 1.75932  C-G: 0.57369  C-T: 3.63019  G-T: 1.00000
+Base frequencies:  A: 0.247  C: 0.254  G: 0.254  T: 0.245
+Site proportion and rates:  (0.961,0.390) (0.029,6.209) (0.007,21.355) (0.003,57.024) (0.001,139.222)
+Parameters optimization took 3 rounds (8.759 sec)
+BEST SCORE FOUND : -2109046.470
+Creating bootstrap support values...
+Split supports printed to NEXUS file /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.splits.nex
+Total tree length: 0.529
+
+Total number of iterations: 1001
+CPU time used for tree search: 647410.064 sec (179h:50m:10s)
+Wall-clock time used for tree search: 17514.232 sec (4h:51m:54s)
+Total CPU time used: 648878.057 sec (180h:14m:38s)
+Total wall-clock time used: 17557.219 sec (4h:52m:37s)
+
+Computing bootstrap consensus tree...
+Reading input file /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.splits.nex...
+616 taxa and 1659 splits.
+Consensus tree written to /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.contree
+Reading input trees file /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.contree
+Log-likelihood of consensus tree: -2108877.490
+
+Analysis results written to: 
+  IQ-TREE report:                /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.iqtree
+  Maximum-likelihood tree:       /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.treefile
+  Likelihood distances:          /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.splits.nex
+  Consensus tree:                /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.contree
+  Screen log file:               /home/bwang97/vast-eande106/projects/Bowen/PopGen_Tro_Project/2025_PopGen_Tro/processed_data/LD_pruned_trees/LD_0.9/phy_file_LD_0.9.phy.log
+
+Date and Time: Fri Jun  6 22:44:48 2025

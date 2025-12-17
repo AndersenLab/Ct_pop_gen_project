@@ -1,0 +1,10 @@
+.DS_Store
+# Ignore large data files
+ignore_other/
+
+>>>>>>> Stashed changes
+# ---- R and RStudio ----
+.rds
+.RData
+.Rhistory
+# ---- System files ----
