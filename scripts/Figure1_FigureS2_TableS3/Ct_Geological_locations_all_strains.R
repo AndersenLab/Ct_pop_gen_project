@@ -148,7 +148,7 @@ indep_strain_info_geo <- indep_strain_info %>%
                                                                        ifelse(isotype %in% nz_strain, "New Zealand", 
                                                                               ifelse(isotype %in% tw_strain, "Taiwan", 
                                                                                      # ifelse(isotype %in% pac_strain, "Pacific", 
-                                                                                     ifelse(isotype %in% mal_strain,"Malay Archipelago",
+                                                                                     ifelse(isotype %in% mal_strain,"Indonesia",
                                                                                             ifelse(isotype %in% mic_strain,"Micronesia","Unknown"))))))))))))
 unique(indep_strain_info_geo$geo)
 
@@ -268,7 +268,7 @@ plot_freq2
 p <- ggpubr::ggarrange(ggpubr::ggarrange(plot_freq2,
                                          plot_world,
                                          ncol = 2, 
-                                         labels = c("A","B"),
+                                         labels = c("a","b"),
                                          widths = c(0.25, 0.75),
                                          label.x = c(-0.02,0)))
 p

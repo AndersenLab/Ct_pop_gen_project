@@ -111,20 +111,22 @@ geo_diversity_result <- table_geo_p_theta_d %>%
   tidyr::pivot_wider(names_from = stat, values_from = values) %>%
   dplyr::filter(!is.na(pi) & !is.na(theta)& !is.na(d)) %>%
   dplyr::select(region, pi, theta, d) %>% 
-  dplyr::rename(Region=region,"\u03C0 value"=pi,"\u03B8 value"=theta, "Tajima's D"=d)
+  dplyr::rename(Region=region,"\u03C0 value"=pi,"\u03B8 value"=theta, "Tajima's D"=d) %>% 
+  dplyr::mutate(Region = ifelse(Region == "Malay_Archipelago",
+                         "Indonesia",
+                         Region))
 
 # add a col to show the numbers of samples
 geo_freq <- read.csv(file = "../../processed_data/geo_info/Ct_isotype_geo_freq.csv")
 geo_freq_col<-geo_freq %>%
   dplyr::mutate(geo = ifelse(geo == "South America", "South_America", geo)) %>% 
-  dplyr::mutate(geo = ifelse(geo == "Central America", "Central_America", geo)) %>% 
-  dplyr::mutate(geo = ifelse(geo == "Malay Archipelago", "Malay_Archipelago", geo)) 
+  dplyr::mutate(geo = ifelse(geo == "Central America", "Central_America", geo)) 
 
 geo_freq_col<-rbind(geo_freq_col, c("All", sum(geo_freq_col$freq))) 
 geo_freq_col$geo <- factor(geo_freq_col$geo, 
                            levels = c("All", "Africa", "Australia", "Caribbean",
                                       "Central_America", "Hawaii", "South_America", 
-                                      "Malay_Archipelago","Micronesia", "Taiwan"))
+                                      "Indonesia","Micronesia", "Taiwan"))
 geo_freq_col<-geo_freq_col %>% 
   dplyr::arrange(geo) %>% 
   dplyr::rename(Region=geo,"Number of strains"=frequency)
@@ -134,7 +136,10 @@ geo_freq_col<-geo_freq_col %>%
 all_result<-dplyr::left_join(geo_diversity_result,
                              geo_freq_col,
                              by = c("Region"))
-
+all_result<-all_result %>%
+  mutate(Region = ifelse(Region == "Malay_Archipelago",
+                         "Indonesia",
+                         Region))
 
 write.csv(file = "../../tables/TableS4_geo_p_theta_d.csv",all_result,quote = FALSE,
           row.names = FALSE)

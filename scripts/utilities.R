@@ -7,8 +7,9 @@ geo.colours <- c("Hawaii"="#66C2A5", "Australia"="#FC8D62", "Central America"="#
                  "New Zealand" = "green","Atlantic" = "purple",
                  "Oceania" ="#DB7779",
                  "Micronesia" = "#E7298A",
-                 "Indonesia" = "#7570B3",
-                 "Malay Archipelago" = "#4110B3",
+                 # "Indonesia" = "#7570B3",
+                 # "Malay Archipelago" = "#4110B3",
+                 "Indonesia" = "#4110B3",
                  "unknown" = 'grey')
 
 species_color <- c("C. elegans"   = "#DB6333",
@@ -20,58 +21,17 @@ genome_domain_colors <- c("Tip" = "#5E3C99",
                           "Center" = "#FDB863", 
                           "Arm" = "#4393C3")
 
-# 
-# lineage_colors <- c(
-#   LAC = "#00CED1",
-#   Tw1 = "#7F743E",
-#   Tw2 = "#95844F",
-#   Indo1 = "#6600CC",
-#   Tw3 = "#ADA066",
-#   Indo2 = "#A366FF",
-#   Tw4 = "#C0B782",
-#   Mic = "#FF3399",
-#   HC = "#FFD92F",
-#   Hw1 = "#1B4D1B",
-#   Tw5 = "#D3CCA0",
-#   Au = "#FFAA10",
-#   Tw6 = "#F9E8D9",
-#   Hw2 = "#4C8C4C",
-#   Af = "#00FF00",
-#   Indo3 = "#D9B3FF",
-#   Tw7 = "#FFFFE9",
-#   Hw3 = "#A3C1A3"
-# )
-
-
-# lineage_colors <- c(
-#   LAC = "#00CED1",
-#   Tw1 = "#161308",
-#   Tw2 = "#5B542A",
-#   Indo1 = "#6600CC",
-#   Tw3 = "#7A541F",
-#   Indo2 = "#A366FF",
-#   Tw4 = "#A99060",
-#   Mic = "#FF3399",
-#   HC = "#FFD92F",
-#   Hw1 = "#1B4D1B",
-#   Tw5 = "#D3CCA0",
-#   Au = "#FFAA10",
-#   Tw6 = "#F9E8D9",
-#   Hw2 = "#4C8C4C",
-#   Af = "#00FF00",
-#   Indo3 = "#D9B3FF",
-#   Tw7 = "#FFFFE9",
-#   Hw3 = "#A3C1A3"
-# )
 
 
 lineage_colors <- c(
   LAC = "#00CED1",
   Tw1 = "#161308",
   Tw2 = "#5B542A",
-  Ma1 = "#6600CC",
+  # Ma1 = "#6600CC",
+  Indo1 = "#6600CC",
   Tw3 = "#7A541F",
-  Ma2 = "#A366FF",
+  # Ma2 = "#A366FF",
+  Indo2 = "#A366FF",
   Tw4 = "#A99060",
   # Mic = "#FF3399",
   Mic1 = "#AA3399",
@@ -84,7 +44,8 @@ lineage_colors <- c(
   # Tw6 = "#F9E8D9",
   Hw2 = "#4C8C4C",
   Af = "#00FF00",
-  Ma3 = "#D9B3FF",
+  # Ma3 = "#D9B3FF",
+  Indo3 = "#D9B3FF",
   # Tw7 = "#FFFFE9",
   Tw7 = "lightblue",
   Hw3 = "#A3C1A3"

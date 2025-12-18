@@ -23,7 +23,7 @@ p3 <- geo_distance_strain       + ggtitle(NULL)
 distance_plots<-plot_grid(
   p2,p3,
   ncol = 2,
-  labels = c("C", "D"),
+  labels = c("c", "d"),
   label_x = c(-0.015, 0)
   # label_size = 14
 )

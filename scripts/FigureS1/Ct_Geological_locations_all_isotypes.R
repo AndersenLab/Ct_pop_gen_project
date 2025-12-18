@@ -137,7 +137,7 @@ indep_isotype_info$long<-as.numeric(indep_isotype_info$long)
                                                                         ifelse(isotype %in% nz_isotype, "New Zealand", 
                                                                                ifelse(isotype %in% tw_isotype, "Taiwan", 
                                                                                       # ifelse(isotype %in% pac_isotype, "Pacific", 
-                                                                                             ifelse(isotype %in% mal_isotype,"Malay Archipelago",
+                                                                                             ifelse(isotype %in% mal_isotype,"Indonesia",
                                                                                                     ifelse(isotype %in% mic_isotype,"Micronesia","Unknown"))))))))))))
  unique(indep_isotype_info_geo$geo)
  
@@ -266,7 +266,7 @@ plot_freq2
 p <- ggpubr::ggarrange(ggpubr::ggarrange(plot_freq2,
                                          plot_world,
                                          ncol = 2, 
-                                         labels = c("A","B"),
+                                         labels = c("a","b"),
                                          widths = c(0.25, 0.75),
                                          label.x = c(-0.02, 0)
 ))

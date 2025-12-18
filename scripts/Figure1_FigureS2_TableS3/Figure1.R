@@ -23,7 +23,7 @@ blank <- ggplot() + theme_void()
 row2 <- plot_grid(
   blank, p2,
   ncol = 2,
-  labels = c("C", "D"),
+  labels = c("c", "d"),
   rel_widths = c(1, 3),
   label_x = c(-0.015,0)
 )

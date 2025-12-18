@@ -211,10 +211,10 @@ Tw1<-extract_sample_list(start_isotype = "NIC1658",
                          end_isotype = "NIC1603")
 Tw2<-extract_sample_list(start_isotype = "NIC1560",
                          end_isotype = "TWN2103")
-Ma1<-c("HPT56")
+Indo1<-c("HPT56")
 Tw3<-extract_sample_list(start_isotype = "NIC1651",
                          end_isotype = "NIC1656")
-Ma2<-c("HPT25","HPT39")
+Indo2<-c("HPT25","HPT39")
 Tw4<-extract_sample_list(start_isotype = "NIC895",
                          end_isotype = "NIC898")
 
@@ -234,7 +234,7 @@ Hw2<-extract_sample_list(start_isotype = "ECA1449",
                          end_isotype = "ECA1453")
 Af<-extract_sample_list(start_isotype = "NIC1534",
                          end_isotype = "JU3170")
-Ma3<-c("HPT33")
+Indo3<-c("HPT33")
 Tw7<-c("NIC1679")
 Hw3<-extract_sample_list(start_isotype = "ECA1307",
                          end_isotype = "ECA1299")
@@ -244,9 +244,9 @@ lineage_samples_list <- list(
   LAC = LAC,
   Tw1 = Tw1,
   Tw2 = Tw2,
-  Ma1 = Ma1,
+  Indo1 = Indo1,
   Tw3 = Tw3,
-  Ma2 = Ma2,
+  Indo2 = Indo2,
   Tw4 = Tw4,
   # Mic = Mic,
   Mic1 = Mic1,
@@ -258,7 +258,7 @@ lineage_samples_list <- list(
   Tw6 = Tw6,
   Hw2 = Hw2,
   Af = Af,
-  Ma3 = Ma3,
+  Indo3 = Indo3,
   Tw7 = Tw7,
   Hw3 = Hw3
 )
@@ -330,7 +330,7 @@ combined_top_ha <- c(col_ha_lineage, col_ha_with_name)
 
 p_heatmap_4 <- Heatmap(
   matrix               = gt_matrix_plot,
-  name                 = "Concordance",
+  name                 = "Genetic\nsimilarity",
   col                  = phylo_col_fun,
   top_annotation       = combined_top_ha,
   # left_annotation      = row_ha,
@@ -481,7 +481,8 @@ p <- ggplot(df_lower, aes(x = Column, y = Row, fill = Value)) +
   theme(
     axis.title  = element_blank(),
     panel.grid  = element_blank(),
-    legend.position = c(0.75, 0.75)
+    legend.position = c(0.75, 0.75),
+    axis.text.x = element_text(angle = 45, hjust = 1)
   )
 
 p

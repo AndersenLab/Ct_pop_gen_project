@@ -24,7 +24,7 @@ geo_and_lineage_raw<-read.csv("../../processed_data/geo_info/geo_and_lineage.csv
 
 
 geo_and_lineage_Malay<-geo_and_lineage_raw %>%
-  filter(geo == "Malay Archipelago")%>% 
+  filter(geo == "Indonesia")%>% 
   select(isotype,long,lat,geo,lineage)
 
 
@@ -86,7 +86,7 @@ Malay_pca_map1 <- ggplot() +
 Malay_pca_map1
 
 ggsave(Malay_pca_map1, 
-       filename = "../../plots/FigureS16_Ct_Malay_map.pdf", 
+       filename = "../../plots/FigureS16_Ct_Indo_map.pdf", 
        width = 7.5, 
        height = 7.5/3219*2674, 
        units = "in")
