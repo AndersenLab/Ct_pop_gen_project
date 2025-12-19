@@ -5,7 +5,7 @@ This directory contains the processed datasets used for downstream population ge
 ## Directory Structure
 
 processed_data/
-- Geo_info/
+- geo_info/
 - pi_theta_d/
 - pi_theta_d_geo/
 - Ct_admixture_k28/
@@ -17,7 +17,7 @@ processed_data/
 - heatmap_hard_filtered/
 
 
-## Geo_info/
+## geo_info/
 
 Processed files summarizing geographic info of the samples.
 
