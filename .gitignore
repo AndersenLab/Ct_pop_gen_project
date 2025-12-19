@@ -1,6 +1,13 @@
 .DS_Store
 # Ignore large data files
 ignore_other/
+processed_data/mosdepth_coverage/alignments
+processed_data/mosdepth_coverage/regions
+processed_data/mosdepth_coverage/misc
+processed_data/variant_counts/WI.20250627.hard-filter.isotype.vcf.gz
+processed_data/LR_calls/LR_HDRs_allThresh_stats.tsv
+processed_data/mosdepth_coverage/thresh/CT_all_thresh_cov.tsv
+processed_data/variant_counts/CT_all_strain_vc.tsv
 
 >>>>>>> Stashed changes
 # ---- R and RStudio ----
