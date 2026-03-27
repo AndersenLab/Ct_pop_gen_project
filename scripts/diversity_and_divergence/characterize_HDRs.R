@@ -8,32 +8,25 @@ library(circlize)
 
 
 lineage_colors <- c(
-  LAC = "#00CED1",
+  LAC = "#FFCA10",
   Tw1 = "#161308",
-  Tw2 = "#5B542A",
-  # Ma1 = "#6600CC",
-  Indo1 = "#6600CC",
-  Tw3 = "#7A541F",
-  # Ma2 = "#A366FF",
-  Indo2 = "#A366FF",
-  Tw4 = "#A99060",
-  # Mic = "#FF3399",
-  Mic1 = "#AA3399",
-  Mic2 = "#FA9591",
-  HC = "#FFD92F",
+  Tw2 = "#FF66CC",
+  Indo1 = "#3390FF",
+  Tw3 = "#D1007A",
+  Indo2 = "#4EA3C8",
+  Tw4 = "#AA3399",
+  Mic1 = "#7A541F",
+  Mic2 = "#A99020",
+  HC = "#D9EF8B",
   Hw1 = "#1B4D1B",
-  Tw5 = "#D3CCA0",
-  Au = "#FFAA10",
-  Tw6 = "blue",
-  # Tw6 = "#F9E8D9",
+  Tw5 = "#6600CC",
+  Au = "#002FA7",
+  Tw6 = "#A366FF",
   Hw2 = "#4C8C4C",
-  Af = "#00FF00",
-  # Ma3 = "#D9B3FF",
-  Indo3 = "#D9B3FF",
-  # Tw7 = "#FFFFE9",
-  Tw7 = "lightblue",
-  Hw3 = "#A3C1A3",
-  All = "grey"
+  Af = "#F4B6B6",
+  Indo3 = "#C8E6F0",
+  Tw7 = "#D9B3FF",
+  Hw3 = "#00FF00"
 )
 
 
@@ -160,17 +153,17 @@ p2_nr <- ggplot() +
   ylab("Percent of variants in hyper-divergent regions")
 
 
-legend <- get_legend(p2_nr)
+legend <- cowplot::get_legend(p2_nr)
 
 p12_nr <- cowplot::plot_grid(p2_nr + theme(legend.position="none"),p1_nr,rel_heights = c(0.4,1),nrow=2)
 padded_plot <- cowplot::plot_grid(NULL,p12_nr,legend,rel_widths = c(0.035,1,0.2),nrow=1)
 
-full_plot <- ggdraw(padded_plot) +
+full_plot <- cowplot::ggdraw(padded_plot) +
   #draw_label("Percent genome span of hyper-divergent regions", x = 0.5, y = 0.01, vjust = 0, size = 12) +
   draw_label("Percent of variants in hyper-divergent regions", x = 0.005, y = 0.5, angle = 90, vjust = 1, size = 12)
 full_plot
 
-ggsave(plot = full_plot, filename = "../../figures/FigureS23_propVC_20251205.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
+ggsave(plot = full_plot, filename = "../../figures/FigureS23_propVC_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
 
 write.table(meanRGSummary_nr,file = "../../tables/TableS7_HDRsummaryStats_20251205.tsv",sep = "\t",quote = F,row.names = F)
 
@@ -265,7 +258,7 @@ p1_combined <- plot_grid(t1_bar, t1, ncol = 1, rel_heights = c(0.3, 1),align = "
 simi_metrics <- cowplot::plot_grid(p2_combined, p1_combined,legend,
                    nrow = 1,
                    rel_widths = c(1, 0.9, 0.4))
-ggsave(plot = simi_metrics, filename = "../../figures/FigureS24_similarity_hdrs_20251205.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
+ggsave(plot = simi_metrics, filename = "../../figures/FigureS24_similarity_hdrs_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
 
 fold_average <- allSummary_nr_wConc %>%
   dplyr::mutate(divergent_variant_density=divergent_variants/divergent_span,genome_wide_variant_density=genome_wide_variants/genome_span) %>%
