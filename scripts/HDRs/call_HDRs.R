@@ -223,6 +223,7 @@ for (i in 1:length(strain_df)) {
 }
 all_calls_LR <- ldply(dvReg, data.frame) %>% dplyr::filter(CHROM!="MtDNA")
 
+#optional diagnostic intermediate files
 #write.table(all_calls_LR, "processed_data/LR_calls/LR_HDRs_allThresh.tsv",quote = F,sep = "\t",row.names = F)
 #write.table(all_LR_stats, "processed_data/LR_calls/LR_HDRs_allThresh_stats.tsv",quote = F,sep = "\t",row.names = F)
 
@@ -305,53 +306,8 @@ s4 <- ggplot(plot_df,
 
 comp_reg<-cowplot::plot_grid(s3,s2,s1,s4,ncol=1, rel_heights = c(1.1,1,1,1),align = "v",axis = "lr",labels=c("a","b","c","d"))
 
-ggsave(plot = comp_reg, filename = "../../figures/FigureS28_LR_STATS_95idy_20251201.png",width = 7.5,height = 9,dpi = 600,device = 'png')
+ggsave(plot = comp_reg, filename = "../../figures/FigureS38_LR_STATS_95idy_20251201.png",width = 7.5,height = 9,dpi = 600,device = 'png')
 
-# 
-# plot_strain_identity <- function(strain_OI, chromlist, rect_colour="blue", rect_linewidth=0.3,xlim=c(NA,NA)) {
-#   
-#   idy_sub <- idy_bins %>%
-#     dplyr::filter(CHROM %in% chromlist & STRAIN==strain_OI)
-#   
-#   calls_sub <- all_calls_LR %>%
-#     dplyr::filter(CHROM %in% chromlist & STRAIN==strain_OI)
-#   
-#   # shared X limit
-#   idy_x <- (idy_sub$START_BIN/1e6) + ((idy_sub$END_BIN/1e6)-(idy_sub$START_BIN/1e6))/2
-#   call_x <- calls_sub$maxEnd/1e6
-#   x_max <- max(c(idy_x, call_x), na.rm=TRUE)
-#   
-#   idy_plot <- ggplot()+
-#     geom_point(data=idy_sub, aes(x=idy_x, y=bin_IDY)) +
-#     geom_hline(yintercept = 95,linetype="dashed")+
-#     facet_wrap(~CHROM, nrow=2, scales='free_x') +
-#     theme_bw() +
-#     theme(axis.title.x=element_blank()) +
-#     scale_y_continuous(breaks=seq(floor(min(idy_sub$bin_IDY,na.rm=TRUE)), ceiling(max(idy_sub$bin_IDY,na.rm=TRUE)), by=1)) +
-#     scale_x_continuous(limits=c(0,x_max), expand=c(0.01,0)) +
-#     ylab("Bin identity") +
-#     ggtitle(paste("Chromosome-wide identity -", strain_OI)) +
-#     coord_cartesian(xlim = xlim)
-#   
-#   call_plot <- ggplot()+
-#     geom_rect(data=calls_sub, aes(xmin=minStart/1e6, xmax=maxEnd/1e6, ymin=threshIDY-0.2, ymax=threshIDY+0.2),
-#               colour=rect_colour, linewidth=rect_linewidth) +
-#     facet_wrap(~CHROM, nrow=2, scales='free_x') +
-#     scale_y_continuous(breaks=seq(floor(min(calls_sub$threshIDY,na.rm=TRUE)), ceiling(max(calls_sub$threshIDY,na.rm=TRUE)), by=1)) +
-#     scale_x_continuous(limits=c(0,x_max), expand=c(0.01,0)) +
-#     theme_bw() +
-#     xlab("Physical position") +
-#     ylab("Identity threshold") +
-#     ggtitle(paste("HDRs -", strain_OI)) +
-#     coord_cartesian(xlim = xlim) 
-#   
-#   cowplot::plot_grid(idy_plot, call_plot, nrow=2, align="v", axis="lr")
-# }
-# 
-# q5 <- idy_bins |>
-#   dplyr::group_by(CHROM) |>
-#   dplyr::summarize(q05 = stats::quantile(bin_IDY, 0.05))
-# 
 q1sd <- idy_bins |>
   dplyr::group_by(CHROM) |>
   dplyr::summarize(
@@ -374,30 +330,7 @@ ggplot2::ggplot(idy_bins, ggplot2::aes(x = bin_IDY, color = CHROM)) +
     )
   ) +
   ggplot2::theme_classic()
-# 
-# ggplot2::ggplot(idy_bins, ggplot2::aes(x = bin_IDY, color = CHROM)) +
-#   ggplot2::geom_freqpoly(binwidth = 0.01, linewidth = 1) +
-#   ggplot2::geom_vline(
-#     data = q5,
-#     ggplot2::aes(xintercept = q05, color = CHROM),
-#     linetype = "dashed",
-#     linewidth = 0.8,
-#     show.legend = FALSE
-#   ) +
-#   ggplot2::theme_classic() +
-#   ggplot2::labs(x = "bin_IDY", y = "Frequency") +
-#   ggplot2::scale_x_continuous(
-#     breaks = base::seq(
-#       from = 75,
-#       to   = 100,
-#       by   = 1
-#     )
-#   ) +
-#   ggplot2::scale_color_brewer(palette = "Dark2")
-# 
-# plot_strain_identity(strain_OI="QG2899",chromlist=c("III"))
-# plot_strain_identity(strain_OI="JU1373",chromlist=c("IV"))
-# plot_strain_identity(strain_OI="ECA1307",chromlist=c("X"),xlim=c(4,5))
+
 ####### CALL SR BASED HDRS (FOR LR STRAINS) ##########
 covfrac <- c(seq(0.05,0.9,0.05))
 varct <- c(seq(5,25,1))
@@ -755,16 +688,16 @@ p1 <- ggplot(all_calls_SR_clustered %>% dplyr::filter(divSize >= 5e3 & !(CHROM==
   scale_y_continuous(expand = c(0, 0)) +
   scale_x_continuous(breaks = function(x) seq(floor(min(x)), ceiling(max(x)), by = 5),expand = c(0, 0))
 
-ggsave(plot = p1, filename = "../../figures/FigureSx_HDR_CT_allStrain_5kbclust_20251201.png",width = 8.5,height = 3.5,dpi = 600,device = 'png')
-ggsave(plot = MOF, filename = "../../figures/FigureS29_MOF_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = MEF, filename = "../../figures/FigureS30_MEF_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = REC, filename = "../../figures/FigureS31_REC_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = PRE, filename = "../../figures/FigureS32_PRE_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = F1, filename = "../../figures/FigureS33_F1_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = BEST, filename = "../../figures/FigureS34_BEST_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = p1, filename = "../../figures/HDR_CT_allStrain_5kbclust_20251201.png",width = 8.5,height = 3.5,dpi = 600,device = 'png')
+ggsave(plot = MOF, filename = "../../figures/FigureS39_MOF_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = MEF, filename = "../../figures/FigureS40_MEF_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = REC, filename = "../../figures/FigureS41_REC_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = PRE, filename = "../../figures/FigureS42_PRE_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = F1, filename = "../../figures/FigureS43_F1_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = BEST, filename = "../../figures/FigureS44_BEST_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
 
 options(scipen=10)
-write.table(all_calls_SR_clustered, file="../../tables/HDR_CT_allStrain_5kbclust_20251201.tsv",row.names = F,quote = F,sep = '\t')
+write.table(all_calls_SR_clustered %>% dplyr::filter(divSize >= 5e3 & !(CHROM=="MtDNA")), file="../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv",row.names = F,quote = F,sep = '\t')
 options(scipen=0)
 
 #save.image("Trop_HDR_checkpoint_20251201.Rda")

@@ -30,11 +30,11 @@ lineage_colors <- c(
 )
 
 
-hdrs <- readr::read_tsv("../../tables/HDR_CT_allStrain_5kbclust_20251201.tsv")  %>% 
-  dplyr::filter(divSize>=5e3) #%>% dplyr::filter(STRAIN!="QX1410" & STRAIN!="JU2536")
+hdrs <- readr::read_tsv("../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv")  %>% 
+  dplyr::filter(divSize>=5e3)
 bins <- readr::read_tsv("../../processed_data/genomic_bins/ONT_NIC58_1kb_bins.bed",col_names = c("CHROM","binStart","binEnd")) 
 all_variants <- readr::read_tsv("../../processed_data/variant_counts/CT_all_strain_vc.tsv", col_names = c("CHROM","START_BIN","END_BIN","COUNT","STRAIN")) %>% dplyr::mutate(source="QX1410") %>% dplyr::filter(!STRAIN=="QX1410")
-lineages <- readr::read_csv("../../processed_data/lineages_tmp/geo_and_lineage.csv") 
+lineages <- readr::read_csv("../../processed_data/geo_info/geo_and_lineage.csv") 
 
 dt_variants <- as.data.table(all_variants)
 dt_hdrs <- as.data.table(hdrs)
@@ -161,14 +161,14 @@ padded_plot <- cowplot::plot_grid(NULL,p12_nr,legend,rel_widths = c(0.035,1,0.2)
 full_plot <- cowplot::ggdraw(padded_plot) +
   #draw_label("Percent genome span of hyper-divergent regions", x = 0.5, y = 0.01, vjust = 0, size = 12) +
   draw_label("Percent of variants in hyper-divergent regions", x = 0.005, y = 0.5, angle = 90, vjust = 1, size = 12)
-full_plot
+#full_plot
 
-ggsave(plot = full_plot, filename = "../../figures/FigureS23_propVC_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
+ggsave(plot = full_plot, filename = "../../figures/FigureS28_propVC_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
 
 write.table(meanRGSummary_nr,file = "../../tables/TableS7_HDRsummaryStats_20251205.tsv",sep = "\t",quote = F,row.names = F)
 
 ##########
-conc <- readr::read_tsv("../../processed_data/nucleotide_diversity/gtcheck.txt") %>%
+conc <- readr::read_tsv("../../data/gtcheck.txt") %>%
   dplyr::filter(i=="NIC58" | j =="NIC58") %>%
   dplyr::mutate(isotype=ifelse(i=="NIC58",j,i)) %>%
   dplyr::mutate(conc=(sites-discordance)/sites) %>%
@@ -258,7 +258,7 @@ p1_combined <- plot_grid(t1_bar, t1, ncol = 1, rel_heights = c(0.3, 1),align = "
 simi_metrics <- cowplot::plot_grid(p2_combined, p1_combined,legend,
                    nrow = 1,
                    rel_widths = c(1, 0.9, 0.4))
-ggsave(plot = simi_metrics, filename = "../../figures/FigureS24_similarity_hdrs_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
+ggsave(plot = simi_metrics, filename = "../../figures/FigureS29_similarity_hdrs_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
 
 fold_average <- allSummary_nr_wConc %>%
   dplyr::mutate(divergent_variant_density=divergent_variants/divergent_span,genome_wide_variant_density=genome_wide_variants/genome_span) %>%
@@ -408,52 +408,9 @@ p2 <- ggplot(bins_wFreq %>% dplyr::filter(CHROM!="MtDNA")) +
 
 #p21 <- cowplot::plot_grid(p1,p2,nrow=2,ncol=1,rel_heights = c(1,0.3),align = "v", axis = "l", labels = c("a","b"))
 
-diversity <- readr::read_csv("../../processed_data/nucleotide_diversity/chromosome_windows_diversity.csv",col_select = c(-1))
+diversity <- readr::read_csv("../../processed_data/pi_theta_d/chromosome_windows_diversity.csv",col_select = c(-1))
 
-domains_raw <- readr::read_tsv("../../processed_data/nucleotide_diversity/ct_ch_domains.tsv") 
-
-# #Create wide format with left and right arm domain coordinates
-# domains_wide <- domains_raw %>%
-#   dplyr::select(CHROM,start,end) %>%
-#   dplyr::group_by(CHROM) %>%
-#   dplyr::arrange(start) #%>%
-#   dplyr::mutate(arm = c("left", "right")) %>%                           
-#   tidyr::pivot_wider(                                                 
-#     names_from = arm,
-#     values_from = c(start, end),
-#     names_glue = "{arm}_{.value}") %>%
-#   dplyr::ungroup()
-# 
-# #Build rectangles for plotting chromosome regions: Tips, Arms, and Center
-# #Tip regions (from 0 to left_start and from right_end to Inf)
-# region_rects <- domains_wide %>%
-#   tidyr::pivot_longer(
-#     cols = c(left_start, right_end),
-#     names_to = "region_side",
-#     values_to = "x") %>%
-#   dplyr::mutate(
-#     region = "Tip",
-#     xmin = ifelse(region_side == "left_start", 0, x), 
-#     xmax = ifelse(region_side == "left_start", x, Inf)) %>%
-#   dplyr::select(CHROM, region, xmin, xmax) %>%
-#   #Add Arm regions
-#   dplyr::bind_rows(
-#     domains_wide %>%
-#       dplyr::mutate(region = "Arm") %>%
-#       dplyr::transmute(CHROM, region, xmin = left_start, xmax = left_end),
-#     domains_wide %>%
-#       dplyr::mutate(region = "Arm") %>%
-#       dplyr::transmute(CHROM, region, xmin = right_start, xmax = right_end),
-#     #Add Center region 
-#     domains_wide %>%
-#       dplyr::mutate(region = "Center") %>%
-#       dplyr::transmute(CHROM, region, xmin = left_end, xmax = right_start)) %>%
-#   #final formatting
-#   dplyr::mutate(
-#     ymin = -Inf,              
-#     ymax = Inf,
-#     xmin = xmin / 1e6,       
-#     xmax = xmax / 1e6)
+domains_raw <- readr::read_tsv("../../data/chromosome_windows_diversity.csv") 
 
 region_rects2 <- domains_raw %>% 
   dplyr::mutate(region=ifelse(grepl("tip",Location),"Tip",ifelse(grepl("arm",Location),"Arm","Center"))) %>%
@@ -532,7 +489,6 @@ lac_subsample_20 <- hdrs_ordered_priv_iv %>%
   dplyr::select(-rleID) %>%
   dplyr::rename(rleID=rleID_new)# re-enumerate rleID starting at 1
 
-
 lac20_hw3 <- rbind(lac_subsample_20,hdrs_ordered_priv_iv %>%
                      dplyr::filter(lineage == "Hw3"))
 
@@ -591,4 +547,4 @@ x_min <- p_range$x_range$range[1]
 x_max <- p_range$x_range$range[2]
 
 fix_diff <- cowplot::plot_grid(p_priv,priv_aln,nrow=2,align = "v",axis = "lr",labels = c("a","b"),rel_heights = c(1,0.6))
-ggsave(fix_diff,filename = "../../figures/FigureS25_fixed_differences.png",width = 7,height = 6.5,dpi = 600,device = 'png')
+ggsave(fix_diff,filename = "../../figures/FigureS30_fixed_differences.png",width = 7,height = 6.5,dpi = 600,device = 'png')
