@@ -305,7 +305,7 @@ Generate Figure S32.
 Generates simplified HDR annotation files for downstream diversity and divergence analyses.
 
 - `characterize_HDRs.R`  
-Summarise HDRs.
+Summarize HDR statistics across wild isolate genomes.
 
 - `Similarity_HDRs.sh`  
 Calculates pairwise genetic similarity using variants located in HDRs.
@@ -335,7 +335,10 @@ Identifies HDRs across genomes.
 
 - `TAs_overlap_HDRs.R`  
 Analyzes overlap between TAs and HDRs.
-Generate Figure S36. 
+Generate Figure S36.
+
+- `visualize_spp_alignments.R`
+Visualizes alignment data between divergent strain pairs across all three selfing _Caenorhabditis_ species
 
 ---
 
