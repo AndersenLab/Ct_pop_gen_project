@@ -1,0 +1,25 @@
+Region	Autosomes_arm_non_HDR	Autosomes_center_non_HDR	X_arm_non_HDR	X_center_non_HDR	fold change Autosomes non_HDR arm/center	fold change ChromX non_HDR arm/center	Stat
+All	7e-04	4e-04	5e-04	4e-04	1.97	1.47	pi
+Africa	6e-04	3e-04	5e-04	4e-04	1.81	1.13	pi
+Caribbean	5e-04	3e-04	3e-04	2e-04	1.98	1.64	pi
+Central America	3e-04	1e-04	1e-04	5e-05	2.16	2.75	pi
+Hawaii	9e-04	5e-04	8e-04	6e-04	1.73	1.23	pi
+Micronesia	6e-04	3e-04	4e-04	3e-04	2.25	1.38	pi
+South America	3e-04	2e-04	1e-04	1e-04	1.81	1.62	pi
+Taiwan	7e-04	3e-04	5e-04	3e-04	2.3	1.62	pi
+All	0.0018	0.0011	0.0015	0.0013	1.61	1.13	theta
+Africa	5e-04	3e-04	5e-04	4e-04	1.67	1.23	theta
+Caribbean	5e-04	3e-04	3e-04	2e-04	1.85	1.31	theta
+Central America	4e-04	2e-04	2e-04	2e-04	1.78	1.43	theta
+Hawaii	6e-04	3e-04	5e-04	4e-04	1.71	1.21	theta
+Micronesia	4e-04	2e-04	2e-04	2e-04	2.24	1.36	theta
+South America	7e-04	5e-04	7e-04	6e-04	1.46	1.09	theta
+Taiwan	7e-04	4e-04	5e-04	4e-04	1.89	1.24	theta
+All	-1.6631	-1.8342	-1.8409	-2.0372	-	-	d
+Africa	0.0247	-0.1978	-0.3287	-0.158	-	-	d
+Caribbean	-0.0072	-0.2003	-0.2683	-0.6523	-	-	d
+Central America	-0.8326	-1.1269	-1.3227	-1.689	-	-	d
+Hawaii	1.3493	1.2512	1.6022	1.4109	-	-	d
+Micronesia	1.744	1.5017	1.5151	1.3773	-	-	d
+South America	-1.5732	-1.7564	-2.13	-2.2985	-	-	d
+Taiwan	-0.0064	-0.4393	-0.1663	-0.6205	-	-	d

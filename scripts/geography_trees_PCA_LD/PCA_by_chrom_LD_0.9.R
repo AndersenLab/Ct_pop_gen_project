@@ -1,0 +1,112 @@
+rm(list=ls())
+
+library(dplyr)
+library(data.table)
+library(ggplot2)
+library(GGally)
+library(dendextend)
+library(ggpubr)
+library(cowplot)
+library(patchwork)
+library(ggridges)
+
+source("../utilities.R")
+
+geo_info_raw <- read.csv("../../processed_data/geo_info/Ct_indep_isotype_info_geo.csv")
+geo_info <- geo_info_raw
+
+plot_PCA <- function(PCA_input, tracy_for_plot_input, x_axis, y_axis){
+  label_x<-tracy_for_plot_input %>%
+    dplyr::filter(N == as.numeric(sub("PC", "", x_axis))) %>%
+    dplyr::select(VarExp) %>%
+    pull(VarExp) %>%
+    `*`(100) %>%
+    round(digits = 2) %>%
+    as.character()
+  
+  label_y<-tracy_for_plot_input %>%
+    dplyr::filter(N == as.numeric(sub("PC", "", y_axis))) %>%
+    dplyr::select(VarExp) %>%
+    pull(VarExp) %>%
+    `*`(100) %>%
+    round(digits = 2) %>%
+    as.character()
+  
+  p1_1<-ggplot2::ggplot(PCA_input)+
+    geom_point(shape=16, alpha=0.8, size=1.5, aes(x=.data[[x_axis]],y=.data[[y_axis]], color=geo))+
+    scale_color_manual(values = geo.colours, name = "geo") +
+    theme_bw() +
+    labs(x=paste(x_axis," (",label_x,"%)",sep = ""),
+         y=paste(y_axis," (",label_y,"%)",sep = ""))+
+    theme(axis.title = element_text(size=7, face = "bold",color = "black"),
+          axis.text = element_text(size=6, color = "black"),
+          legend.position='none',
+          panel.grid = element_blank())
+  
+  return(p1_1)
+}
+
+base_dir <- "../../processed_data/PCA_by_chrom"
+chroms <- c("I","II","III","IV","V","X")
+
+combined_panels <- list()
+pcs_geo_by_chrom <- list()
+
+for (chrom in chroms) {
+  message("Processing chromosome: ", chrom)
+  
+  tracy_path <- file.path(base_dir, chrom, "EIGESTRAT", "LD_0.9", "NO_REMOVAL", "TracyWidom_statistics_no_removal.tsv")
+  evac_path  <- file.path(base_dir, chrom, "EIGESTRAT", "LD_0.9", "NO_REMOVAL", "eigenstrat_no_removal.evac")
+  
+  if (!file.exists(tracy_path)) {
+    warning("Tracy file not found for ", chrom, " at: ", tracy_path, "  -> skipping this chromosome.")
+    next
+  }
+  if (!file.exists(evac_path)) {
+    warning("Evac file not found for ", chrom, " at: ", evac_path, "  -> skipping this chromosome.")
+    next
+  }
+  
+  tracy_for_plot <- data.table::fread(tracy_path) %>%
+    dplyr::mutate(sum = sum(eigenvalue),
+                  VarExp = eigenvalue / sum,
+                  sigEV = ifelse(`p-value` < 0.05, TRUE, FALSE)) %>%
+    dplyr::group_by(sigEV) %>%
+    dplyr::mutate(sigVarExp = sum(VarExp)) %>%
+    dplyr::ungroup()
+
+  cdf <- data.table::fread(evac_path, skip = 1)
+
+  cdf_pcs <- cdf %>%
+    dplyr::select(isotype = V1, PC1 = V2, PC2 = V3, PC3 = V4, PC4 = V5, PC5 = V6, PC6 = V7)
+  
+  cdf_pcs_geo <- cdf_pcs %>%
+    dplyr::left_join(geo_info, by = c("isotype"))
+  
+  pcs_geo_by_chrom[[chrom]] <- cdf_pcs_geo
+
+  p_PC1_PC2 <- plot_PCA(PCA_input = cdf_pcs_geo,
+                        tracy_for_plot_input = tracy_for_plot,
+                        x_axis = "PC1", y_axis = "PC2")
+  
+  p_PC3_PC4 <- plot_PCA(PCA_input = cdf_pcs_geo,
+                        tracy_for_plot_input = tracy_for_plot,
+                        x_axis = "PC3", y_axis = "PC4")
+  
+  combined_core <- cowplot::plot_grid(p_PC1_PC2, p_PC3_PC4, ncol = 2, align = "hv", rel_heights = c(1,1))
+  
+  combined_titled <- cowplot::ggdraw() +
+    cowplot::draw_plot(combined_core) +
+    cowplot::draw_label(paste0("Chromosome ", chrom),
+                        x = 0.5, y = 0.97, hjust = 0.5, vjust = 0,
+                        fontface = "bold", size = 8)
+  
+  combined_panels[[chrom]] <- combined_titled
+  
+}
+
+final_plot <- patchwork::wrap_plots(plotlist = combined_panels, ncol = 2)
+ggsave("../../figures/FigureS6_PCA_by_chrom.pdf", final_plot, width = 7, height = 4, units = "in", device = "pdf")
+
+
+

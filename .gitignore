@@ -14,4 +14,14 @@ processed_data/variant_counts/CT_all_strain_vc.tsv
 .rds
 .RData
 .Rhistory
+# allow specific figure-assembly files
+!processed_data/geo_info/p_isotype_hist.rds
+!processed_data/geo_info/p_strain_hist.rds
+!processed_data/geo_info/Taiwan/Ct_PCA_Taiwan_Lineage.rds
+!processed_data/geo_info/Taiwan/cdf9_7no.rds
+!processed_data/geo_info/strain_map.rds
+!processed_data/geo_info/Hawaii/cdf9_7no.rds
+!processed_data/geo_info/Hawaii/Ct_PCA_Hawaii_RG.rds
+!processed_data/geo_info/isotype_map.rds
+!processed_data/Ct_pruned_VCF_and_PCA/Ct_all_isotypes_PCA_plot_PC1_4.rds
 # ---- System files ----

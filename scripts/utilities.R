@@ -1,16 +1,42 @@
 
 # region colors
-geo.colours <- c("Hawaii"="#66C2A5", "Australia"="#FC8D62", "Central America"="#8DA0CB",
-                 "South America"="#E78AC3", "Africa"="#A6D854", "Caribbean"="#FFD92F",
-                 "Taiwan" = "#E5C494", "North America" = "#A65628", "Europe" = "#377EB8",
-                 "Asia" = "#E41A1C", "Pacific" = "#611EA1",
-                 "New Zealand" = "green","Atlantic" = "purple",
-                 "Oceania" ="#DB7779",
-                 "Micronesia" = "#E7298A",
-                 # "Indonesia" = "#7570B3",
-                 # "Malay Archipelago" = "#4110B3",
-                 "Indonesia" = "#4110B3",
-                 "unknown" = 'grey')
+
+geo.colours <- c(
+  "South America"   = "#E41A1C",
+  "Central America" = "#FFAA10", 
+  "Caribbean"       = "#FFD92F",
+  "Micronesia"      = "#A99060",
+  "Hawaii"          = "#66C2A5",
+  "Indonesia"       = "#A2D2E2",
+  "Australia"       = "#002FA7",  
+  "Taiwan"          = "#710193",
+  "Africa"          = "#FA9591",
+  "unknown"         = "grey"
+)
+
+
+lineage_colors <- c(
+  LAC = "#FFCA10",
+  Tw1 = "#161308",
+  Tw2 = "#FF66CC",
+  Indo1 = "#3390FF",
+  Tw3 = "#D1007A",
+  Indo2 = "#4EA3C8",
+  Tw4 = "#AA3399",
+  Mic1 = "#7A541F",
+  Mic2 = "#A99020",
+  HC = "#D9EF8B",
+  Hw1 = "#1B4D1B",
+  Tw5 = "#6600CC",
+  Au = "#002FA7",
+  Tw6 = "#A366FF",
+  Hw2 = "#4C8C4C",
+  Af = "#F4B6B6",
+  Indo3 = "#C8E6F0",
+  Tw7 = "#D9B3FF",
+  Hw3 = "#00FF00"
+)
+
 
 species_color <- c("C. elegans"   = "#DB6333",
                    "C. tropicalis" = "#0719BC",
@@ -20,39 +46,6 @@ species_color <- c("C. elegans"   = "#DB6333",
 genome_domain_colors <- c("Tip" = "#5E3C99", 
                           "Center" = "#FDB863", 
                           "Arm" = "#4393C3")
-
-
-
-lineage_colors <- c(
-  LAC = "#00CED1",
-  Tw1 = "#161308",
-  Tw2 = "#5B542A",
-  # Ma1 = "#6600CC",
-  Indo1 = "#6600CC",
-  Tw3 = "#7A541F",
-  # Ma2 = "#A366FF",
-  Indo2 = "#A366FF",
-  Tw4 = "#A99060",
-  # Mic = "#FF3399",
-  Mic1 = "#AA3399",
-  Mic2 = "#FA9591",
-  HC = "#FFD92F",
-  Hw1 = "#1B4D1B",
-  Tw5 = "#D3CCA0",
-  Au = "#FFAA10",
-  Tw6 = "blue",
-  # Tw6 = "#F9E8D9",
-  Hw2 = "#4C8C4C",
-  Af = "#00FF00",
-  # Ma3 = "#D9B3FF",
-  Indo3 = "#D9B3FF",
-  # Tw7 = "#FFFFE9",
-  Tw7 = "lightblue",
-  Hw3 = "#A3C1A3"
-)
-
-
-
 
 
 
