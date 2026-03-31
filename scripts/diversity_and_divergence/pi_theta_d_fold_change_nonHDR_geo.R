@@ -73,7 +73,7 @@ region_rects2 <- region_rects %>%
     )
   )
 
-hdrs_ct <- readr::read_tsv("../../tables/HDR_CT_allStrain_5kbclust_20251201.tsv")
+hdrs_ct <- readr::read_tsv("../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv")
 
 y_hdr <- hdrs_ct %>%
   dplyr::mutate(

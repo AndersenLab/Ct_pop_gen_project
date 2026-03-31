@@ -298,8 +298,8 @@ Generates population assignment files used for pairwise Dxy calculations among r
 Calculates pairwise Dxy among relatedness groups.
 
 - `Dxy_HDRs_nonHDRs.R`  
-Compares Dxy between relatedness groups within HDR or nonHDR regions.
-Generate Figure S32. 
+Compares Dxy between relatedness groups within HDR or nonHDR regions. Compare Dxy of C. tropicalis and C. briggsae.
+Generate Figure S32 and Table S9.
 
 - `Generate_simple_HDRs_file.R`  
 Generates simplified HDR annotation files for downstream diversity and divergence analyses.
