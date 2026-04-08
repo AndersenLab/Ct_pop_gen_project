@@ -343,7 +343,15 @@ Visualizes alignment data between divergent strain pairs across all three selfin
 ---
 
 ## gene_enrichment
+This directory contains scripts for annotating the NIC58 proteome using InterProScan and performing functional enrichment analysis of IPR terms and Gene Ontology gene sets.
 
+- 'InterProScan.sh'
+This script annotates NIC58 proteins with InterProScan terms, which outputs a table used in 'IPR_GO_tropicalis.R'
+
+- 'IPR_GO_tropicalis.R'
+Given the NIC58 reference genome and InterProsScan annotations of the NIC58 proteome, this script classifies genes that are found in the chromosomal arm domains, genes found in hyper-divergent regions in chromosomal arm domains, and performs a one-sided hyper-geometric test to identify statistically-enriched InterProScan functional protein domains in genes found in hyper-divergent regions in chromosomal arm domains in relation to genes found outside of hyper-divergent regions in chromosomal arm domains.
+
+Generates Figure 4 and Table S10.
 
 ---
 
