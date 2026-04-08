@@ -1,0 +1,14 @@
+group,mean_dxy_nonHDR,species
+Hw3 and LAC,0.172,C. tropicalis
+Af and LAC,0.152,C. tropicalis
+Hw1 and LAC,0.105,C. tropicalis
+HC and LAC,0.101,C. tropicalis
+Mic2 and LAC,0.104,C. tropicalis
+Mic1 and LAC,0.096,C. tropicalis
+Tw3 and LAC,0.093,C. tropicalis
+Tw1 and LAC,0.102,C. tropicalis
+KD and Tropical,0.398,C. briggsae
+AD and Tropical,0.373,C. briggsae
+Temperate and Tropical,0.19,C. briggsae
+TD1 and Tropical,0.161,C. briggsae
+TH and Tropical,0.158,C. briggsae

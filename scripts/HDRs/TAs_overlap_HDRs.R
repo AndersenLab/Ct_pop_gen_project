@@ -7,7 +7,7 @@ library(purrr)
 library(tidyr)
 library(ggplot2)
 
-HDRs <- readr::read_tsv("../../tables/HDR_CT_allStrain_5kbclust_20251201.tsv", show_col_types = FALSE)
+HDRs <- readr::read_tsv("../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv", show_col_types = FALSE)
 
 TAs <- data.frame(
   TA_id = paste0("TA", seq_len(9)),

@@ -5,6 +5,7 @@ library(tidyr)
 library(ggplot2)
 library(data.table)
 library(cowplot)
+library(purrr)
 
 domains_raw <- readr::read_tsv("../../data/ct_ch_domains.tsv") 
 
@@ -60,7 +61,7 @@ region_rects2 <- region_rects %>%
   )
 
 region_colors <- c("Tip" = "#5E3C99", "Center" = "#FDB863", "Arm" = "#4393C3")
-hdrs_ct <- readr::read_tsv("../../tables/HDR_CT_allStrain_5kbclust_20251201.tsv")
+hdrs_ct <- readr::read_tsv("../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv")
 
 y <- hdrs_ct %>%
   dplyr::mutate(
@@ -216,7 +217,184 @@ nonhdr_dxy_overall <- anno_dxy_all %>%
   ) %>%
   dplyr::arrange(comp_lin)
 
+Ct_nonhdr_dxy_overall<-nonhdr_dxy_overall %>% 
+  rename(mean_dxy_nonHDR=mean_dxy,
+         group=comp_lin) %>% 
+  select(group,mean_dxy_nonHDR) %>% 
+  mutate(group = paste0(group, " and LAC"),
+         mean_dxy_nonHDR = round(mean_dxy_nonHDR, 3)) %>% 
+  dplyr::mutate(species = "C. tropicalis")
 
 
+## Cb ##
+files <- c(
+  "../../data/meta_data_Ce_Cb/Cb/Cb_Dxy/Tropical_AD__dxy.txt",
+  "../../data/meta_data_Ce_Cb/Cb/Cb_Dxy/Tropical_KD__dxy.txt",
+  "../../data/meta_data_Ce_Cb/Cb/Cb_Dxy/Tropical_TD1__dxy.txt",
+  "../../data/meta_data_Ce_Cb/Cb/Cb_Dxy/Tropical_Temperate__dxy.txt",
+  "../../data/meta_data_Ce_Cb/Cb/Cb_Dxy/Tropical_TH__dxy.txt"
+)
 
+all_dxy_raw <- map_dfr(files, ~ {
+  df <- read_tsv(.x, show_col_types = FALSE)
+  df$group <- gsub(".*Tropical_(.*)__dxy.*", "\\1", .x)
+  df
+})
+
+genome_domain_raw<-read.csv("../../data/meta_data_Ce_Cb/Cb/Cb_bounds_df.csv",
+                            header = TRUE)
+
+genome_domain <- genome_domain_raw %>%
+  mutate(
+    category = case_when(
+      grepl("tip$", sub_region)    ~ "Tip",
+      grepl("arm$", sub_region)    ~ "Arm",
+      sub_region == "center"       ~ "Center",
+      TRUE                         ~ NA_character_
+    ),
+    xmin = start / 1e6,
+    xmax = stop  / 1e6
+  ) %>%
+  filter(!is.na(category)) %>%
+  mutate(category = factor(category, levels = c("Tip", "Arm", "Center")))
+
+all_dxy <- all_dxy_raw %>%
+  mutate(
+    x = (window_pos_1 + window_pos_2) / 2,
+    x_mb = x / 1e6,
+    group = as.factor(group)
+  ) %>% 
+  filter(!(chromosome %in% "MtDNA"))
+
+chrom_levels <- unique(all_dxy$chromosome)
+all_dxy <- all_dxy %>% mutate(chrom = factor(chromosome, levels = chrom_levels))
+genome_domain <- genome_domain %>% mutate(chrom = factor(chrom, levels = chrom_levels))
+
+hdrs <- readr::read_tsv("../../data/meta_data_Ce_Cb/Cb/HDR_CB_allStrain_5kbclust_20250930.tsv",
+                        show_col_types = FALSE)
+
+getRegFreq <- function(all_regions) {
+  all_collapsed <- list()
+  for (i in 1:length(all_regions)) {
+    temp <- all_regions[[i]]
+    k = 1
+    j = 1
+    while (k == 1) {
+      checkIntersect <- temp %>%
+        dplyr::arrange(CHROM, minStart) %>%
+        dplyr::mutate(check = ifelse(dplyr::lead(minStart) <= maxEnd, TRUE, FALSE)) %>%
+        dplyr::mutate(check = ifelse(is.na(check), FALSE, check))
+      
+      if (nrow(checkIntersect %>% dplyr::filter(check == TRUE)) == 0) {
+        k = 0
+      } else {
+        temp <- checkIntersect %>%
+          dplyr::mutate(gid = data.table::rleid(check)) %>%
+          dplyr::mutate(gid = ifelse((check == FALSE | is.na(check)) & dplyr::lag(check) == TRUE,
+                                     dplyr::lag(gid), gid))
+        
+        collapse <- temp %>%
+          dplyr::filter(check == TRUE | (check == FALSE & dplyr::lag(check) == TRUE)) %>%
+          dplyr::group_by(gid) %>%
+          dplyr::mutate(newStart = min(minStart)) %>%
+          dplyr::mutate(newEnd = max(maxEnd)) %>%
+          dplyr::ungroup() %>%
+          dplyr::distinct(gid, .keep_all = TRUE) %>%
+          dplyr::mutate(minStart = newStart, maxEnd = newEnd) %>%
+          dplyr::select(-newEnd, -newStart)
+        
+        retain <- temp %>%
+          dplyr::filter(check == FALSE & dplyr::lag(check) == FALSE)
+        
+        temp <- rbind(collapse, retain) %>%
+          dplyr::select(-gid, -check)
+        
+        j = j + 1
+      }
+    }
+    all_collapsed[[i]] <- temp
+  }
+  return(all_collapsed)
+}
+
+collapsed_tropical <- plyr::ldply(
+  getRegFreq(
+    hdrs %>%
+      dplyr::filter(source == "QX1410") %>%
+      dplyr::group_split(CHROM)
+  ),
+  data.frame
+) %>%
+  dplyr::mutate(divSize = maxEnd - minStart) %>%
+  dplyr::select(-STRAIN)
+
+all_dxy_overlap <- all_dxy %>%
+  dplyr::transmute(
+    CHROM = chromosome,
+    start = window_pos_1 / 1e6,
+    end   = window_pos_2 / 1e6,
+    x,
+    x_mb,
+    group,
+    avg_dxy
+  )
+
+setDT(all_dxy_overlap)
+setDT(collapsed_tropical)
+
+x_dt <- copy(all_dxy_overlap)[, rowid := .I]
+y_dt <- copy(collapsed_tropical)[
+  , `:=`(tstart = minStart / 1e6,
+         tend   = maxEnd / 1e6)
+][, .(CHROM, tstart, tend)]
+
+setkey(x_dt, CHROM, start, end)
+setkey(y_dt, CHROM, tstart, tend)
+
+ov <- foverlaps(
+  x = x_dt,
+  y = y_dt,
+  by.x = c("CHROM", "start", "end"),
+  by.y = c("CHROM", "tstart", "tend"),
+  type = "any",
+  nomatch = 0L
+)
+
+ov[, `:=`(
+  ov_len = pmax(0, pmin(end, tend) - pmax(start, tstart)),
+  int_len = pmax(0, end - start)
+)]
+
+ov[, prop := fifelse(int_len > 0, ov_len / int_len, 0)]
+
+ov_best <- as.data.frame(ov) %>%
+  dplyr::select(rowid, prop) %>%
+  dplyr::group_by(rowid) %>%
+  dplyr::slice_max(prop, n = 1, with_ties = FALSE) %>%
+  dplyr::ungroup()
+
+all_dxy_annotated <- as.data.frame(x_dt) %>%
+  dplyr::left_join(ov_best, by = "rowid") %>%
+  dplyr::mutate(
+    hdstatus = ifelse(is.na(prop) | prop < 0.5, "non-HDR", "HDR")
+  )
+
+mean_nonHDR_by_group_raw <- all_dxy_annotated %>%
+  dplyr::filter(hdstatus == "non-HDR") %>%
+  dplyr::group_by(group) %>%
+  dplyr::summarise(
+    mean_dxy_nonHDR = mean(avg_dxy, na.rm = TRUE),
+    n_windows_nonHDR = dplyr::n(),
+    n_na = sum(is.na(avg_dxy))
+  ) %>%
+  dplyr::arrange(desc(mean_dxy_nonHDR))
+
+mean_nonHDR_by_group <- mean_nonHDR_by_group_raw %>%
+  dplyr::select(group, mean_dxy_nonHDR) %>% 
+  mutate(group = paste0(group, " and Tropical"),
+         mean_dxy_nonHDR = round(mean_dxy_nonHDR, 3)) %>% 
+  dplyr::mutate(species = "C. briggsae")
+
+output<-rbind(Ct_nonhdr_dxy_overall,mean_nonHDR_by_group)
+write_csv(output,"../../tables/TableS9_Ct_and_Cb_Dxy_nonHDRs.csv")
 
