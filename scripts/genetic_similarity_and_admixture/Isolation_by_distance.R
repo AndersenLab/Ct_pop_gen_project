@@ -268,7 +268,7 @@ p_big <- ggplot(plot_all_df2, aes(x = geo_km, y = gen_dist)) +
   facet_wrap(~RG, scales = "free", ncol = 3) +
   labs(
     x = "Geographic distance (km)",
-    y = "Genetic distance (1 - concordance)",
+    y = "Genetic distance (1 - genetic similarity)",
     title = NULL
   ) +
   theme_classic() +
