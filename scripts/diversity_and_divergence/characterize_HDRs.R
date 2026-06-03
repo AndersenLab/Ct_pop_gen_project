@@ -258,7 +258,7 @@ p1_combined <- plot_grid(t1_bar, t1, ncol = 1, rel_heights = c(0.3, 1),align = "
 simi_metrics <- cowplot::plot_grid(p2_combined, p1_combined,legend,
                    nrow = 1,
                    rel_widths = c(1, 0.9, 0.4))
-ggsave(plot = simi_metrics, filename = "../../figures/FigureS29_similarity_hdrs_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
+ggsave(plot = simi_metrics, filename = "../../figures/Figure4_similarity_hdrs_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
 
 fold_average <- allSummary_nr_wConc %>%
   dplyr::mutate(divergent_variant_density=divergent_variants/divergent_span,genome_wide_variant_density=genome_wide_variants/genome_span) %>%
@@ -309,7 +309,8 @@ getRegFreq <- function(all_regions) {
           dplyr::select(-newEnd,-newStart)
         
         retain <- temp %>%
-          dplyr::filter(check==F & lag(check)==F)
+          dplyr::filter(check == FALSE & dplyr::coalesce(dplyr::lag(check), FALSE) == FALSE)
+          # dplyr::filter(check==F & lag(check)==F)
         
         temp <- rbind(collapse,retain) %>%
           dplyr::select(-gid,-check)
@@ -547,4 +548,4 @@ x_min <- p_range$x_range$range[1]
 x_max <- p_range$x_range$range[2]
 
 fix_diff <- cowplot::plot_grid(p_priv,priv_aln,nrow=2,align = "v",axis = "lr",labels = c("a","b"),rel_heights = c(1,0.6))
-ggsave(fix_diff,filename = "../../figures/FigureS30_fixed_differences.png",width = 7,height = 6.5,dpi = 600,device = 'png')
+ggsave(fix_diff,filename = "../../figures/FigureS29_fixed_differences.png",width = 7,height = 6.5,dpi = 600,device = 'png')

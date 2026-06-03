@@ -121,7 +121,8 @@ getRegFreq <- function(all_regions) {
           dplyr::select(-newEnd,-newStart)
         
         retain <- temp %>%
-          dplyr::filter(check==F & lag(check)==F)
+          dplyr::filter(check == FALSE & dplyr::coalesce(dplyr::lag(check), FALSE) == FALSE)
+          # dplyr::filter(check==F & lag(check)==F)
         
         temp <- rbind(collapse,retain) %>%
           dplyr::select(-gid,-check)
@@ -643,7 +644,7 @@ final_plot <- cowplot::plot_grid(
   label_fontface = "bold")
 final_plot
 
-ggsave("../../figures/Figure4_HDR_gene_enrichment.png", final_plot,  width = 7.5, height = 7, dpi = 600)
+ggsave("../../figures/Figure5_HDR_gene_enrichment.png", final_plot,  width = 7.5, height = 7, dpi = 600)
 
 
 

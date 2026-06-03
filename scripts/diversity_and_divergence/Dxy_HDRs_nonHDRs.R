@@ -195,7 +195,7 @@ dxybox_hw3 <- ggplot(anno_dxy_all) +
   )
 
 ggsave(dxybox_hw3,
-       filename = "../../figures/FigureS32_Dxy.png",
+       filename = "../../figures/FigureS31_Dxy.png",
        width = 7, height = 7,
        units = "in", dpi = 600)
 
@@ -304,7 +304,8 @@ getRegFreq <- function(all_regions) {
           dplyr::select(-newEnd, -newStart)
         
         retain <- temp %>%
-          dplyr::filter(check == FALSE & dplyr::lag(check) == FALSE)
+          dplyr::filter(check == FALSE & dplyr::coalesce(dplyr::lag(check), FALSE) == FALSE)
+          # dplyr::filter(check == FALSE & dplyr::lag(check) == FALSE)
         
         temp <- rbind(collapse, retain) %>%
           dplyr::select(-gid, -check)

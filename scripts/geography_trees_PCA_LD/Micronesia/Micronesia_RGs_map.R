@@ -65,7 +65,16 @@ Micro_pca_map1 <- ggplot() +
         legend.position.inside = c(0.05, 0.09))+
   coord_quickmap(xlim = c(Microbox["xmin"], Microbox["xmax"]),
                  ylim = c(Microbox["ymin"], Microbox["ymax"]),
-                 expand = FALSE)
+                 expand = FALSE)+
+  geom_segment(aes(x = Microbox["xmin"] + 0.01, 
+                   y = Microbox["ymin"] + 0.01,
+                   xend = Microbox["xmin"] + 0.01 + 0.04525,
+                   yend = Microbox["ymin"] + 0.01),
+               linewidth = 0.8, color = "black") +
+  annotate("text", 
+           x = Microbox["xmin"] + 0.01 + 0.04525/2, 
+           y = Microbox["ymin"] + 0.01 - 0.005, 
+           label = "5 km", size = 3.5, hjust = 0.5)
 
 ggsave(Micro_pca_map1, 
        filename = "../../../figures/FigureS23_Micro_map.pdf", 
