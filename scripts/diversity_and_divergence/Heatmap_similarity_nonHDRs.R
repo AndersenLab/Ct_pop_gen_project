@@ -340,7 +340,7 @@ lgd_group <- Legend(
   gap = unit(8, "mm")
 )
 
-pdf("../../figures/raw_FigureS34_heatmap_nonHDRs.pdf", 
+pdf("../../figures/raw_FigureS33_heatmap_nonHDRs.pdf", 
     width = 12, height = 10)
 top_annotation_legends <- packLegend(
   lgd_group,

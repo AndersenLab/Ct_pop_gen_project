@@ -6,8 +6,106 @@ library(stringr)
 library(purrr)
 library(tidyr)
 library(ggplot2)
+library(data.table)
+library(plyr)
 
-HDRs <- readr::read_tsv("../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv", show_col_types = FALSE)
+getRegFreq <- function(all_regions) {
+  all_collapsed <- list()
+  
+  for (i in 1:length(all_regions)) {
+    temp <- all_regions[[i]]
+    k <- 1
+    j <- 1
+    
+    while (k == 1) {
+      checkIntersect <- temp %>%
+        dplyr::arrange(CHROM, minStart) %>%
+        dplyr::mutate(check = ifelse(lead(minStart) <= maxEnd, TRUE, FALSE)) %>%
+        dplyr::mutate(check = ifelse(is.na(check), FALSE, check))
+      
+      print(nrow(checkIntersect %>% dplyr::filter(check == TRUE)))
+      
+      if (nrow(checkIntersect %>% dplyr::filter(check == TRUE)) == 0) {
+        print("NO MORE INTERSECTS")
+        k <- 0
+      } else {
+        
+        temp <- checkIntersect %>%
+          dplyr::mutate(gid = data.table::rleid(check)) %>%
+          dplyr::mutate(
+            gid = ifelse(
+              (check == FALSE | is.na(check)) & lag(check) == TRUE,
+              lag(gid),
+              gid
+            )
+          )
+        
+        collapse <- temp %>%
+          dplyr::filter(check == TRUE | (check == FALSE & lag(check) == TRUE)) %>%
+          dplyr::group_by(gid) %>%
+          dplyr::mutate(newStart = min(minStart)) %>%
+          dplyr::mutate(newEnd = max(maxEnd)) %>%
+          dplyr::ungroup() %>%
+          dplyr::distinct(gid, .keep_all = TRUE) %>%
+          dplyr::mutate(minStart = newStart, maxEnd = newEnd) %>%
+          dplyr::select(-newEnd, -newStart)
+        
+        retain <- temp %>%
+          dplyr::filter(check == FALSE & dplyr::coalesce(dplyr::lag(check), FALSE) == FALSE)
+        
+        temp <- rbind(collapse, retain) %>%
+          dplyr::select(-gid, -check)
+        
+        j <- j + 1
+      }
+    }
+    
+    print("WRITING TO LIST")
+    print(head(temp))
+    all_collapsed[[i]] <- temp
+  }
+  
+  return(all_collapsed)
+}
+
+
+hdr_regions <- readr::read_tsv(
+  "../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv",
+  show_col_types = FALSE
+) %>%
+  dplyr::select(CHROM, minStart, maxEnd, STRAIN) %>%
+  dplyr::filter(CHROM != "MtDNA") %>%
+  dplyr::arrange(CHROM, minStart, maxEnd) %>%
+  dplyr::mutate(divSize = maxEnd - minStart) %>%
+  dplyr::filter(divSize >= 5e3) %>%
+  dplyr::select(CHROM, minStart, maxEnd, STRAIN)
+
+nonoverlap_hdrs <- plyr::ldply(
+  getRegFreq(
+    hdr_regions %>%
+      dplyr::arrange(CHROM, minStart) %>%
+      dplyr::group_split(CHROM)
+  ),
+  data.frame
+) %>%
+  dplyr::select(-STRAIN) %>%
+  dplyr::rename(start = minStart, end = maxEnd) %>%
+  dplyr::mutate(divSize = end - start) %>%
+  dplyr::arrange(CHROM, start, end)
+
+summary_nonoverlap_hdrs <- nonoverlap_hdrs %>%
+  dplyr::summarise(
+    n_nonoverlap_HDRs = dplyr::n(),
+    mean_length_kb = mean(divSize) / 1e3,
+    min_length_kb = min(divSize) / 1e3,
+    max_length_kb = max(divSize) / 1e3,
+    total_span_bp = sum(divSize),
+    total_span_Mb = sum(divSize) / 1e6
+  )
+
+print(summary_nonoverlap_hdrs)
+
+
 
 TAs <- data.frame(
   TA_id = paste0("TA", seq_len(9)),
@@ -19,29 +117,42 @@ TAs <- data.frame(
 
 norm_chr <- function(x) str_replace(x, "^Chr", "")
 
-TAs2  <- TAs  %>% mutate(Chr_norm = norm_chr(Chr))
-HDRs2 <- HDRs %>% mutate(CHROM_norm = norm_chr(CHROM))
+TAs2 <- TAs %>%
+  dplyr::mutate(Chr_norm = norm_chr(Chr))
+
+HDRs2 <- nonoverlap_hdrs %>%
+  dplyr::mutate(
+    CHROM_norm = norm_chr(CHROM),
+    HDR_hit_id = paste0("nonoverlap_HDR_", dplyr::row_number())
+  )
+
+
 
 TA_HDR_hits <- TAs2 %>%
   dplyr::inner_join(HDRs2, by = c("Chr_norm" = "CHROM_norm")) %>%
-  dplyr::filter(minStart <= End, maxEnd >= Start) %>%
+  dplyr::filter(start <= End, end >= Start) %>%
   dplyr::mutate(
-    overlap_start = pmax(minStart, Start),
-    overlap_end   = pmin(maxEnd, End),
+    overlap_start = pmax(start, Start),
+    overlap_end   = pmin(end, End),
     overlap_bp    = overlap_end - overlap_start + 1
   )
 
 TA_HDR_hits_long <- TA_HDR_hits %>%
-  dplyr::select(TA_id, Chr, Start, End, CHROM, minStart, maxEnd, overlap_start, overlap_end, overlap_bp, everything())
-
-id_col <- intersect(names(HDRs2), c("HDR", "HDR_id", "hdr_id", "cluster", "cluster_id", "ID", "id"))[1]
-if (is.na(id_col)) {
-  TA_HDR_hits_long <- TA_HDR_hits_long %>% 
-    dplyr::mutate(HDR_hit_id = paste0("HDRrow_", row_number()))
-} else {
-  TA_HDR_hits_long <- TA_HDR_hits_long %>% 
-    dplyr::mutate(HDR_hit_id = .data[[id_col]])
-}
+  dplyr::select(
+    TA_id,
+    Chr,
+    Start,
+    End,
+    CHROM,
+    start,
+    end,
+    divSize,
+    HDR_hit_id,
+    overlap_start,
+    overlap_end,
+    overlap_bp,
+    everything()
+  )
 
 TA_HDR_summary <- TA_HDR_hits_long %>%
   dplyr::group_by(TA_id, Chr, Start, End) %>%
@@ -53,36 +164,38 @@ TA_HDR_summary <- TA_HDR_hits_long %>%
   dplyr::arrange(TA_id)
 
 TA_HDR_summary_all <- TAs %>%
-  dplyr::left_join(TA_HDR_summary, by = c("TA_id","Chr","Start","End")) %>%
+  dplyr::left_join(TA_HDR_summary, by = c("TA_id", "Chr", "Start", "End")) %>%
   dplyr::mutate(
     n_HDRs = replace_na(n_HDRs, 0L),
     HDRs   = replace_na(HDRs, "")
   )
+print(TA_HDR_summary_all)
 
-TA_HDR_export<-TA_HDR_summary_all %>% 
-  dplyr::select(-TA_id,-HDRs)
+TA_HDR_export <- TA_HDR_summary_all %>%
+  dplyr::select(-TA_id, -HDRs)
+
+write_csv(TA_HDR_export,
+          "../../tables/TableS12_TA_HDRs.csv")
 
 HDRs_hit_coords <- TA_HDR_hits_long %>%
   dplyr::distinct(
     CHROM,
-    minStart,
-    maxEnd
+    start,
+    end
   ) %>%
   dplyr::rename(
-    chr   = CHROM,
-    start = minStart,
-    end   = maxEnd
+    chr = CHROM
   ) %>%
   dplyr::arrange(chr, start, end)
 
 HDRs_hit_coords_with_TA <- TA_HDR_hits_long %>%
-  dplyr::distinct(TA_id, CHROM, minStart, maxEnd) %>%
-  dplyr::group_by(CHROM, minStart, maxEnd) %>%
+  dplyr::distinct(TA_id, CHROM, start, end) %>%
+  dplyr::group_by(CHROM, start, end) %>%
   dplyr::summarise(
     hit_by_TAs = paste(sort(unique(TA_id)), collapse = ";"),
     .groups = "drop"
   ) %>%
-  dplyr::rename(chr = CHROM, start = minStart, end = maxEnd) %>%
+  dplyr::rename(chr = CHROM) %>%
   dplyr::arrange(chr, start, end)
 
 plot_df <- HDRs_hit_coords_with_TA %>%
@@ -95,7 +208,7 @@ plot_df <- HDRs_hit_coords_with_TA %>%
   ) %>%
   dplyr::filter(chr == TA_chr) %>%
   dplyr::group_by(TA_id) %>%
-  dplyr::mutate(chr = factor(chr, levels = unique(chr))) %>% 
+  dplyr::mutate(chr = factor(chr, levels = unique(chr))) %>%
   dplyr::ungroup()
 
 TA_df <- TAs %>%
@@ -116,7 +229,7 @@ TAs_plot <- ggplot(plot_df, aes(x = start, xend = end, y = chr, yend = chr)) +
   facet_wrap(
     ~ TA_id,
     scales = "free",
-    labeller = as_labeller(function(x){
+    labeller = as_labeller(function(x) {
       ta <- TA_df[TA_df$TA_id == x, ]
       paste0(ta$Chr, ": ", ta$Start, "-", ta$End)
     })
@@ -134,8 +247,9 @@ TAs_plot <- ggplot(plot_df, aes(x = start, xend = end, y = chr, yend = chr)) +
     strip.text = element_text(face = "bold")
   )
 
-ggsave(TAs_plot,
-  filename = "../../figures/FigureS36_TAs_overlap_HDRs.pdf",
+ggsave(
+  TAs_plot,
+  filename = "../../figures/FigureS36_TAs_overlap_nonoverlap_HDRs.pdf",
   width  = 7.5,
   height = 3,
   units  = "in"
