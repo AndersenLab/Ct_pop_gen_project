@@ -335,7 +335,7 @@ ipr_gene <- ipr %>%
 
 # Define universe & HDR membership (annotated-only universe) 
 univ_genes <- unique(ipr_gene$NIC58)
-hdr_genes  <- intersect(HD_gene_vector, univ_genes) # 2,603 genes 
+hdr_genes  <- intersect(HD_gene_vector, univ_genes) # 2,604 genes 
 
 N <- length(univ_genes)
 n <- length(hdr_genes)
@@ -509,7 +509,7 @@ go_ipr_arms <- go_ipr %>% dplyr::filter(NIC58 %in% arm_genes)
 IPR_GO_bckgrd_arms <- unique(go_ipr_arms$NIC58) # 3,966 genes
 
 
-how_many_HDR_GO_arm_genes <- go_ipr_arms %>% dplyr::filter(NIC58 %in% HD_gene_vector) # 1,750
+how_many_HDR_GO_arm_genes <- go_ipr_arms %>% dplyr::filter(NIC58 %in% HD_gene_vector) # 1,751
 
 GO_annotations <- AnnotationDbi::select(GO.db,
                                         keys=unique(go_ipr$GO),
