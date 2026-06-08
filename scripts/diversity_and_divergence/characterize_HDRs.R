@@ -352,7 +352,7 @@ bins_wCounts <- merge(bins_dt, counts_PB, by = c("CHROM", "start", "end"), all.x
 bins_wCounts[is.na(n_strains), n_strains := 0]
 
 bins_wFreq <- as.data.frame(bins_wCounts) %>%
-  dplyr::mutate(freq=n_strains/695)
+  dplyr::mutate(freq=n_strains/622)
 
 hdrs_ordered <- hdrs %>% 
   dplyr::left_join(lineages %>% dplyr::select(strain,lineage),by=c("STRAIN"="strain")) %>%
@@ -411,7 +411,7 @@ p2 <- ggplot(bins_wFreq %>% dplyr::filter(CHROM!="MtDNA")) +
 
 diversity <- readr::read_csv("../../processed_data/pi_theta_d/chromosome_windows_diversity.csv",col_select = c(-1))
 
-domains_raw <- readr::read_tsv("../../data/chromosome_windows_diversity.csv") 
+domains_raw <- readr::read_tsv("../../data/ct_ch_domains.tsv") 
 
 region_rects2 <- domains_raw %>% 
   dplyr::mutate(region=ifelse(grepl("tip",Location),"Tip",ifelse(grepl("arm",Location),"Arm","Center"))) %>%
