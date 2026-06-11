@@ -358,3 +358,19 @@ Per region (Africa, Australia, Caribbean, Central_America, Hawaii, Indonesia, Mi
 - `windows.csv`: genomic windows  
 - `sub_region_diversity.csv`: subregion diversity  
 - `chromosome_windows_diversity.csv`: chromosome window diversity  
+
+---
+
+### HDR_stats/
+
+Files used to summarize C. tropicalis HDRs, heterozygous-like SNV signals, one-to-one orthologs, and four-fold degenerate site diversity:
+
+- `Ct_soft_filtered_hets.TableS6_HDR_ranges.bed`: HDR intervals from Table S6 in BED format  
+- `Ct_soft_filtered_hets.het_counts_per_site.tsv`: per-site heterozygous genotype counts from the soft-filtered VCF  
+- `Ct_soft_filtered_hets.SNV_sites.bed`: SNV site coordinates in BED format  
+- `Ct_soft_filtered_hets.HDR_site_ids.txt`: SNV sites overlapping HDR intervals  
+- `Ct_soft_filtered_hets.het_counts_per_site.HDR_labeled.tsv`: per-site heterozygous genotype counts labeled as HDR or non-HDR  
+- `N2_NIC58_1to1_orthologs.tsv`: one-to-one orthologs between C. elegans N2 and C. tropicalis NIC58  
+
+#### HDR_stats/pi_theta_d_1to1_4fold/*
+Diversity estimates calculated from variable SNVs at four-fold degenerate sites in one-to-one C. elegans-C. tropicalis orthologs

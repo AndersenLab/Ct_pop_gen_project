@@ -315,11 +315,11 @@ Calculates pairwise genetic similarity using variants located outside HDRs.
 
 - `Heatmap_similarity_HDRs.R`  
 Visualizes pairwise genetic similarity in HDR regions as a heatmap.
-Generate Figure S33. 
+Generate Figure S32. 
 
 - `Heatmap_similarity_nonHDRs.R`  
 Visualizes pairwise genetic similarity in nonHDR regions as a heatmap.
-Generate Figure S34. 
+Generate Figure S33. 
 
 - `pi_theta_d_python/`  
 Core Python scripts for calculating π, Watterson’s θ, and Tajima’s D.
@@ -351,7 +351,37 @@ This script annotates NIC58 proteins with InterProScan terms, which outputs a ta
 - `IPR_GO_tropicalis.R`
 Given the NIC58 reference genome and InterProsScan annotations of the NIC58 proteome, this script classifies genes that are found in the chromosomal arm domains, genes found in hyper-divergent regions in chromosomal arm domains, and performs a one-sided hyper-geometric test to identify statistically-enriched InterProScan functional protein domains in genes found in hyper-divergent regions in chromosomal arm domains in relation to genes found outside of hyper-divergent regions in chromosomal arm domains.
 
-Generates Figure 4 and Table S10.
+Generates Figure 5 and Table S10.
+
+- `Ct_heterozygous_SNVs.sh`
+Counts heterozygous genotype calls at biallelic SNV sites in the soft-filtered C. tropicalis VCF and labels each site as HDR or non-HDR.
+
+- `Ct_hets.R`
+Summarizes heterozygous genotype calls genome-wide and separately for HDR and non-HDR SNV sites.
+
+- `1to1_ortho.R`
+Filter one-to-one orthologs between C. elegans N2 and C. tropicalis NIC58 from the orthogroup table.
+
+- `HDR_genes_stats.R`
+Summarizes non-overlapping HDR intervals and characterizes their gene content and SNV annotation classes.
+
+- `four_fold_degenotate.sh`
+Runs Degenotate to annotate codon degeneracy in the C. tropicalis NIC58 genome.
+
+- `Ct_extract1to1_4fold.sh`
+Extracts variable SNVs at four-fold degenerate sites in one-to-one C. elegans-C. tropicalis orthologs.
+
+- `Ct_1to1_4fold_vcf_to_zarr.sh`
+Converts the one-to-one ortholog four-fold degenerate SNV VCF into Zarr format for downstream diversity analyses.
+
+- `Ct_1to1_4fold_zarr_to_pi_theta_d.sh`
+Calculates pi, theta, and Tajima's D from the one-to-one ortholog four-fold degenerate SNV Zarr dataset.
+
+- `Plot_Ct_1to1_4fold_pi_theta_d.R`
+Plots pi and theta at four-fold degenerate sites in one-to-one orthologs and compares mean pi between HDR and non-HDR windows.
+
+Generate Figure S34
+
 
 ---
 
