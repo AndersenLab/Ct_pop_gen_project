@@ -1,0 +1,622 @@
+BRC20391	Taiwan
+BRC20400	Taiwan
+BRC20464	Taiwan
+BRC20548	Taiwan
+ECA1299	Hawaii
+ECA1300	Hawaii
+ECA1301	Hawaii
+ECA1302	Hawaii
+ECA1303	Hawaii
+ECA1304	Hawaii
+ECA1305	Hawaii
+ECA1306	Hawaii
+ECA1307	Hawaii
+ECA1309	Hawaii
+ECA1310	Hawaii
+ECA1311	Hawaii
+ECA1312	Hawaii
+ECA1313	Hawaii
+ECA1401	Hawaii
+ECA1403	Hawaii
+ECA1405	Hawaii
+ECA1445	Hawaii
+ECA1447	Hawaii
+ECA1449	Hawaii
+ECA1451	Hawaii
+ECA1453	Hawaii
+ECA1481	Hawaii
+ECA1518	Hawaii
+ECA1579	Hawaii
+ECA1581	Hawaii
+ECA1583	Hawaii
+ECA1585	Hawaii
+ECA1599	Hawaii
+ECA1603	Hawaii
+ECA2087	Hawaii
+ECA2898	Hawaii
+ECA2899	Hawaii
+ECA2900	Hawaii
+ECA2909	Hawaii
+ECA2910	Hawaii
+ECA2920	Hawaii
+ECA2954	Hawaii
+ECA2955	Hawaii
+ECA2976	Hawaii
+ECA3053	Hawaii
+ECA788	Hawaii
+ECA789	Hawaii
+ECA790	Hawaii
+ECA791	Hawaii
+ECA792	Hawaii
+ECA793	Hawaii
+ECA794	Hawaii
+ECA796	Hawaii
+ECA797	Hawaii
+ECA798	Hawaii
+ECA799	Hawaii
+ECA800	Hawaii
+ECA801	Hawaii
+ECA802	Hawaii
+ECA803	Hawaii
+ECA804	Hawaii
+ECA805	Hawaii
+ECA806	Hawaii
+EG5889	Caribbean
+EG6180	Caribbean
+HPT25	Indonesia
+HPT33	Indonesia
+HPT39	Indonesia
+HPT56	Indonesia
+JU1373	Africa
+JU1374	Africa
+JU1428	South America
+JU1630	Africa
+JU1631	Africa
+JU1632	Africa
+JU1633	Africa
+JU1634	Africa
+JU1635	Africa
+JU1636	Africa
+JU1639	Africa
+JU1640	Africa
+JU1641	Africa
+JU1800	Africa
+JU1818	South America
+JU1819	South America
+JU1821	South America
+JU1835	South America
+JU1836	South America
+JU1838	South America
+JU1845	South America
+JU1846	South America
+JU1847	South America
+JU1848	South America
+JU1849	South America
+JU1850	South America
+JU1851	South America
+JU1870	South America
+JU1871	South America
+JU1975	South America
+JU1976	South America
+JU2505	Central America
+JU2750	Caribbean
+JU2752	Caribbean
+JU3170	Africa
+NIC1000	South America
+NIC1004	South America
+NIC1005	South America
+NIC1012	South America
+NIC1016	South America
+NIC1028	South America
+NIC1033	South America
+NIC1038	South America
+NIC105	South America
+NIC1112	South America
+NIC1116	South America
+NIC1121	South America
+NIC1126	South America
+NIC1132	South America
+NIC1136	South America
+NIC1137	South America
+NIC114	Caribbean
+NIC1140	South America
+NIC1142	South America
+NIC1144	South America
+NIC1145	South America
+NIC1146	South America
+NIC1147	South America
+NIC1149	South America
+NIC1150	South America
+NIC1151	South America
+NIC1152	South America
+NIC1153	South America
+NIC1155	South America
+NIC1156	South America
+NIC1157	South America
+NIC1160	South America
+NIC1161	South America
+NIC1163	South America
+NIC1164	South America
+NIC1165	South America
+NIC1167	South America
+NIC1168	South America
+NIC1169	South America
+NIC1170	South America
+NIC1175	South America
+NIC1176	South America
+NIC1177	South America
+NIC1179	South America
+NIC1180	South America
+NIC1181	South America
+NIC1188	South America
+NIC1192	South America
+NIC1193	South America
+NIC122	Caribbean
+NIC124	Caribbean
+NIC125	Caribbean
+NIC1252	South America
+NIC1254	South America
+NIC1257	South America
+NIC1268	South America
+NIC1270	South America
+NIC1272	South America
+NIC1275	South America
+NIC1276	South America
+NIC1277	South America
+NIC1278	South America
+NIC129	Caribbean
+NIC1290	South America
+NIC1293	South America
+NIC1300	South America
+NIC1301	South America
+NIC1305	South America
+NIC1307	South America
+NIC1309	South America
+NIC1313	South America
+NIC1316	South America
+NIC1317	South America
+NIC1321	South America
+NIC1323	South America
+NIC1328	South America
+NIC1337	South America
+NIC1338	South America
+NIC1341	South America
+NIC1343	South America
+NIC1344	South America
+NIC1354	South America
+NIC1355	South America
+NIC1359	South America
+NIC1363	South America
+NIC1372	South America
+NIC1376	South America
+NIC1378	South America
+NIC1381	South America
+NIC1382	South America
+NIC1383	South America
+NIC1384	South America
+NIC1386	South America
+NIC1387	South America
+NIC1389	South America
+NIC1391	South America
+NIC1392	South America
+NIC1393	South America
+NIC1395	South America
+NIC1400	South America
+NIC1405	South America
+NIC1408	South America
+NIC1410	South America
+NIC1411	South America
+NIC1415	South America
+NIC1419	South America
+NIC1420	South America
+NIC1422	South America
+NIC1425	South America
+NIC1430	South America
+NIC1432	South America
+NIC1433	South America
+NIC1438	South America
+NIC1453	South America
+NIC1470	South America
+NIC1476	South America
+NIC1477	South America
+NIC1478	South America
+NIC1514	South America
+NIC1526	Africa
+NIC1531	Africa
+NIC1534	Africa
+NIC1541	Taiwan
+NIC1542	Taiwan
+NIC1543	Taiwan
+NIC1544	Taiwan
+NIC1545	Taiwan
+NIC1546	Taiwan
+NIC1547	Taiwan
+NIC1548	Taiwan
+NIC1549	Taiwan
+NIC1550	Taiwan
+NIC1551	Taiwan
+NIC1553	Taiwan
+NIC1555	Taiwan
+NIC1556	Taiwan
+NIC1557	Taiwan
+NIC1559	Taiwan
+NIC1560	Taiwan
+NIC1561	Taiwan
+NIC1563	Taiwan
+NIC1564	Taiwan
+NIC1565	Taiwan
+NIC1583	Taiwan
+NIC1584	Taiwan
+NIC1585	Taiwan
+NIC1586	Taiwan
+NIC1587	Taiwan
+NIC1588	Taiwan
+NIC1592	Taiwan
+NIC1594	Taiwan
+NIC1596	Taiwan
+NIC1603	Taiwan
+NIC1644	Taiwan
+NIC1646	Taiwan
+NIC1647	Taiwan
+NIC1648	Taiwan
+NIC1649	Taiwan
+NIC1650	Taiwan
+NIC1651	Taiwan
+NIC1653	Taiwan
+NIC1656	Taiwan
+NIC1657	Taiwan
+NIC1658	Taiwan
+NIC1679	Taiwan
+NIC1694	Taiwan
+NIC1846	Caribbean
+NIC1851	Caribbean
+NIC1855	Caribbean
+NIC1856	Caribbean
+NIC1862	Caribbean
+NIC1877	Caribbean
+NIC1879	Caribbean
+NIC1881	Caribbean
+NIC1886	Caribbean
+NIC1911	Caribbean
+NIC1912	Caribbean
+NIC1913	Caribbean
+NIC1914	Caribbean
+NIC1915	Caribbean
+NIC1916	Caribbean
+NIC1917	Caribbean
+NIC1918	Caribbean
+NIC1919	Caribbean
+NIC192	Caribbean
+NIC1927	Caribbean
+NIC1928	Caribbean
+NIC1929	Caribbean
+NIC193	Caribbean
+NIC1939	Caribbean
+NIC1941	Caribbean
+NIC1950	Caribbean
+NIC1962	Caribbean
+NIC1976	Caribbean
+NIC203	Caribbean
+NIC2355	South America
+NIC2357	South America
+NIC2360	South America
+NIC2361	South America
+NIC2362	South America
+NIC2363	South America
+NIC2364	South America
+NIC2365	South America
+NIC2366	South America
+NIC2367	South America
+NIC2368	South America
+NIC2371	South America
+NIC2373	South America
+NIC2375	South America
+NIC247	Caribbean
+NIC249	Caribbean
+NIC280	South America
+NIC284	South America
+NIC286	South America
+NIC291	South America
+NIC294	South America
+NIC300	South America
+NIC311	South America
+NIC312	South America
+NIC314	South America
+NIC321	South America
+NIC322	South America
+NIC339	South America
+NIC344	South America
+NIC350	South America
+NIC354	South America
+NIC359	South America
+NIC363	South America
+NIC365	South America
+NIC372	South America
+NIC382	South America
+NIC384	South America
+NIC387	South America
+NIC389	South America
+NIC391	South America
+NIC393	South America
+NIC396	South America
+NIC404	South America
+NIC407	South America
+NIC408	South America
+NIC413	South America
+NIC416	South America
+NIC417	South America
+NIC420	South America
+NIC422	South America
+NIC424	South America
+NIC425	South America
+NIC426	South America
+NIC434	South America
+NIC436	South America
+NIC441	South America
+NIC443	South America
+NIC444	South America
+NIC445	South America
+NIC450	South America
+NIC454	South America
+NIC458	South America
+NIC459	South America
+NIC461	South America
+NIC468	South America
+NIC469	South America
+NIC475	South America
+NIC478	South America
+NIC479	South America
+NIC489	South America
+NIC491	South America
+NIC492	South America
+NIC496	South America
+NIC51	South America
+NIC517	Taiwan
+NIC530	Taiwan
+NIC533	Caribbean
+NIC535	Caribbean
+NIC540	Caribbean
+NIC55	South America
+NIC551	Caribbean
+NIC56	South America
+NIC567	Caribbean
+NIC57	South America
+NIC570	Caribbean
+NIC571	Caribbean
+NIC572	Caribbean
+NIC575	Caribbean
+NIC577	Caribbean
+NIC58	South America
+NIC584	Caribbean
+NIC585	Caribbean
+NIC586	Caribbean
+NIC587	Caribbean
+NIC589	Caribbean
+NIC591	Caribbean
+NIC746	Caribbean
+NIC747	Caribbean
+NIC749	Caribbean
+NIC751	Caribbean
+NIC753	Caribbean
+NIC763	Caribbean
+NIC773	Caribbean
+NIC775	Caribbean
+NIC85	South America
+NIC894	Taiwan
+NIC895	Taiwan
+NIC898	Taiwan
+NIC903	South America
+NIC904	South America
+NIC905	South America
+NIC907	South America
+NIC908	South America
+NIC909	South America
+NIC91	South America
+NIC916	South America
+NIC917	South America
+NIC920	South America
+NIC925	South America
+NIC926	South America
+NIC927	South America
+NIC929	South America
+NIC933	South America
+NIC934	South America
+NIC936	South America
+NIC938	South America
+NIC939	South America
+NIC94	South America
+NIC940	South America
+NIC941	South America
+NIC942	South America
+NIC944	South America
+NIC945	South America
+NIC947	South America
+NIC948	South America
+NIC952	South America
+NIC953	South America
+NIC955	South America
+NIC956	South America
+NIC957	South America
+NIC958	South America
+NIC959	South America
+NIC961	South America
+NIC962	South America
+NIC964	South America
+NIC965	South America
+NIC970	South America
+NIC972	South America
+NIC975	South America
+NIC977	South America
+NIC980	South America
+NIC983	South America
+NIC986	South America
+NIC987	South America
+NIC988	South America
+NIC989	South America
+NIC99	South America
+NIC993	South America
+NIC994	South America
+NIC999	South America
+QG1000	Central America
+QG1004	Central America
+QG131	Hawaii
+QG2716	Central America
+QG2724	Central America
+QG2726	Central America
+QG2770	Central America
+QG2896	Australia
+QG2897	Australia
+QG2898	Australia
+QG2899	Australia
+QG2904	Australia
+QG2905	Australia
+QG3008	Central America
+QG3009	Central America
+QG3010	Central America
+QG3011	Central America
+QG3013	Central America
+QG3024	Central America
+QG3037	Central America
+QG3038	Central America
+QG3055	Central America
+QG3064	Central America
+QG3514	Central America
+QG3521	Central America
+QG3522	Central America
+QG3523	Central America
+QG3526	Central America
+QG3529	Central America
+QG3533	Central America
+QG3535	Central America
+QG3539	Central America
+QG3543	Central America
+QG3545	Central America
+QG3546	Central America
+QG3547	Central America
+QG3785	Central America
+QG3786	Central America
+QG3789	Central America
+QG3790	Central America
+QG3793	Central America
+QG3795	Central America
+QG3797	Central America
+QG3799	Central America
+QG3800	Central America
+QG3805	Central America
+QG3807	Central America
+QG3808	Central America
+QG3809	Central America
+QG3811	Central America
+QG3812	Central America
+QG3817	Central America
+QG3818	Central America
+QG3821	Central America
+QG3824	Central America
+QG3828	Central America
+QG3829	Central America
+QG3831	Central America
+QG3834	Central America
+QG3839	Central America
+QG3843	Central America
+QG3845	Central America
+QG3847	Central America
+QG3848	Central America
+QG3849	Central America
+QG3850	Central America
+QG3852	Central America
+QG3856	Central America
+QG3862	Central America
+QG3863	Central America
+QG3868	Central America
+QG3871	Central America
+QG3872	Central America
+QG3873	Central America
+QG3877	Central America
+QG3880	Central America
+QG4629	Micronesia
+QG4646	Micronesia
+QG4653	Micronesia
+QG4659	Micronesia
+QG4669	Micronesia
+QG4671	Micronesia
+QG4672	Micronesia
+QG4694	Micronesia
+QG4695	Micronesia
+QG4696	Micronesia
+QG4702	Micronesia
+QG4713	Micronesia
+QG4714	Micronesia
+QG4730	Micronesia
+QG4739	Micronesia
+QG4740	Micronesia
+QG4741	Micronesia
+QG4754	Micronesia
+QG4759	Micronesia
+QG4779	Micronesia
+QG4780	Micronesia
+QG4781	Micronesia
+QG4782	Micronesia
+QG4817	Micronesia
+QG4824	Micronesia
+QG4866	Micronesia
+QG4867	Micronesia
+QG4869	Micronesia
+QG4870	Micronesia
+QG4871	Micronesia
+QG4878	Micronesia
+QG4891	Micronesia
+QG4892	Micronesia
+QG4893	Micronesia
+QG4894	Micronesia
+QG4897	Micronesia
+QG4904	Micronesia
+QG5104	Micronesia
+QG5159	Micronesia
+QG5160	Micronesia
+QG5161	Micronesia
+QG5220	Micronesia
+QG5237	Micronesia
+QG5256	Micronesia
+QG5260	Micronesia
+QG5262	Micronesia
+QG5305	Micronesia
+QG5319	Micronesia
+QG5364	Micronesia
+QG5365	Micronesia
+QG5366	Micronesia
+QG5405	Micronesia
+QG5502	Micronesia
+QG5503	Micronesia
+QG5510	Micronesia
+QG5550	Micronesia
+QG5551	Micronesia
+QG5552	Micronesia
+QG5576	Micronesia
+QG5588	Micronesia
+QG5602	Micronesia
+QG5628	Micronesia
+QG5629	Micronesia
+QG5638	Micronesia
+QG5643	Micronesia
+QG5650	Micronesia
+QG5652	Micronesia
+QG5654	Micronesia
+QG5655	Micronesia
+QG800	Central America
+QG823	Central America
+QG834	Central America
+QG836	Central America
+QG840	Central America
+QG841	Central America
+QG845	Central America
+QG846	Central America
+QG848	Central America
+QG850	Central America
+QG852	Central America
+QG853	Central America
+QG921	Central America
+QG935	Central America
+QG942	Central America
+QG981	Central America
+QG987	Central America
+TWN2103	Taiwan

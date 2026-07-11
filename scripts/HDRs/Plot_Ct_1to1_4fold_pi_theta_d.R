@@ -3,43 +3,69 @@ rm(list = ls())
 library(dplyr)
 library(ggplot2)
 library(data.table)
+library(readr)
 
 source("../utilities.R")
 
-window_diversity<-read.csv("../../processed_data/HDR_stats/pi_theta_d_1to1_4fold/chromosome_windows_diversity.csv",
-                           header = TRUE,
-                           row.names = 1)
-window_diversity<-window_diversity %>% 
-  filter(!(is.na(stat)) & (stat != 0))
+read_pixy_1to1_4fold <- function() {
+  pi_df <- readr::read_tsv(
+    "../../processed_data/HDR_stats/pi_theta_d_1to1_4fold_pixy/Ct_1to1_4fold_GLOBAL_pi.txt",
+    show_col_types = FALSE
+  ) %>%
+    dplyr::transmute(
+      chrom = chromosome,
+      x = (window_pos_1 + window_pos_2) / 2,
+      window_start = window_pos_1,
+      window_stop = window_pos_2,
+      stat_type = "pi",
+      stat = avg_pi
+    )
+  
+  theta_df <- readr::read_tsv(
+    "../../processed_data/HDR_stats/pi_theta_d_1to1_4fold_pixy/Ct_1to1_4fold_GLOBAL_watterson_theta.txt",
+    show_col_types = FALSE
+  ) %>%
+    dplyr::transmute(
+      chrom = chromosome,
+      x = (window_pos_1 + window_pos_2) / 2,
+      window_start = window_pos_1,
+      window_stop = window_pos_2,
+      stat_type = "theta",
+      stat = avg_watterson_theta
+    )
+  
+  dplyr::bind_rows(pi_df, theta_df) %>%
+    dplyr::filter(chrom != "MtDNA")
+}
+
+window_diversity <- read_pixy_1to1_4fold() %>%
+  dplyr::filter(!(is.na(stat)) & (stat != 0))
 
 ### read genome domain
-genome_domain_raw<-readr::read_tsv("../../data/ct_ch_domains.tsv")
+genome_domain_raw <- readr::read_tsv("../../data/ct_ch_domains.tsv", show_col_types = FALSE)
 
 genome_domain <- genome_domain_raw %>%
-  rename(chrom=CHROM) %>% 
-  # merge sub_regions
-  mutate(
-    category = case_when(
-      grepl("tip$", Location)    ~ "Tip",
-      grepl("arm$", Location)    ~ "Arm",
-      Location == "center"       ~ "Center",
-      TRUE                         ~ NA_character_
+  dplyr::rename(chrom = CHROM) %>%
+  dplyr::mutate(
+    category = dplyr::case_when(
+      grepl("tip$", Location) ~ "Tip",
+      grepl("arm$", Location) ~ "Arm",
+      Location == "center" ~ "Center",
+      TRUE ~ NA_character_
     ),
-    # as Mb 
     xmin = start / 1e6,
-    xmax = end  / 1e6
+    xmax = end / 1e6
   ) %>%
-  filter(!is.na(category)) %>%
-  mutate(category = factor(category, levels = c("Tip", "Arm", "Center")))
+  dplyr::filter(!is.na(category)) %>%
+  dplyr::mutate(category = factor(category, levels = c("Tip", "Arm", "Center")))
 
 #### Plot all windowed diversity stats
-windowed_div_stats_no_d <- function(windows_df){
+windowed_div_stats_no_d <- function(windows_df) {
   diversity <- windows_df %>%
-    filter(stat_type %in% c("pi","theta"
-                            )) %>%
-    mutate(
-      stat_type = case_when(
-        stat_type == "pi"    ~ "Nucleotide diversity (\u03C0)",
+    dplyr::filter(stat_type %in% c("pi", "theta")) %>%
+    dplyr::mutate(
+      stat_type = dplyr::case_when(
+        stat_type == "pi" ~ "Nucleotide diversity (\u03C0)",
         stat_type == "theta" ~ "Watterson's \u03B8"
       ),
       x_mb = x / 1e6
@@ -47,9 +73,10 @@ windowed_div_stats_no_d <- function(windows_df){
   
   diversity$stat_type <- factor(
     diversity$stat_type,
-    levels = c("Nucleotide diversity (\u03C0)", 
-               "Watterson's \u03B8"
-               )
+    levels = c(
+      "Nucleotide diversity (\u03C0)",
+      "Watterson's \u03B8"
+    )
   )
   
   ggplot() +
@@ -62,12 +89,18 @@ windowed_div_stats_no_d <- function(windows_df){
     geom_point(
       data = diversity,
       aes(x = x_mb, y = stat),
-      color = "gray30", size = 0.05, alpha = 0.8, shape = 16
+      color = "gray30",
+      size = 0.05,
+      alpha = 0.8,
+      shape = 16
     ) +
     geom_smooth(
       data = diversity,
       aes(x = x_mb, y = stat),
-      method = "loess", se = FALSE, span = 0.3, color = "lightgray"
+      method = "loess",
+      se = FALSE,
+      span = 0.3,
+      color = "lightgray"
     ) +
     facet_grid(stat_type ~ chrom, scales = "free") +
     scale_fill_manual(values = genome_domain_colors) +
@@ -75,23 +108,26 @@ windowed_div_stats_no_d <- function(windows_df){
     ylab("Diversity statistic") +
     theme_bw() +
     theme(
-      legend.position      = "none",
-      panel.grid           = element_blank(),
-      strip.background     = element_blank(),
-      strip.text           = element_text(face = "bold", size = 7, color = "#525252"),
-      axis.title           = element_text(face = "bold", size = 9),
-      axis.text            = element_text(size = 6)
+      legend.position = "none",
+      panel.grid = element_blank(),
+      strip.background = element_blank(),
+      strip.text = element_text(face = "bold", size = 7, color = "#525252"),
+      axis.title = element_text(face = "bold", size = 9),
+      axis.text = element_text(size = 6)
     )
 }
 
 result_plots_no_d <- windowed_div_stats_no_d(window_diversity)
 result_plots_no_d
 
-ggsave("../../figures/FigureS34_plot_pi_theta_1to1_4fold.png", 
-       plot = result_plots_no_d, 
-       width = 7, height = 3, 
-       units = "in", dpi = 600)
-
+ggsave(
+  "../../figures/FigureS34_plot_pi_theta_1to1_4fold.png",
+  plot = result_plots_no_d,
+  width = 7,
+  height = 3,
+  units = "in",
+  dpi = 600
+)
 
 #### Mean pi in HDR vs non-HDR windows
 getRegFreq <- function(all_regions) {
@@ -114,7 +150,6 @@ getRegFreq <- function(all_regions) {
         print("NO MORE INTERSECTS")
         k <- 0
       } else {
-        
         temp <- checkIntersect %>%
           dplyr::mutate(gid = data.table::rleid(check)) %>%
           dplyr::mutate(
@@ -137,7 +172,6 @@ getRegFreq <- function(all_regions) {
         
         retain <- temp %>%
           dplyr::filter(check == FALSE & dplyr::coalesce(dplyr::lag(check), FALSE) == FALSE)
-        # dplyr::filter(check == FALSE & lag(check) == FALSE)
         
         temp <- rbind(collapse, retain) %>%
           dplyr::select(-gid, -check)
@@ -184,8 +218,8 @@ pi_windows <- window_diversity %>%
   dplyr::mutate(
     rowid = dplyr::row_number(),
     CHROM = chrom,
-    start = x / 1e6,
-    end = (x + 10000) / 1e6
+    start = window_start / 1e6,
+    end = window_stop / 1e6
   ) %>%
   dplyr::select(rowid, CHROM, start, end, stat)
 
@@ -198,16 +232,16 @@ hdr_overlap <- nonoverlap_hdrs %>%
   )
 
 ###### Overlap windows with HDRs ######
-setDT(pi_windows)
-setDT(hdr_overlap)
+data.table::setDT(pi_windows)
+data.table::setDT(hdr_overlap)
 
-x_dt <- copy(pi_windows)
-y_dt <- copy(hdr_overlap)
+x_dt <- data.table::copy(pi_windows)
+y_dt <- data.table::copy(hdr_overlap)
 
-setkey(x_dt, CHROM, start, end)
-setkey(y_dt, CHROM, tstart, tend)
+data.table::setkey(x_dt, CHROM, start, end)
+data.table::setkey(y_dt, CHROM, tstart, tend)
 
-ov <- foverlaps(
+ov <- data.table::foverlaps(
   x = x_dt,
   y = y_dt,
   by.x = c("CHROM", "start", "end"),
@@ -221,7 +255,7 @@ ov[, `:=`(
   int_len = pmax(0, end - start)
 )]
 
-ov[, prop := fifelse(int_len > 0, ov_len / int_len, 0)]
+ov[, prop := data.table::fifelse(int_len > 0, ov_len / int_len, 0)]
 
 ov_best <- as.data.frame(ov) %>%
   dplyr::select(rowid, prop) %>%
