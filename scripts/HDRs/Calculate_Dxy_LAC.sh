@@ -21,7 +21,7 @@ mkdir -p $OUT_DIR
 PREFIX="Ct_Dxy_"
 
 pixy \
- --stats pi dxy fst watterson_theta tajima_d \
+ --stats pi dxy watterson_theta tajima_d \
  --vcf "$vcf_raw" \
  --populations "$POP_DIR/pop_file_lineage.txt" \
  --window_size 10000 \

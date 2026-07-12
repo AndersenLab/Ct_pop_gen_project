@@ -234,13 +234,16 @@ Generate Figure S12 and Figure S13.
 
 ## diversity_and_divergence
 
-This directory contains scripts for calculating nucleotide diversity (π), Watterson’s θ, Tajima’s D, and Dxy, including analysis for HDRs or nonHDRs.
+This directory contains scripts for calculating and analyzing nucleotide diversity (π), Watterson’s θ, Tajima’s D, genetic similarity, and hyper-divergent regions (HDRs), including genome-wide, geographic group, and nonHDR analyses.
 
-- `Ct_vcf_to_zarr.sh`  
-Converts the genome-wide VCF file to Zarr format for downstream calculation of π, θ, and Tajima’s D.
+- `Calculate_pi_theta_d_all.sh`  
+Calculates genome-wide π, Watterson’s θ, and Tajima’s D for all isotypes.
 
-- `Ct_zarr_to_pi_theta_d.sh`  
-Calculates π, Watterson’s θ, and Tajima’s D from genome-wide Zarr files.
+- `Calculate_pi_theta_d_geo.sh`  
+Calculates π, Watterson’s θ, and Tajima’s D separately for geographic groups.
+
+- `pi_theta_d_populations_file.R`  
+Generates population assignment files used for geographic group-specific π, Watterson’s θ, and Tajima’s D calculations.
 
 - `Ct_vcf_HDRs.sh`  
 Generates VCF files restricted to hyper-divergent regions (HDRs).
@@ -248,97 +251,83 @@ Generates VCF files restricted to hyper-divergent regions (HDRs).
 - `Ct_vcf_nonHDRs.sh`  
 Generates VCF files restricted to nonHDR regions.
 
-- `Ct_vcf_to_zarr_nonHDRs.sh`  
-Converts nonHDR VCF files to Zarr format for downstream diversity analyses.
-
-- `Ct_zarr_to_pi_theta_d_nonHDRs.sh`  
-Calculates π, Watterson’s θ, and Tajima’s D from nonHDR Zarr files.
-
-- `Ct_vcf_nonHDRs_geo.sh`  
-Generates nonHDR VCF files for geo-specific analyses.
-
-- `vcf_to_zarr_geo.sh`  
-Converts geo-specific VCF files to Zarr format.
-
-- `zarr_to_pi_theta_d_geo.sh`  
-Calculates π, Watterson’s θ, and Tajima’s D from Zarr files for geographic groups.
-
-- `vcf_to_zarr_nonHDRs_geo.sh`  
-Converts geo-specific nonHDR VCF files to Zarr format.
-
-- `zarr_to_pi_theta_d_nonHDRs_geo.sh`  
-Calculates π, Watterson’s θ, and Tajima’s D from nonHDR Zarr files for geographic groups.
-
-- `Calculate_geo_vcf.sh`  
-Generates VCF files for analyses of diversity and divergence across geographic groups.
+- `Generate_simple_HDRs_file.R`  
+Generates simplified HDR annotation files for downstream diversity and genetic similarity analyses.
 
 - `Geo_pi_theta_d.R`  
-Visualizes π, Watterson’s θ, and Tajima’s D across geographic groups.
-Generate Table S4. 
+Summarizes and visualizes π, Watterson’s θ, and Tajima’s D across geographic groups and generates Table S4.
 
 - `Geo_pi_theta_d_Autosomes_X.R`  
-Summarises diversity statistics across autosomes and the X chromosome for geographic groups.
-Generate Table S5. 
+Summarizes diversity statistics across the autosomes and X chromosome for geographic groups and generates Table S5.
 
 - `pi_theta_nonHDRs.R`  
-Analyzes π, Watterson’s θ, and Tajima’s D in nonHDR regions.
-Generate Figure S35. 
+Analyzes π, Watterson’s θ, and Tajima’s D in nonHDR regions and generates Figure S35.
 
 - `pi_theta_d_fold_change_nonHDR_geo.R`  
-Calculates fold changes in diversity statistics across geographic groups in nonHDR regions.
-Generate Table S8. 
-
-- `Calculate_Dxy_generate_VCF.sh`  
-Generates VCF files required for pairwise Dxy calculations.
-
-- `Generate_Dxy_pop_files.R`  
-Generates population assignment files used for pairwise Dxy calculations among relatedness groups or geographic groups.
-
-- `Calculate_Dxy_LAC.sh`  
-Calculates pairwise Dxy among relatedness groups.
-
-- `Dxy_HDRs_nonHDRs.R`  
-Compares Dxy between relatedness groups within HDR or nonHDR regions. Compare Dxy of C. tropicalis and C. briggsae.
-Generate Figure S32 and Table S9.
-
-- `Generate_simple_HDRs_file.R`  
-Generates simplified HDR annotation files for downstream diversity and divergence analyses.
+Calculates fold changes in diversity statistics across geographic groups in nonHDR regions and generates Table S8.
 
 - `characterize_HDRs.R`  
-Summarize HDR statistics across wild isolate genomes.
+Summarizes and visualizes HDR characteristics across wild-isolate genomes.
 
 - `Similarity_HDRs.sh`  
-Calculates pairwise genetic similarity using variants located in HDRs.
+Calculates pairwise genetic similarity using variants located within HDRs.
 
 - `Similarity_nonHDRs.sh`  
 Calculates pairwise genetic similarity using variants located outside HDRs.
 
 - `Heatmap_similarity_HDRs.R`  
-Visualizes pairwise genetic similarity in HDR regions as a heatmap.
-Generate Figure S32. 
+Visualizes pairwise genetic similarity within HDRs as a heatmap and generates Figure S32.
 
 - `Heatmap_similarity_nonHDRs.R`  
-Visualizes pairwise genetic similarity in nonHDR regions as a heatmap.
-Generate Figure S33. 
-
-- `pi_theta_d_python/`  
-Core Python scripts for calculating π, Watterson’s θ, and Tajima’s D.
+Visualizes pairwise genetic similarity within nonHDR regions as a heatmap and generates Figure S33.
 
 ---
 
 ## HDRs
 
-This directory contains scripts for identifying and characterizing HDRs.
+This directory contains scripts for identifying and characterizing hyper-divergent regions (HDRs), analyzing genetic variation within and outside HDRs, and comparing diversity and divergence across species.
 
 - `call_HDRs.R`  
-Identifies HDRs across genomes.
+Identifies HDRs across wild-isolate genomes.
+
+- `HDR_genes_stats.R`  
+Summarizes genes located within HDRs and characterizes their genomic distributions.
 
 - `TAs_overlap_HDRs.R`  
-Analyzes overlap between TAs and HDRs.
-Generate Figure S36.
+Analyzes the overlap between toxin–antidote loci and HDRs and generates Figure S36.
 
-- `visualize_spp_alignments.R`
-Visualizes alignment data between divergent strain pairs across all three selfing _Caenorhabditis_ species
+- `visualize_spp_alignments.R`  
+Visualizes genome alignments between divergent strain pairs across the three selfing *Caenorhabditis* species.
+
+- `Ct_heterozygous_SNVs.sh`  
+Identifies heterozygous SNVs in genome-wide, HDR, and nonHDR regions of *C. tropicalis*.
+
+- `Ct_hets.R`  
+Summarizes and visualizes heterozygous SNV patterns in genome-wide, HDR, and nonHDR regions.
+
+- `Calculate_Dxy_LAC.sh`  
+Calculates pairwise pi theta Tajima's D and Dxy among *C. tropicalis* relatedness groups.
+
+- `dxy_populations_file.R`  
+Generates population assignment files used for pairwise Dxy calculations.
+
+- `Dxy_HDRs_nonHDRs.R`  
+Compares Dxy among relatedness groups within HDR and nonHDR regions, compares Dxy between *C. tropicalis* and *C. briggsae*, and generates Figure S34 and Table S9.
+
+- `1to1_ortho.R`  
+Identifies one-to-one orthologs used for four-fold degenerate-site analyses.
+
+- `four_fold_degenotate.sh`  
+Identifies four-fold degenerate sites from one-to-one orthologs using degenotate.
+
+- `Ct_make_1to1_4fold_sites_file_for_pixy.sh`  
+Generates a *C. tropicalis* four-fold degenerate-site file for pixy analyses.
+
+- `Ct_1to1_4fold_pixy_pi_theta_GLOBAL.sh`  
+Calculates genome-wide π and Watterson’s θ at one-to-one orthologous four-fold degenerate sites using pixy.
+
+- `Plot_Ct_1to1_4fold_pi_theta_d.R`  
+Summarizes and visualizes π and Watterson’s θ at one-to-one orthologous four-fold degenerate sites.
 
 ---
 

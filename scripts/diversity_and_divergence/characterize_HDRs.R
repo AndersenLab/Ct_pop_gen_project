@@ -409,7 +409,8 @@ p2 <- ggplot(bins_wFreq %>% dplyr::filter(CHROM!="MtDNA")) +
 
 #p21 <- cowplot::plot_grid(p1,p2,nrow=2,ncol=1,rel_heights = c(1,0.3),align = "v", axis = "l", labels = c("a","b"))
 
-diversity <- readr::read_csv("../../processed_data/pi_theta_d/chromosome_windows_diversity.csv",col_select = c(-1))
+diversity <- readr::read_csv("../../processed_data/pi_theta_d/chromosome_windows_diversity.csv")%>% 
+  dplyr::filter(chrom != "MtDNA")
 
 domains_raw <- readr::read_tsv("../../data/ct_ch_domains.tsv") 
 
@@ -457,7 +458,7 @@ pitheta_plot <- ggplot() +
   labs(fill="Domain")
 
 div_plot <- cowplot::plot_grid(pitheta_plot,p1,p2,nrow=3,align = "v",axis = "lr",rel_heights = c(0.5,0.9,0.3),labels = c("a","b"))
-ggsave(div_plot,filename = "../../figures/Figure3_div_hd_main.png",width = 7,height = 8,dpi = 600,device = 'png')
+ggsave(div_plot,filename = "../../figures/raw_Figure3_div_hd_main.pdf",width = 7,height = 8,dpi = 600,device = 'pdf')
 
 hdrs_ordered_priv_iv <- hdrs %>% 
   dplyr::left_join(lineages %>% dplyr::select(strain,lineage),by=c("STRAIN"="strain")) %>%

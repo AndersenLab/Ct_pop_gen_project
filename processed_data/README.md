@@ -240,24 +240,6 @@ Hawaii-specific geographic and PCA-related files.
 
 ---
 
-### pi_theta_exclude_HDRs/
-
-Processed diversity summary files excluding HDRs.
-
-- `pi_theta_exclude_HDRs/windows.csv`  
-  Genomic windows used for diversity calculations outside HDRs.
-
-- `pi_theta_exclude_HDRs/HDRs_file.tsv`  
-  HDR annotation file used for filtering.
-
-- `pi_theta_exclude_HDRs/sub_region_diversity.csv`  
-  Diversity summary across subregions outside HDRs.
-
-- `pi_theta_exclude_HDRs/chromosome_windows_diversity.csv`  
-  Diversity summary across windows outside HDRs.
-
----
-
 ### PCA_by_chrom/
 
 Chromosome-specific PCA outputs.
@@ -281,37 +263,62 @@ For each chromosome (I-V, X):
 
 ### Dxy_LAC/
 
-Input and output files for pairwise Dxy analyses involving the LAC group.
+Input and output files for population genetic analyses among relatedness groups.
 
-- `Dxy_LAC/LAC_Af.txt`
-- `Dxy_LAC/LAC_Hw1.txt`
-- `Dxy_LAC/LAC_Hw3.txt`
-- `Dxy_LAC/LAC_HC.txt`
-- `Dxy_LAC/LAC_Mic1.txt`
-- `Dxy_LAC/LAC_Mic2.txt`
-- `Dxy_LAC/LAC_Tw1.txt`
-- `Dxy_LAC/LAC_Tw3.txt`  
-  Population definition files used for pairwise Dxy calculations.
+- `Dxy_LAC/pop_file_lineage.txt`  
+  Population assignment file used for calculating pairwise Dxy, FST, nucleotide diversity (π), Watterson’s θ, and Tajima’s D among relatedness groups.
 
 #### Dxy_LAC/results/
 
-- `Dxy_LAC/results/*_dxy.txt`  
-  Pairwise Dxy result files for LAC comparisons.
+- `Dxy_LAC/results/Ct_Dxy__dxy.txt`  
+  Pairwise Dxy estimates among relatedness groups.
+
+- `Dxy_LAC/results/Ct_Dxy__pi.txt`  
+  Nucleotide diversity (π) estimates for relatedness groups.
+
+- `Dxy_LAC/results/Ct_Dxy__tajima_d.txt`  
+  Tajima’s D estimates for relatedness groups.
+
+- `Dxy_LAC/results/Ct_Dxy__watterson_theta.txt`  
+  Watterson’s θ estimates for relatedness groups.
 
 ---
 
 ### pi_theta_d/
 
-Genome-wide diversity summary files.
+Input and output files for genome-wide and geographic group-specific diversity analyses.
 
 - `pi_theta_d/windows.csv`  
   Genomic windows used for diversity calculations.
 
-- `pi_theta_d/sub_region_diversity.csv`  
-  Diversity summary across genomic subregions.
-
 - `pi_theta_d/chromosome_windows_diversity.csv`  
-  Diversity summary across 10kb windows.
+  Diversity statistics summarized across chromosome windows.
+
+- `pi_theta_d/pop_file_GLOBAL.txt`  
+  Population assignment file used for genome-wide diversity analyses across all isotypes.
+
+- `pi_theta_d/pop_file_geo.txt`  
+  Population assignment file used for geographic group-specific diversity analyses.
+
+#### pi_theta_d/results/
+
+- `pi_theta_d/results/Ct_GLOBAL_pi.txt`  
+  Genome-wide nucleotide diversity (π) estimates across all isotypes.
+
+- `pi_theta_d/results/Ct_GLOBAL_watterson_theta.txt`  
+  Genome-wide Watterson’s θ estimates across all isotypes.
+
+- `pi_theta_d/results/Ct_GLOBAL_tajima_d.txt`  
+  Genome-wide Tajima’s D estimates across all isotypes.
+
+- `pi_theta_d/results/Ct_geo_pi.txt`  
+  Nucleotide diversity (π) estimates for geographic groups.
+
+- `pi_theta_d/results/Ct_geo_watterson_theta.txt`  
+  Watterson’s θ estimates for geographic groups.
+
+- `pi_theta_d/results/Ct_geo_tajima_d.txt`  
+  Tajima’s D estimates for geographic groups.
 
 ---
 
@@ -344,20 +351,6 @@ Per-strain variant count summary files.
 
 - `variant_counts/*.variant_counts.tsv`  
   Variant count tables for individual strains.
-
----
-
-### pi_theta_d_geo/
-
-Region-specific diversity summary files.
-
-#### pi_theta_d_geo/*/
-
-Per region (Africa, Australia, Caribbean, Central_America, Hawaii, Indonesia, Micronesia, South_America, Taiwan):
-
-- `windows.csv`: genomic windows  
-- `sub_region_diversity.csv`: subregion diversity  
-- `chromosome_windows_diversity.csv`: chromosome window diversity  
 
 ---
 
