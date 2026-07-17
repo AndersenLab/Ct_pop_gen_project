@@ -71,7 +71,7 @@ Malay_pca_map1 <- ggplot() +
 Malay_pca_map1
 
 ggsave(Malay_pca_map1, 
-       filename = "../../../figures/FigureS25_Indo_map.pdf", 
+       filename = "../../../figures/FigureS33_Indo_map.pdf", 
        width = 7.5, 
        height = 7.5/3219*2674, 
        units = "in")

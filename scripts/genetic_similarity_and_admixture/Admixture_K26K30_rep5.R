@@ -152,7 +152,7 @@ final_admixture_plots <- cowplot::plot_grid(admixture_plots,
                                             ncol = 1,
                                             rel_heights = c(1, 0.1))
 ggsave(final_admixture_plots, 
-       filename = paste0("../../figures/FigureS9_admixture_K26K30_replicate_",which_replicate,".pdf"), 
+       filename = paste0("../../figures/FigureS3_admixture_K26K30_replicate_",which_replicate,".pdf"), 
        height = 7.5, width = 7.5, 
        useDingbats=FALSE)
 

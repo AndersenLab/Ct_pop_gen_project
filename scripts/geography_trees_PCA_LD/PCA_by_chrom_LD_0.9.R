@@ -106,7 +106,7 @@ for (chrom in chroms) {
 }
 
 final_plot <- patchwork::wrap_plots(plotlist = combined_panels, ncol = 2)
-ggsave("../../figures/FigureS6_PCA_by_chrom.pdf", final_plot, width = 7, height = 4, units = "in", device = "pdf")
+ggsave("../../figures/FigureS18_PCA_by_chrom.pdf", final_plot, width = 7, height = 4, units = "in", device = "pdf")
 
 
 

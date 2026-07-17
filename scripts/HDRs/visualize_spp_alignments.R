@@ -35,4 +35,4 @@ compplot<-ggplot(all_ex %>% dplyr::filter(REF == "V")) +
   ggtitle("Chromosome V")
 
 
-ggsave(compplot,filename = "../../figures/FigureS30_REFxDIV_V_alnidy.png",width = 7,height = 5.5,dpi = 600,device = 'png')
+ggsave(compplot,filename = "../../figures/FigureS38_REFxDIV_V_alnidy.png",width = 7,height = 5.5,dpi = 600,device = 'png')

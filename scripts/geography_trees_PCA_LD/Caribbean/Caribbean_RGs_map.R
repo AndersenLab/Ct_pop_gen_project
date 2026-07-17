@@ -62,5 +62,5 @@ Car_pca_map1 <- ggplot() +
                  ylim = c(Carbox["ymin"], Carbox["ymax"]),
                  expand = FALSE)
 
-ggsave(Car_pca_map1, filename = "../../../figures/FigureS18_Car_map.pdf", 
+ggsave(Car_pca_map1, filename = "../../../figures/FigureS26_Car_map.pdf", 
        width = 7.5, height = 7.5/8*7, units = "in")

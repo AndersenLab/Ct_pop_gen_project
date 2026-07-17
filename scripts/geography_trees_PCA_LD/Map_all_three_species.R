@@ -84,7 +84,7 @@ plot_world <- ggplot() +
     )
   )
 
-ggsave("../../figures/FigureS1_all_strains_map_3_species.pdf", plot = plot_world, width = 7, height = 8, units = "in")
+ggsave("../../figures/FigureS13_all_strains_map_3_species.pdf", plot = plot_world, width = 7, height = 8, units = "in")
 
 
 

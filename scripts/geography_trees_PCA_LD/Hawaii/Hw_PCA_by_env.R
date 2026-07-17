@@ -218,6 +218,6 @@ merge_supp <- ggdraw() +
     height = 1
   )
 
-cowplot::ggsave2(merge_supp, filename = "../../../figures/FigureS17_Hawaii_env_all.pdf",
+cowplot::ggsave2(merge_supp, filename = "../../../figures/FigureS25_Hawaii_env_all.pdf",
                  width = 7.5, heigh = 7.5, units = "in")
 

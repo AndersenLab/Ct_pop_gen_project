@@ -69,7 +69,7 @@ South_pca_map1 <- ggplot() +
                  expand = FALSE)
 
 ggsave(South_pca_map1, 
-       filename = "../../../figures/FigureS21_SA_map.pdf", 
+       filename = "../../../figures/FigureS29_SA_map.pdf", 
        width = 7.5, 
        height = 7.5/48*33, 
        units = "in")

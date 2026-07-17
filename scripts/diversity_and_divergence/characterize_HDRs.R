@@ -163,7 +163,7 @@ full_plot <- cowplot::ggdraw(padded_plot) +
   draw_label("Percent of variants in hyper-divergent regions", x = 0.005, y = 0.5, angle = 90, vjust = 1, size = 12)
 #full_plot
 
-ggsave(plot = full_plot, filename = "../../figures/FigureS28_propVC_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
+ggsave(plot = full_plot, filename = "../../figures/FigureS36_propVC_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
 
 write.table(meanRGSummary_nr,file = "../../tables/TableS8_HDRsummaryStats_20251205.tsv",sep = "\t",quote = F,row.names = F)
 
@@ -258,7 +258,7 @@ p1_combined <- plot_grid(t1_bar, t1, ncol = 1, rel_heights = c(0.3, 1),align = "
 simi_metrics <- cowplot::plot_grid(p2_combined, p1_combined,legend,
                    nrow = 1,
                    rel_widths = c(1, 0.9, 0.4))
-ggsave(plot = simi_metrics, filename = "../../figures/FigureS29_similarity_hdrs_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
+ggsave(plot = simi_metrics, filename = "../../figures/FigureS37_similarity_hdrs_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
 
 fold_average <- allSummary_nr_wConc %>%
   dplyr::mutate(divergent_variant_density=divergent_variants/divergent_span,genome_wide_variant_density=genome_wide_variants/genome_span) %>%

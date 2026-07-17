@@ -495,7 +495,7 @@ p <- ggplot(df_lower, aes(x = Column, y = Row, fill = Value)) +
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
 
-ggsave("../../figures/FigureS7_mean_genetic_similarity.pdf",
+ggsave("../../figures/FigureS19_mean_genetic_similarity.pdf",
        plot = p, width = 7, height = 7, 
        units = "in", device = 'pdf')
 

@@ -249,7 +249,7 @@ TAs_plot <- ggplot(plot_df, aes(x = start, xend = end, y = chr, yend = chr)) +
 
 ggsave(
   TAs_plot,
-  filename = "../../figures/FigureS36_TAs_overlap_nonoverlap_HDRs.pdf",
+  filename = "../../figures/FigureS44_TAs_overlap_nonoverlap_HDRs.pdf",
   width  = 7.5,
   height = 3,
   units  = "in"

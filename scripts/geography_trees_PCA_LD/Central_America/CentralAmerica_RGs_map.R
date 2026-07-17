@@ -66,7 +66,7 @@ Cen_pca_map1 <- ggplot() +
                  expand = FALSE)
 
 ggsave(Cen_pca_map1, 
-       filename = "../../../figures/FigureS19_Cen_map.pdf", 
+       filename = "../../../figures/FigureS27_Cen_map.pdf", 
        width = 7.5, 
        height = 7.5, 
        units = "in")

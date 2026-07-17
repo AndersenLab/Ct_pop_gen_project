@@ -57,5 +57,5 @@ hi_pca_map1 <- ggplot() + geom_sf(data = hi_crop, size = 0.25, fill = "light gre
 
 hi_div_fig <- cowplot::plot_grid(PC_plots, hi_pca_map1, ncol = 1, labels = c("", "c"), rel_heights = c(2, 3))
 
-ggsave(hi_div_fig, filename = "../../../figures/FigureS16_Hw_PCA_and_map.pdf",
+ggsave(hi_div_fig, filename = "../../../figures/FigureS24_Hw_PCA_and_map.pdf",
        width = 7.5, height = 8.258929, units = "in")

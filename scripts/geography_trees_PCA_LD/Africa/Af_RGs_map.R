@@ -134,7 +134,7 @@ Af_map_combined <- plot_grid(
 )
 
 ggsave(
-  filename = "../../../figures/FigureS26_Af_maps.pdf",
+  filename = "../../../figures/FigureS34_Af_maps.pdf",
   plot = Af_map_combined,
   width = 7.5,
   height = 8,

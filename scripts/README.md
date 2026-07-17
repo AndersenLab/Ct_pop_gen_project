@@ -33,7 +33,7 @@ Generates trees from PHYLIP alignments.
 
 - `Trees.R`  
 Plots trees.  
-Generates Figure S4 and Figure S5.
+Generates Figure S16 and Figure S17.
 
 - `nf_Ct_pruned_VCF_and_PCA.sh`  
 Generates LD-pruned VCF files and performs PCA.
@@ -46,22 +46,22 @@ Runs PCA on per-chromosome VCF files and generates eigenvalues and PC scores.
 
 - `PCA_by_chrom_LD_0.9.R`  
 Plots chromosome-specific PCA results.  
-Generates Figure S6.
+Generates Figure S18.
 
 - `PCA_figure_and_table.R`  
-Generates PCA summary plots and associated TableS4.
+Generates PCA summary plots and associated Table S4.
 
 - `Figure1.R`  
 Assembles panels for Figure 1.
 
-- `FigureS2.R`  
-Assembles panels for Figure S2.
+- `FigureS14.R`  
+Assembles panels for Figure S14.
 
 ### Geographic visualization
 
 - `Map_all_three_species.R`  
 Plots geographic distributions across species.  
-Generates Figure S1.
+Generates Figure S13.
 
 - `Geo_locations_isotypes.R`  
 Plots geographic locations of isotypes.
@@ -76,7 +76,7 @@ Summarises geographic distances and number of strains across isotypes.
 
 - `LD_decay_three_species.R`  
 Summarise LD decay across species.  
-Generates Figure S3.
+Generates Figure S15.
 
 - `Calculate_Ct_LD_per_Mb_all.sh`  
 Computes LD statistics for C. tropicalis.
@@ -95,37 +95,37 @@ These subdirectories contain scripts for region-specific analyses, including geo
 
 - `Af_RGs_map.R`  
 Plots relatedness group (RG) distribution in Africa.  
-Generates Figure S26.
+Generates Figure S34.
 
 - `Af_similarity.R`  
 Analyzes genetic similarity among African isotypes.  
-Generates Figure S27.
+Generates Figure S35.
 
 #### Central_America/
 
 - `CentralAmerica_RGs_map.R`  
 Plots RG distribution in Central America.  
-Generates Figure S19.
+Generates Figure S27.
 
 - `Central_America_genetic_similarity.R`  
 Analyzes genetic similarity within Central American isotypes.  
-Generates Figure S20.
+Generates Figure S28.
 
 #### Caribbean/
 
 - `Caribbean_RGs_map.R`  
 Plots RG distribution in Caribbean isotypes.  
-Generates Figure S18.
+Generates Figure S26.
 
 #### South_America/
 
 - `South_America_RGs_map.R`  
 Plots RG distribution in South America.  
-Generates Figure S21.
+Generates Figure S29.
 
 - `South_America_heatmap.R`  
 Generates genetic similarity heatmap for South American isotypes.  
-Generates Figure S22.
+Generates Figure S30.
 
 #### Hawaii/
 
@@ -134,11 +134,11 @@ Plot PCA and visualizes RG in Hawaiian isotypes.
 
 - `Hw_PCA_by_env.R`  
 Analyzes PCA patterns in relation to environmental variables.  
-Generates Figure S17.
+Generates Figure S25.
 
 - `Hw_PCA_group_map.R`  
 Assemble PCA plot and generate map of RGs.
-Generates Figure S16.
+Generates Figure S24.
 
 - `nf_Hawaii_PCA.sh`  
 Pipeline script for PCA analysis in Hawaii dataset.
@@ -151,11 +151,11 @@ Performs PCA and visualizes RG structure in Taiwanese isotypes.
 
 - `Tw_PCA_by_env.R`  
 Analyzes PCA patterns in relation to environmental variables.  
-Generates Figure S15.
+Generates Figure S23.
 
 - `Tw_PCA_group_map.R`  
 Assemble PCA plot and generate map of RGs.
-Generates Figure S14.
+Generates Figure S22.
 
 - `Taiwan_GIS.R`  
 Sumarrise GIS data of Taiwanese sampling locations.
@@ -167,17 +167,17 @@ Pipeline script for PCA analysis in Taiwan dataset.
 
 - `Micronesia_RGs_map.R`  
 Plots RG distribution in Micronesia.  
-Generates Figure S23.
+Generates Figure S31.
 
 - `Micronesia_similarity.R`  
 Analyzes genetic similarity among Micronesian isotypes.  
-Generates Figure S24.
+Generates Figure S32.
 
 #### Indo/
 
 - `Indo_RG_map.R`  
 Plots RG distribution in Indonesia (Malay Archipelago).  
-Generates Figure S25.
+Generates Figure S33.
 
 ---
 
@@ -208,27 +208,27 @@ Concatenates ADMIXTURE Q matrices across runs and writes group-specific Q files 
 
 - `Admixture_best_k.R`  
 Plots ADMIXTURE CV errors across K values and identifies the optimal K.
-Generate Figure S8.
+Generate Figure S2.
 
 - `Admixture_K26K30_rep5.R`  
 Visualizes ADMIXTURE results for selected K values between K = 26 and K = 30.
-Geenrate Figure S9.
+Geenrate Figure S3.
 
 - `Admixture_by_lRGs.R`  
 Plots ADMIXTURE assignment patterns grouped by relatedness groups (RGs).  
-Generates Figure S11.
+Generates Figure S4 and Figure S5.
 
 - `Genetic_similarity_heatmap_hard_filtered.R`  
 Calculates and visualizes pairwise genetic similarity among isotypes using hard-filtered variants, and exports the associated geographic and RGs metadata for downstream analyses.
-Generate Figure 2 and Figure S7.
+Generate Figure 2 and Figure S19.
 
 - `Similarity_histogram_hard_filtered.R`  
 Plots the distribution of pairwise genetic similarity values across strains.
-Generate Figure S37.
+Generate Figure S1.
 
 - `Isolation_by_distance.R`  
 Analyzes the relationship between geographic distance and genetic distance among isotypes.
-Generate Figure S12 and Figure S13.
+Generate Figure S20 and Figure S21.
 
 ---
 
@@ -255,16 +255,16 @@ Generates VCF files restricted to nonHDR regions.
 Generates simplified HDR annotation files for downstream diversity and genetic similarity analyses.
 
 - `Geo_pi_theta_d.R`  
-Summarizes and visualizes π, Watterson’s θ, and Tajima’s D across geographic groups and generates Table S4.
+Summarizes and visualizes π, Watterson’s θ, and Tajima’s D across geographic groups and generates Table S5.
 
 - `Geo_pi_theta_d_Autosomes_X.R`  
-Summarizes diversity statistics across the autosomes and X chromosome for geographic groups and generates Table S5.
+Summarizes diversity statistics across the autosomes and X chromosome for geographic groups and generates Table S6.
 
 - `pi_theta_nonHDRs.R`  
-Analyzes π, Watterson’s θ, and Tajima’s D in nonHDR regions and generates Figure S35.
+Analyzes π, Watterson’s θ, and Tajima’s D in nonHDR regions and generates Figure S43.
 
 - `pi_theta_d_fold_change_nonHDR_geo.R`  
-Calculates fold changes in diversity statistics across geographic groups in nonHDR regions and generates Table S8.
+Calculates fold changes in diversity statistics across geographic groups in nonHDR regions and generates Table S9.
 
 - `characterize_HDRs.R`  
 Summarizes and visualizes HDR characteristics across wild-isolate genomes.
@@ -276,10 +276,10 @@ Calculates pairwise genetic similarity using variants located within HDRs.
 Calculates pairwise genetic similarity using variants located outside HDRs.
 
 - `Heatmap_similarity_HDRs.R`  
-Visualizes pairwise genetic similarity within HDRs as a heatmap and generates Figure S32.
+Visualizes pairwise genetic similarity within HDRs as a heatmap and generates Figure S40.
 
 - `Heatmap_similarity_nonHDRs.R`  
-Visualizes pairwise genetic similarity within nonHDR regions as a heatmap and generates Figure S33.
+Visualizes pairwise genetic similarity within nonHDR regions as a heatmap and generates Figure S41.
 
 ---
 
@@ -294,7 +294,7 @@ Identifies HDRs across wild-isolate genomes.
 Summarizes genes located within HDRs and characterizes their genomic distributions.
 
 - `TAs_overlap_HDRs.R`  
-Analyzes the overlap between toxin–antidote loci and HDRs and generates Figure S36.
+Analyzes the overlap between toxin–antidote loci and HDRs and generates Figure S44.
 
 - `visualize_spp_alignments.R`  
 Visualizes genome alignments between divergent strain pairs across the three selfing *Caenorhabditis* species.
@@ -312,7 +312,7 @@ Calculates pairwise pi theta Tajima's D and Dxy among *C. tropicalis* relatednes
 Generates population assignment files used for pairwise Dxy calculations.
 
 - `Dxy_HDRs_nonHDRs.R`  
-Compares Dxy among relatedness groups within HDR and nonHDR regions, compares Dxy between *C. tropicalis* and *C. briggsae*, and generates Figure S34 and Table S9.
+Compares Dxy among relatedness groups within HDR and nonHDR regions, compares Dxy between *C. tropicalis* and *C. briggsae*, and generates Figure S39 and Table S10.
 
 - `1to1_ortho.R`  
 Identifies one-to-one orthologs used for four-fold degenerate-site analyses.
@@ -340,7 +340,7 @@ This script annotates NIC58 proteins with InterProScan terms, which outputs a ta
 - `IPR_GO_tropicalis.R`
 Given the NIC58 reference genome and InterProsScan annotations of the NIC58 proteome, this script classifies genes that are found in the chromosomal arm domains, genes found in hyper-divergent regions in chromosomal arm domains, and performs a one-sided hyper-geometric test to identify statistically-enriched InterProScan functional protein domains in genes found in hyper-divergent regions in chromosomal arm domains in relation to genes found outside of hyper-divergent regions in chromosomal arm domains.
 
-Generates Figure 5 and Table S10.
+Generates Figure 5 and Table S11.
 
 - `Ct_heterozygous_SNVs.sh`
 Counts heterozygous genotype calls at biallelic SNV sites in the soft-filtered C. tropicalis VCF and labels each site as HDR or non-HDR.
@@ -369,7 +369,7 @@ Calculates pi, theta, and Tajima's D from the one-to-one ortholog four-fold dege
 - `Plot_Ct_1to1_4fold_pi_theta_d.R`
 Plots pi and theta at four-fold degenerate sites in one-to-one orthologs and compares mean pi between HDR and non-HDR windows.
 
-Generate Figure S34
+Generate Figure S42
 
 
 ---
@@ -401,4 +401,3 @@ Performs genome alignment.
 ## utilities.R
 
 Contains shared R functions used across multiple scripts.
-

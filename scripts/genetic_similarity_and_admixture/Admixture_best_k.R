@@ -174,7 +174,7 @@ comprg <- cowplot::plot_grid(rg2,rg1,rg3,
                              axis = "tb", 
                              labels=c("b","c","d"))
 rg_cv <- cowplot::plot_grid(cv + theme(panel.grid.major = element_line(color="grey80"),panel.grid.minor = element_blank()),comprg,nrow=2,rel_heights = c(1.2,1), align = "v",axis="r",labels=c("a",NA))
-ggsave(rg_cv,file="../../figures/FigureS8_admixture_CV_error.pdf",
+ggsave(rg_cv,file="../../figures/FigureS2_admixture_CV_error.pdf",
        width = 7,height = 6,
        units = "in",device = 'pdf',
        bg="white",dpi=600)

@@ -308,7 +308,7 @@ for (which_replicate in which_replicate) {
   )
   
   if (which_replicate == 5){
-  ggsave(paste0("../../figures/raw_FigureS10_admixture_by_RGs_replicate",which_replicate,".pdf"), final_plot, width = 10, height = 8, useDingbats = FALSE)
+  ggsave(paste0("../../figures/raw_FigureS4_admixture_by_RGs_replicate",which_replicate,".pdf"), final_plot, width = 10, height = 8, useDingbats = FALSE)
   }
   
   best_k_qfile<-read.table(paste0("../../processed_data/Ct_admixture_k28/K28_Processed_Ancestry_replicate_",which_replicate,".tsv"),
@@ -443,7 +443,7 @@ for (which_replicate in which_replicate) {
 }
 
 combined_only_7_lineage <- plot_grid(plotlist = final_plots, ncol = 2, align = "v")
-ggsave("../../figures/raw_FigureS11_admixture_7_RGs.pdf", 
+ggsave("../../figures/raw_FigureS5_admixture_7_RGs.pdf", 
        combined_only_7_lineage, 
        width = 10, height = 7)
 

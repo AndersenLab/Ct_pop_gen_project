@@ -77,7 +77,7 @@ Micro_pca_map1 <- ggplot() +
            label = "5 km", size = 3.5, hjust = 0.5)
 
 ggsave(Micro_pca_map1, 
-       filename = "../../../figures/FigureS23_Micro_map.pdf", 
+       filename = "../../../figures/FigureS31_Micro_map.pdf", 
        width = 7.5, 
        height = 7.5/3219*2674, 
        units = "in")

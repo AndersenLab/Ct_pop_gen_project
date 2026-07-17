@@ -393,7 +393,7 @@ dxybox_ct <- make_dxy_plot(anno_dxy_ct_all)
 
 ggsave(
   dxybox_ct,
-  filename = "../../figures/FigureS31_Dxy.png",
+  filename = "../../figures/FigureS39_Dxy.png",
   width = 7,
   height = 7,
   units = "in",

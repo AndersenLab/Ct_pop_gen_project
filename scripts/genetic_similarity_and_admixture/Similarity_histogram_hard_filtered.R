@@ -48,7 +48,7 @@ final <- plot_grid(p_full, p_zoom, ncol = 2,
                    rel_widths = c(1, 1),
                    labels = c("a", "b"))
 
-ggsave("../../figures/FigureS37_Similarity_histogram_hard_filtered.pdf",
+ggsave("../../figures/FigureS1_Similarity_histogram_hard_filtered.pdf",
        final, 
        width = 7, height = 3, 
        units = "in")

@@ -121,7 +121,7 @@ result_plots_no_d <- windowed_div_stats_no_d(window_diversity)
 result_plots_no_d
 
 ggsave(
-  "../../figures/FigureS34_plot_pi_theta_1to1_4fold.png",
+  "../../figures/FigureS42_plot_pi_theta_1to1_4fold.png",
   plot = result_plots_no_d,
   width = 7,
   height = 3,

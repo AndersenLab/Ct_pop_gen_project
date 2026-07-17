@@ -272,7 +272,7 @@ p_heatmap_3 <- Heatmap(
   column_title_rot     = 0
 )
 
-pdf(paste0("../../../figures/FigureS22_SA_heatmap.pdf"), width = 7, height = 6)
+pdf(paste0("../../../figures/FigureS30_SA_heatmap.pdf"), width = 7, height = 6)
 
 draw(p_heatmap_3, merge_legend = TRUE, heatmap_legend_side = "right",
      annotation_legend_side = "right")

@@ -306,7 +306,7 @@ s4 <- ggplot(plot_df,
 
 comp_reg<-cowplot::plot_grid(s3,s2,s1,s4,ncol=1, rel_heights = c(1.1,1,1,1),align = "v",axis = "lr",labels=c("a","b","c","d"))
 
-ggsave(plot = comp_reg, filename = "../../figures/FigureS38_LR_STATS_95idy_20251201.png",width = 7.5,height = 9,dpi = 600,device = 'png')
+ggsave(plot = comp_reg, filename = "../../figures/FigureS6_LR_STATS_95idy_20251201.png",width = 7.5,height = 9,dpi = 600,device = 'png')
 
 q1sd <- idy_bins |>
   dplyr::group_by(CHROM) |>
@@ -689,12 +689,12 @@ p1 <- ggplot(all_calls_SR_clustered %>% dplyr::filter(divSize >= 5e3 & !(CHROM==
   scale_x_continuous(breaks = function(x) seq(floor(min(x)), ceiling(max(x)), by = 5),expand = c(0, 0))
 
 ggsave(plot = p1, filename = "../../figures/HDR_CT_allStrain_5kbclust_20251201.png",width = 8.5,height = 3.5,dpi = 600,device = 'png')
-ggsave(plot = MOF, filename = "../../figures/FigureS39_MOF_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = MEF, filename = "../../figures/FigureS40_MEF_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = REC, filename = "../../figures/FigureS41_REC_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = PRE, filename = "../../figures/FigureS42_PRE_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = F1, filename = "../../figures/FigureS43_F1_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
-ggsave(plot = BEST, filename = "../../figures/FigureS44_BEST_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = MOF, filename = "../../figures/FigureS7_MOF_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = MEF, filename = "../../figures/FigureS8_MEF_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = REC, filename = "../../figures/FigureS9_REC_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = PRE, filename = "../../figures/FigureS10_PRE_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = F1, filename = "../../figures/FigureS11_F1_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
+ggsave(plot = BEST, filename = "../../figures/FigureS12_BEST_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
 
 options(scipen=10)
 write.table(all_calls_SR_clustered %>% dplyr::filter(divSize >= 5e3 & !(CHROM=="MtDNA")), file="../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv",row.names = F,quote = F,sep = '\t')

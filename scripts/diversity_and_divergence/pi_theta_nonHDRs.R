@@ -280,7 +280,7 @@ windowed_div_stats_no_d <- function(windows_df) {
 result_plots_no_d <- windowed_div_stats_no_d(window_diversity)
 
 ggsave(
-  "../../figures/FigureS35_pi_theta_nonHDRs.png",
+  "../../figures/FigureS43_pi_theta_nonHDRs.png",
   plot = result_plots_no_d,
   width = 7,
   height = 3,

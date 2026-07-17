@@ -172,6 +172,6 @@ merge_supp<- cowplot::plot_grid(pc_heatmap,all,
                                 )
 merge_supp
 
-cowplot::ggsave2(merge_supp, filename = "../../../figures/FigureS15_Taiwan_env.pdf",
+cowplot::ggsave2(merge_supp, filename = "../../../figures/FigureS23_Taiwan_env.pdf",
                  width = 7.5, heigh = 7.5, units = "in")
 

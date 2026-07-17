@@ -275,7 +275,7 @@ p_heatmap_3 <- Heatmap(
   
 )
 
-pdf(paste0("../../../figures/FigureS24_Micronesia_heatmap.pdf"), width = 7, height = 6)
+pdf(paste0("../../../figures/FigureS32_Micronesia_heatmap.pdf"), width = 7, height = 6)
 
 draw(p_heatmap_3, merge_legend = TRUE, heatmap_legend_side = "right",
      annotation_legend_side = "right")

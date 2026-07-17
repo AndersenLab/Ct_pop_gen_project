@@ -88,7 +88,7 @@ p <- ggplot(plot_df, aes(x = geo_km, y = gen_dist)) +
   ) +
   theme_classic()
 
-ggsave("../../figures/FigureS12_IBD_isotype_pairs_Mantel.png",
+ggsave("../../figures/FigureS20_IBD_isotype_pairs_Mantel.png",
        plot = p,
        width = 7,
        height = 7,
@@ -274,7 +274,7 @@ p_big <- ggplot(plot_all_df2, aes(x = geo_km, y = gen_dist)) +
   theme_classic() +
   theme(strip.text = element_text(size = 11))
 
-ggsave("../../figures/FigureS13_IBD_RGs.png",
+ggsave("../../figures/FigureS21_IBD_RGs.png",
        plot = p_big, 
        width = 7, height = 7, 
        dpi = 300)

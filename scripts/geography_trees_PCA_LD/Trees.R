@@ -94,7 +94,7 @@ plot_tree_heatmaps <- function(tree_file,
 
 plot_0.9_tree<-plot_tree_heatmaps(tree_file = isotype_map_0.9,
                                   annotation_map_file = annotation_maps)
-ggsave("../../figures/raw_FigureS4_Ct_tree.pdf", plot = plot_0.9_tree, width = 7.5, height = 7.5, units = "in")
+ggsave("../../figures/raw_FigureS16_Ct_tree.pdf", plot = plot_0.9_tree, width = 7.5, height = 7.5, units = "in")
 
 
 plot_equal_angle_tree <- function(tree_file, 
@@ -118,7 +118,7 @@ plot_equal_angle_tree <- function(tree_file,
 annotation_maps<- read.csv("../../processed_data/geo_info/Ct_indep_isotype_info_geo.csv", header = TRUE)
 plot_0.9_tree_equal_angle<-plot_equal_angle_tree(isotype_map_0.9_raw, 
                                                  annotation_map_file = annotation_maps)
-ggsave("../../figures/FigureS5_tree_unrooted.pdf", 
+ggsave("../../figures/FigureS17_tree_unrooted.pdf", 
        plot = plot_0.9_tree_equal_angle, 
        width = 7, height = 7, units = "in")
 

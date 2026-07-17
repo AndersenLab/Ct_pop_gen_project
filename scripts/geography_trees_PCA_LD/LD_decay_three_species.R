@@ -64,7 +64,7 @@ return(p1)
 }
 
 plot_LD_all_summary<-plot_figure(LD_all_summary)
-ggsave("../../figures/FigureS3_LD_decay.pdf", 
+ggsave("../../figures/FigureS15_LD_decay.pdf", 
        plot = plot_LD_all_summary, 
        width = 7, height = 4, units = "in")
 

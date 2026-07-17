@@ -26,7 +26,7 @@ combined2 <- plot_grid(
   rel_heights = c(2.153522, 2.3)
 )
 
-ggsave("../../figures/FigureS2_isotype_and_geo_distance.pdf", 
+ggsave("../../figures/FigureS14_isotype_and_geo_distance.pdf", 
        combined2, 
        width = 7.5, 
        height = sum(c(2.153522,2.3)), 
