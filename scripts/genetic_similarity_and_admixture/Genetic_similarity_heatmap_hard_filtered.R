@@ -20,7 +20,7 @@ gtcheck_output<-gtcheck_raw %>%
   rename(`total genome-wide SNVs` = sites) %>% 
   rename(`strain1` = i) %>% 
   rename(`strain2` = j)
-write.csv(gtcheck_output,"../../tables/TableS2.csv",row.names = FALSE)
+write.csv(gtcheck_output,"../../tables/TableS3.csv",row.names = FALSE)
 
 gtcheck_strain<-gtcheck_raw %>% 
   dplyr::mutate(concordance = 1-(discordance/sites)) %>% 

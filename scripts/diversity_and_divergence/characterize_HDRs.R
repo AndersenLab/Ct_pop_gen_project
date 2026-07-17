@@ -30,7 +30,7 @@ lineage_colors <- c(
 )
 
 
-hdrs <- readr::read_tsv("../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv")  %>% 
+hdrs <- readr::read_tsv("../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv")  %>% 
   dplyr::filter(divSize>=5e3)
 bins <- readr::read_tsv("../../processed_data/genomic_bins/ONT_NIC58_1kb_bins.bed",col_names = c("CHROM","binStart","binEnd")) 
 all_variants <- readr::read_tsv("../../processed_data/variant_counts/CT_all_strain_vc.tsv", col_names = c("CHROM","START_BIN","END_BIN","COUNT","STRAIN")) %>% dplyr::mutate(source="QX1410") %>% dplyr::filter(!STRAIN=="QX1410")
@@ -165,7 +165,7 @@ full_plot <- cowplot::ggdraw(padded_plot) +
 
 ggsave(plot = full_plot, filename = "../../figures/FigureS28_propVC_20260323.png",width = 7,height = 6,dpi = 600,device = 'png',bg = "white")
 
-write.table(meanRGSummary_nr,file = "../../tables/TableS7_HDRsummaryStats_20251205.tsv",sep = "\t",quote = F,row.names = F)
+write.table(meanRGSummary_nr,file = "../../tables/TableS8_HDRsummaryStats_20251205.tsv",sep = "\t",quote = F,row.names = F)
 
 ##########
 conc <- readr::read_tsv("../../data/gtcheck.txt") %>%

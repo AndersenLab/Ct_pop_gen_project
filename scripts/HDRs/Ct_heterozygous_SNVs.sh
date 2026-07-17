@@ -13,7 +13,7 @@ cd ./processed_data/
 mkdir -p HDR_stats
 cd HDR_stats
 
-HDR_TABLE="../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv"
+HDR_TABLE="../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv"
 SOFT_VCF="../../data/VCF/WI.20250627.soft-filter.isotype.vcf.gz"
 
 PREFIX="Ct_soft_filtered_hets"
@@ -21,7 +21,7 @@ PREFIX="Ct_soft_filtered_hets"
 # 1. Table S6 ranges -> BED
 awk 'BEGIN{OFS="\t"} NR>1 {print $1, $2, $3}' ${HDR_TABLE} \
   | sort -k1,1 -k2,2n \
-  > ${PREFIX}.TableS6_HDR_ranges.bed
+  > ${PREFIX}.TableS7_HDR_ranges.bed
 
 # 2. Count het genotype calls per biallelic SNV site
 bcftools view -m2 -M2 -v snps ${SOFT_VCF} \
@@ -60,7 +60,7 @@ awk 'BEGIN{OFS="\t"} NR>1 {print $1, $2-1, $2, $1":"$2}' \
 ### -wa -u: each SNV site is reported once even if it overlaps multiple HDR ranges.
 bedtools intersect \
   -a ${PREFIX}.SNV_sites.bed \
-  -b ${PREFIX}.TableS6_HDR_ranges.bed \
+  -b ${PREFIX}.TableS7_HDR_ranges.bed \
   -wa -u \
   | awk '{print $4}' \
   | sort -u \

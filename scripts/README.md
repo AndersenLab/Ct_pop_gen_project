@@ -49,7 +49,7 @@ Plots chromosome-specific PCA results.
 Generates Figure S6.
 
 - `PCA_figure_and_table.R`  
-Generates PCA summary plots and associated TableS3.
+Generates PCA summary plots and associated TableS4.
 
 - `Figure1.R`  
 Assembles panels for Figure 1.

@@ -189,7 +189,7 @@ getRegFreq <- function(all_regions) {
 }
 
 hdr_regions <- readr::read_tsv(
-  "../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv",
+  "../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv",
   show_col_types = FALSE
 ) %>%
   dplyr::select(CHROM, minStart, maxEnd, STRAIN) %>%

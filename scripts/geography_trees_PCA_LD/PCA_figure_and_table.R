@@ -80,7 +80,7 @@ Table_PCA<-pca_TAC_ld0.9_no_rm %>%
   dplyr::select(-strain, -lat, -long, -PC5, -PC6)
 
 write.table(Table_PCA,
-            "../../tables/TableS3_PCA.tsv",
+            "../../tables/TableS4_PCA.tsv",
             sep = '\t',
             col.names = TRUE,
             row.names = FALSE,

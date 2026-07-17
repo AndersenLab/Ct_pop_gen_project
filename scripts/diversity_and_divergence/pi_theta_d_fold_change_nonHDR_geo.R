@@ -178,7 +178,7 @@ region_rects <- dplyr::bind_rows(
   dplyr::filter(region != "Tip")
 
 hdrs_ct <- readr::read_tsv(
-  "../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv",
+  "../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv",
   show_col_types = FALSE
 ) %>%
   dplyr::transmute(
@@ -346,7 +346,7 @@ output_table <- dplyr::bind_rows(
 
 write.table(
   output_table,
-  "../../tables/TableS8_Geo_pi_theta_d_Autosomes_X_nonHDR.tsv",
+  "../../tables/TableS9_Geo_pi_theta_d_Autosomes_X_nonHDR.tsv",
   quote = FALSE,
   row.names = FALSE,
   sep = "\t"

@@ -14,7 +14,7 @@ gtcheck_isotype <- gtcheck_isotype_raw %>%
   mutate(concordance = 1 - (discordance / sites)) %>%
   select(i, j, concordance)
 
-Ct_raw_csv <- readr::read_tsv("../../tables/Table_S1.tsv")
+Ct_raw_csv <- readr::read_tsv("../../tables/Table_S2.tsv")
 
 Ct_isotyeps_csv <- Ct_raw_csv %>%
   dplyr::filter(strain == isotype) %>%
@@ -115,7 +115,7 @@ gtcheck_isotype <- gtcheck_isotype_raw %>%
   dplyr::mutate(concordance = 1 - (discordance / sites)) %>%
   dplyr::select(i, j, concordance)
 
-Ct_raw_csv <- readr::read_tsv("../../tables/Table_S1.tsv")
+Ct_raw_csv <- readr::read_tsv("../../tables/Table_S2.tsv")
 
 Ct_isotypes <- Ct_raw_csv %>%
   dplyr::filter(strain == isotype) %>%

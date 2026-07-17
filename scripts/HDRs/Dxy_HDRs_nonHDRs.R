@@ -339,7 +339,7 @@ ct_region_rects <- make_ct_region_rects(
 )
 
 ct_hdr_dt <- make_hdr_dt(
-  "../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv"
+  "../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv"
 )
 
 
@@ -489,7 +489,7 @@ cb_dxy_distribution_check <- check_dxy_distribution(cb_dxy_focal)
 
 print(cb_dxy_distribution_check)
 
-TableS9_Ct_and_Cb_Dxy_nonHDRs <- dplyr::bind_rows(
+TableS10_Ct_and_Cb_Dxy_nonHDRs <- dplyr::bind_rows(
   Ct_nonhdr_dxy_overall,
   Cb_nonhdr_dxy_overall
 ) %>%
@@ -504,8 +504,8 @@ TableS9_Ct_and_Cb_Dxy_nonHDRs <- dplyr::bind_rows(
   dplyr::select(species, group, mean_dxy_nonHDR)
 
 readr::write_csv(
-  TableS9_Ct_and_Cb_Dxy_nonHDRs,
-  "../../tables/TableS9_Ct_and_Cb_Dxy_nonHDRs.csv"
+  TableS10_Ct_and_Cb_Dxy_nonHDRs,
+  "../../tables/TableS10_Ct_and_Cb_Dxy_nonHDRs.csv"
 )
 
-print(TableS9_Ct_and_Cb_Dxy_nonHDRs)
+print(TableS10_Ct_and_Cb_Dxy_nonHDRs)

@@ -203,7 +203,7 @@ geo_merged_wide_table <- merged_wide_table %>%
 
 write.table(
   geo_merged_wide_table,
-  "../../tables/TableS5_Geo_pi_theta_d_Autosomes_X.tsv",
+  "../../tables/TableS6_Geo_pi_theta_d_Autosomes_X.tsv",
   col.names = TRUE,
   row.names = FALSE,
   quote = FALSE,

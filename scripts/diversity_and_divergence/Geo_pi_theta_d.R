@@ -249,6 +249,6 @@ dir.create("../../tables", recursive = TRUE, showWarnings = FALSE)
 
 readr::write_csv(
   all_result,
-  "../../tables/TableS4_geo_pi_theta_d.csv",
+  "../../tables/TableS5_geo_pi_theta_d.csv",
   na = ""
 )

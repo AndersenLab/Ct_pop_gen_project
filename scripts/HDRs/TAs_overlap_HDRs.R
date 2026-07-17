@@ -70,7 +70,7 @@ getRegFreq <- function(all_regions) {
 
 
 hdr_regions <- readr::read_tsv(
-  "../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv",
+  "../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv",
   show_col_types = FALSE
 ) %>%
   dplyr::select(CHROM, minStart, maxEnd, STRAIN) %>%
@@ -175,7 +175,7 @@ TA_HDR_export <- TA_HDR_summary_all %>%
   dplyr::select(-TA_id, -HDRs)
 
 write_csv(TA_HDR_export,
-          "../../tables/TableS12_TA_HDRs.csv")
+          "../../tables/TableS13_TA_HDRs.csv")
 
 HDRs_hit_coords <- TA_HDR_hits_long %>%
   dplyr::distinct(

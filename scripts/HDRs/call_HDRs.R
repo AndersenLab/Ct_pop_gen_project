@@ -697,7 +697,7 @@ ggsave(plot = F1, filename = "../../figures/FigureS43_F1_HDR_CT_20251201.png",wi
 ggsave(plot = BEST, filename = "../../figures/FigureS44_BEST_HDR_CT_20251201.png",width = 7.5,height = 6.5,dpi = 600,device = 'png')
 
 options(scipen=10)
-write.table(all_calls_SR_clustered %>% dplyr::filter(divSize >= 5e3 & !(CHROM=="MtDNA")), file="../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv",row.names = F,quote = F,sep = '\t')
+write.table(all_calls_SR_clustered %>% dplyr::filter(divSize >= 5e3 & !(CHROM=="MtDNA")), file="../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv",row.names = F,quote = F,sep = '\t')
 options(scipen=0)
 
 #save.image("Trop_HDR_checkpoint_20251201.Rda")

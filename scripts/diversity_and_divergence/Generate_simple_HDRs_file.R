@@ -4,7 +4,7 @@ library(dplyr)
 library(readr)
 
 
-HDRs_raw <- read_tsv("../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv", show_col_types = FALSE)
+HDRs_raw <- read_tsv("../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv", show_col_types = FALSE)
 
 HDRs_file<-HDRs_raw %>% 
   select(CHROM,minStart,maxEnd)

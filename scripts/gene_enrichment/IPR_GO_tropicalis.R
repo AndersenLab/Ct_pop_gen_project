@@ -168,7 +168,7 @@ ggplot(data = nHDR_armDomain) +
   theme(legend.position = 'none') 
 
 # Loading in HDRs
-hdr_regions <- readr::read_tsv("../../tables/TableS6_HDR_CT_allStrain_5kbclust_20251201.tsv") %>% dplyr::select(CHROM,minStart,maxEnd,STRAIN) 
+hdr_regions <- readr::read_tsv("../../tables/TableS7_HDR_CT_allStrain_5kbclust_20251201.tsv") %>% dplyr::select(CHROM,minStart,maxEnd,STRAIN) 
 
 HDreg_all <- ldply(getRegFreq(hdr_regions %>% dplyr::select(CHROM,minStart,maxEnd,STRAIN) %>% dplyr::arrange(CHROM,minStart) %>%dplyr::group_split(CHROM)), data.frame) %>% dplyr::select(-STRAIN) %>% dplyr::rename(start=minStart,end=maxEnd)
 
@@ -319,7 +319,7 @@ cleaned_table <- ipr %>%
 
 either_GO_orIPR_total <- cleaned_table %>% dplyr::distinct(NIC58) # total number of genes that have either an IPR or GO annotation
  
-write.table(cleaned_table, "../../tables/TableS10_NIC58_IPR_annotations.tsv", sep = '\t', quote = F, col.names = T, row.names = F)
+write.table(cleaned_table, "../../tables/TableS11_NIC58_IPR_annotations.tsv", sep = '\t', quote = F, col.names = T, row.names = F)
 
 
 #==============================================================================================================================================================================================================================#

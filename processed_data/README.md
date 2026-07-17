@@ -358,7 +358,7 @@ Per-strain variant count summary files.
 
 Files used to summarize C. tropicalis HDRs, heterozygous-like SNV signals, one-to-one orthologs, and four-fold degenerate site diversity:
 
-- `Ct_soft_filtered_hets.TableS6_HDR_ranges.bed`: HDR intervals from Table S6 in BED format  
+- `Ct_soft_filtered_hets.TableS7_HDR_ranges.bed`: HDR intervals from Table S7 in BED format  
 - `Ct_soft_filtered_hets.het_counts_per_site.tsv`: per-site heterozygous genotype counts from the soft-filtered VCF  
 - `Ct_soft_filtered_hets.SNV_sites.bed`: SNV site coordinates in BED format  
 - `Ct_soft_filtered_hets.HDR_site_ids.txt`: SNV sites overlapping HDR intervals  
